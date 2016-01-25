@@ -3,7 +3,7 @@ ssh root@your_ip_address
 pw: provided_in_email
 
 ### setup deployer
-useradd deployer <enter>
+useradd deployer<enter>
 passwd deployer<enter>
 deploy<enter>
 deploy<enter>
