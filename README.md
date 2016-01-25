@@ -3,10 +3,10 @@ ssh root@your_ip_address
 pw: provided_in_email
 
 ### setup deployer
-useradd deployer<enter>
-passwd deployer<enter>
-deploy<enter>
-deploy<enter>
+useradd deployer `enter`
+passwd deployer `enter`
+deploy `enter`
+deploy `enter`
 
 ### setup ssh keys by copying local public key onto remote .ssh/authorized_keys file
 remote: in roo/.ssh, `vim authorized_keys`
