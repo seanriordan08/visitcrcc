@@ -19,7 +19,8 @@ log back into root - you should not be prompted for a password
 
 ### create local db
 NOTE: Run this on both local and prod, sometimes the mysql2 adapter version needs to be held back due to edge-rails     
-NOTE: If `PID not found` error occurs, be sure to check local `/usr/local/var/mysql` and ensure *.pid filenames match the current user name.     
+NOTE: If `PID not found` error occurs, be sure to check local `/usr/local/var/mysql` and ensure *.pid filenames match 
+the current user name. (ie. if user name is `Seans-MBP`, then pid should be: `Seans-MBP.PK5001Z.pid`)      
 local: bin/rake db:create
 
 ### if using basic ansible provisioner
