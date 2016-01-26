@@ -1,0 +1,173 @@
+//Reset all css
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+//Branding
+$crcc-white: #F5F5F5;
+$crcc-orange: #F68F1A;
+$crcc-brown: #6B6054;
+$crcc-blue: #59656F;
+$crcc-ltblue: #78B5CA;
+
+@mixin font-roboto($size, $weight) {
+  font-family: 'Roboto', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+@mixin box-shadow($horiz, $verti, $blur, $spread, $alpha, $inset: null) {
+  box-shadow:         $inset $horiz $verti $blur $spread $alpha;
+  -moz-box-shadow:    $inset $horiz $verti $blur $spread $alpha;
+  -webkit-box-shadow: $inset $horiz $verti $blur $spread $alpha;
+}
+
+@mixin section-layout($text-color, $background-image) {
+  height: auto;
+  padding: 20px 40px 40px 40px;
+  @media screen and (max-width: 450px){
+    padding: 5%;
+  }
+  text-align: center;
+  color: $text-color;
+  background-image: $background-image;
+}
+
+@mixin rotate_it($angle) {
+  transform: rotate($angle);
+  -moz-transform: rotate($angle);
+  -webkit-transform: rotate($angle);
+}
+
+@mixin transition($duration, $easing: null) {
+  transition: $duration $easing;
+  -webkit-transition: $duration $easing; /* Safari */
+  -moz-transition: $duration $easing;
+}
+
+@mixin element-alignment($side) {
+  display: block;
+  float: $side;
+  clear: both;
+  margin: 5px;
+  cursor: pointer;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: $crcc-white url(concrete_seamless.png) repeat;
+  overflow: scroll;
+}
+
+.float_left {
+  float: left;
+}
+
+.float_right {
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.chat_action_white {
+  display: inline-block;
+  min-width: 130px;
+  min-height: 35px;
+  padding: 5px 0;
+  border-radius: 4px;
+  color: $crcc-blue;
+  background-color: $crcc-white;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  text-decoration: none;
+  @include box-sizing;
+  border: 1px solid $crcc-white;
+  &:hover {
+    @include transition(150ms);
+    color: $crcc-white;
+    background-color: transparent;
+    @include box-sizing;
+    border: 1px solid $crcc-white;
+  }
+}
+
+.chat_action_black {
+  display: inline-block;
+  min-width: 130px;
+  min-height: 35px;
+  padding: 5px 0;
+  border-radius: 4px;
+  color: $crcc-white;
+  background-color: $crcc-blue;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  text-decoration: none;
+  @include box-sizing;
+  border: 1px solid $crcc-blue;
+  &:hover {
+    @include transition(150ms);
+    color: $crcc-blue;
+    background-color: transparent;
+    @include box-sizing;
+    border: 1px solid $crcc-blue;
+  }
+}
+
+.hero {
+  background: asset-data-url("sunrise.png") no-repeat center center fixed;
+  color: #333;
+  @media screen and (max-width: 699px) {
+    background-size: cover;
+    background-position: center top;
+  }
+  @media screen and (min-width: 700px) {
+    background-size: cover;
+  }
+}
+
+.about_general_content {
+  a {
+    text-decoration: underline;
+    color: $crcc-white
+  }
+}
+
+//@media screen and (min-width: 950px) {
+//  @import 'welcome_desktop';
+//}
+//
+//@media screen and (min-width: 700px) and (max-width: 949px){
+//  @import 'welcome_tablet';
+//}
+
+@media screen and (max-width: 699px){
+  @import 'welcome_mobile';
+}

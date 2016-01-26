@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Visitcrcc</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en-US">
+  <head>
+    <title>VisitCRCC</title>
+    <%= stylesheet_link_tag *%w(
+        application
+        //cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css
+        //cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css
+        //cdn.jsdelivr.net/pure/0.6.0/pure-min.css
+       )
+    %>
+    <%= stylesheet_link_tag media: 'all', 'data-turbolinks-track' => true %>
 
-<%= yield %>
+    <%= javascript_include_tag *%w(
+          application
+          //cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js
+        )
+    %>
+    <%= javascript_include_tag 'data-turbolinks-track' => true %>
 
-</body>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="container">
+      <%= render partial: "shared/nav_bar.html.erb" %>
+      <%= yield %>
+    </div>
+  </body>
+
 </html>

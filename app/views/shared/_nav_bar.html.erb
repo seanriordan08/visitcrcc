@@ -1,0 +1,42 @@
+<div class="header">
+	<%#= image_tag("logo_50.png", size: "50x50", alt: "KPR Ascent", class: "logo_icon float_left") %>
+	<ul class="float_left">
+		<li class="logo_text">CRCC</li>
+	</ul>
+
+	<ul class="nav_links">
+		<div id="hamburger-menu">
+			<span></span><span></span><span></span><span></span>
+		</div>
+		<li id="nav_services" class="nav">Services</li>
+		<li id="nav_about" class="nav">About</li>
+		<li id="nav_pricing" class="nav">Pricing</li>
+    <li id="nav_signin" class="nav">Sign In</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#nav_signin").on("click", function() {
+			if ($('#sign_in_form').is(":visible")){
+				$('#sign_in_form').fadeOut(100);
+			} else {
+				$('#sign_in_form').fadeIn(200).attr('tabindex', -1).focus();
+			}
+		});
+
+		$(document).mouseup(function (e)
+		{
+			var container = $('#sign_in_form');
+			if (!container.is(e.target) // if the target of the click isn't the container...
+				&& container.has(e.target).length === 0) // ... nor a descendant of the container
+			{
+				container.fadeOut(300);
+			}
+		});
+
+		<% if flash[:error] %>
+			$('#nav_signin').trigger("click");
+		<% end %>
+	});
+</script>
