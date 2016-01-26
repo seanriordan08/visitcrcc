@@ -20,16 +20,12 @@ local: bin/rake db:create
 
 ### if using basic ansible provisioner
 -modify `telemark-ops/ansible/production`
-
 -modify `telemark-ops/ansible/group_vars/production`
-
 -modify `telemark-ops/ansible/group_vars/all`
 
 
 ## Provisioning
-
 To provision a new server: cd ansible && `ansible-playbook -i production provision.yml`
 
 ##Deploying
-
 To deploy the app: cd ansible && `ansible-playbook -i production deploy.yml`
