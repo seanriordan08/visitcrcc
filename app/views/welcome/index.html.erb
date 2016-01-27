@@ -32,6 +32,11 @@
   </div>
 </div>
 
+<div class="crcc-main-slider">
+  <div>your content</div>
+  <div>your content</div>
+  <div>your content</div>
+</div>
 
 <div class="container">
   <div class="section">
@@ -149,3 +154,16 @@
     </div>
   </div>
 </footer>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.crcc-main-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 2500,
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 2
+    });
+  });
+</script>
