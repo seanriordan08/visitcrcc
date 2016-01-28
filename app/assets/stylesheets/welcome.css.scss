@@ -62,8 +62,21 @@ body {
   }
   .slick-dots {
     height: 100px;
-    background-color: red;
-    top: 10px;
+    @media screen and (max-width: 500px) {
+      bottom: -110px;
+    }
+    @media screen and (min-width: 501px) and (max-width: 900px){
+      bottom: -90px;
+    }
+    @media screen and (min-width: 901px) and (max-width: 1200px){
+      bottom: -65px;
+    }
+    @media screen and (min-width: 1201px) and (max-width: 1850px){
+      bottom: -25px;
+    }
+    @media screen and (min-width: 1851px){
+      bottom: 0;
+    }
   }
 }
 
