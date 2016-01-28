@@ -6,16 +6,21 @@
       <div class="row center">
         <h5 class="header col s12 light crcc-brown-text"></h5>
       </div>
+      <br><br><br>
       <div class="row center">
-        <a href="#" id="download-button" class="btn-large waves-effect waves-light blue">Call to Action</a>
+        <a href="#modal_learn_more" id="learn_more_button" class="btn-large waves-effect waves-light" style="background-color: #78B5CA">Learn More</a>
       </div>
-      <br><br>
-
     </div>
   </div>
   <div class="parallax">
     <%= image_tag("sunrise.png", alt: "Unsplashed background img 1") %>
   </div>
+</div>
+
+<%= render partial: "modals" %>
+
+<div class="section service_time_strip">
+  Sundays TBD:00 AM | Location Address TBD &bull; Castle Rock, CO 8010#
 </div>
 
 <div class="section">
@@ -39,7 +44,7 @@
     <!--   Icon Section   -->
     <div class="row">
       <div class="col s12 m3">
-        <div class="icon-block">
+        <div class="icon-block hoverable">
           <h2 class="center brown-text"><i class="large material-icons">stars</i></h2>
           <h5 class="center">New Here?</h5>
 
@@ -48,7 +53,7 @@
       </div>
 
       <div class="col s12 m3">
-        <div class="icon-block">
+        <div class="icon-block hoverable">
           <h2 class="center brown-text"><i class="large material-icons">event</i></h2>
           <h5 class="center">Upcoming Events</h5>
 
@@ -57,7 +62,7 @@
       </div>
 
       <div class="col s12 m3">
-        <div class="icon-block">
+        <div class="icon-block hoverable">
           <h2 class="center brown-text"><i class="large material-icons">group</i></h2>
           <h5 class="center">Get involved</h5>
 
@@ -66,7 +71,7 @@
       </div>
 
       <div class="col s12 m3">
-        <div class="icon-block">
+        <div class="icon-block hoverable">
           <h2 class="center brown-text"><i class="large material-icons">card_giftcard</i></h2>
           <h5 class="center">Give</h5>
 
@@ -115,38 +120,36 @@
   <div class="parallax"><%= image_tag("background3.jpg", alt: "Unsplashed background img 3") %></div>
 </div>
 
-<footer class="page-footer blue">
+<footer class="page-footer" style="background-color: #78B5CA">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
         <h5 class="white-text">Mission Statement</h5>
-        <p class="grey-text text-lighten-4">“Making Much Of Jesus,” - our clear objective to fight for our community in the name of Jesus Christ.</p>
-
-
+        <p class="crcc-black-text text-lighten-4">“Making Much Of Jesus,” - our clear objective to fight for our community in the name of Jesus Christ.</p>
       </div>
       <div class="col l3 s12">
-        <h5 class="white-text">Links</h5>
+        <h5 class="crcc-white-text">Links</h5>
         <ul>
-          <li><a class="white-text" href="#!">Link 1</a></li>
-          <li><a class="white-text" href="#!">Link 2</a></li>
-          <li><a class="white-text" href="#!">Link 3</a></li>
-          <li><a class="white-text" href="#!">Link 4</a></li>
+          <li><a class="crcc-white-text" href="#">Affiliated Churches</a></li>
+          <li><a class="crcc-white-text" href="#">Sponsors</a></li>
+          <li><a class="crcc-white-text" href="#">Our Partners</a></li>
+          <li><a class="crcc-white-text" href="#"></a></li>
         </ul>
       </div>
       <div class="col l3 s12">
         <h5 class="white-text">Connect</h5>
         <ul>
-          <li><a class="white-text" href="#!">Link 1</a></li>
-          <li><a class="white-text" href="#!">Link 2</a></li>
-          <li><a class="white-text" href="#!">Link 3</a></li>
-          <li><a class="white-text" href="#!">Link 4</a></li>
+          <li><a class="crcc-white-text" href="#">Facebook TBD</a></li>
+          <li><a class="crcc-white-text" href="#">Twitter TBD</a></li>
+          <li><a class="crcc-white-text" href="#">Email</a></li>
+          <li><a class="crcc-white-text" href="#">Prayers</a></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
     <div class="container">
-      Generic <a class="brown-text text-lighten-3" href="#">footnotes</a>
+      Website created by Castle Rock Community Church partners & volunteers
     </div>
   </div>
 </footer>

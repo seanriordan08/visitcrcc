@@ -29,9 +29,24 @@ body {
   overflow: scroll;
 }
 
+a:hover {
+  color: $crcc-black !important;
+}
+
+.service_time_strip {
+  position: relative;
+  display: inline-block;
+  top: -53px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  color: $crcc-white;
+  background-color: rgba($crcc-brown, .7);
+}
+
 .box_wrapper {
   box-sizing: border-box;
-  margin: 20px;
+  margin: 0 53px;
 }
 
 .crcc_main_slider {
@@ -79,7 +94,6 @@ body {
     }
   }
 }
-
 .dark_bg {
   color: $crcc-grey;
   background: transparent url('dark_geometric.png') repeat;
@@ -87,4 +101,9 @@ body {
 .light_bg {
   color: $crcc-black;
   background: transparent url('light_paper.png') repeat;
+}
+
+.hoverable {
+  padding: 10px;
+  cursor: pointer;
 }
