@@ -28,3 +28,44 @@ body {
   background: $crcc-white url(concrete_seamless.png) repeat;
   overflow: scroll;
 }
+
+.box_wrapper {
+  box-sizing: border-box;
+  margin: 20px;
+}
+.crcc_main_slider {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: auto;
+  color: $crcc-black;
+  background-color: $crcc-grey;
+  box-shadow: 0 0 20px 1px #555;
+  .slider_content {
+    display: inline-block;
+    width: inherit;
+    height: 400px;
+    outline-width: 0;
+    cursor: pointer;
+  }
+  .slick-arrow {
+    text-shadow: 0 0 2px #000;
+  }
+  .slick-prev {
+    left: 10px;
+    z-index: 3;
+  }
+  .slick-next {
+   right: 10px;
+   z-index: 3;
+  }
+}
+
+.dark_bg {
+  color: $crcc-orange;
+  background: transparent url('dark_geometric.png') repeat;
+}
+.light_bg {
+  color: $crcc-black;
+  background: transparent url('light_paper.png') repeat;
+}

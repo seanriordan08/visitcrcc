@@ -2,7 +2,7 @@
   <div class="section no-pad-bot">
     <div class="container">
       <br><br>
-      <h1 class="header center crcc-black-text">Castle Rock Community Church</h1>
+      <h1 class="header center crcc-black-text" style="font-family: 'Sansita One', cursive;">Castle Rock Community Church</h1>
       <div class="row center">
         <h5 class="header col s12 light crcc-brown-text"></h5>
       </div>
@@ -18,25 +18,21 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="section">
-
+<div class="section">
+  <div class="box_wrapper">
     <div class="row">
       <div class="col s12 center">
-        <h3><i class="medium material-icons brown-text">queue_play_next</i></h3>
-        <h4>Hero Slide Show</h4>
-        <p class="center-align light">Slide show content goes here</p>
+        <div class="crcc_main_slider">
+          <div class="slider_content dark_bg">slide heading 1</div>
+          <div class="slider_content light_bg">slide heading 2</div>
+          <div class="slider_content dark_bg">slide heading 3</div>
+          <div class="slider_content light_bg">slide heading 4</div>
+        </div>
       </div>
     </div>
-
   </div>
 </div>
 
-<div class="crcc-main-slider">
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-</div>
 
 <div class="container">
   <div class="section">
@@ -157,13 +153,13 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $('.crcc-main-slider').slick({
+    $('.crcc_main_slider').slick({
       autoplay: true,
       autoplaySpeed: 2500,
       dots: true,
       infinite: true,
       speed: 300,
-      slidesToShow: 2
+      slidesToShow: 1
     });
   });
 </script>
