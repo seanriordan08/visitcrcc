@@ -33,14 +33,15 @@ body {
   box-sizing: border-box;
   margin: 20px;
 }
+
 .crcc_main_slider {
   display: inline-block;
   vertical-align: top;
   width: 100%;
   height: auto;
-  color: $crcc-black;
-  background-color: $crcc-grey;
   box-shadow: 0 0 20px 1px #555;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 7vw;
   .slider_content {
     display: inline-block;
     width: inherit;
@@ -59,10 +60,15 @@ body {
    right: 10px;
    z-index: 3;
   }
+  .slick-dots {
+    height: 100px;
+    background-color: red;
+    top: 10px;
+  }
 }
 
 .dark_bg {
-  color: $crcc-orange;
+  color: $crcc-grey;
   background: transparent url('dark_geometric.png') repeat;
 }
 .light_bg {
