@@ -1,7 +1,7 @@
 <ul id="nav_dropdown_info" class="dropdown-content">
   <li><a href="#" style="color: #353535">Mission</a></li>
   <li class="divider"></li>
-  <li><a href="#" style="color: #353535">Planting Team</a></li>
+  <li><%= link_to "Planting Team", planting_team_welcome_index_path, style: "color: #353535"%></li>
 </ul>
 <ul id="nav_dropdown_get_involved" class="dropdown-content">
   <li><a href="#" style="color: #353535">Prayer</a></li>
@@ -13,7 +13,7 @@
 <div class="navbar-fixed">
   <nav class="crcc-white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo crcc-black-text" style="font-family: 'Sansita One', cursive; color: #353535">CRCC</a>
+      <%= link_to "CRCC", root_path, id: "logo-container", class: "brand-logo crcc-black-text", style: "font-family: 'Sansita One', cursive; color: #353535" %>
       <ul class="right hide-on-med-and-down">
         <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_info">About<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="#" style="color: #353535">Sermons</a></li>
@@ -28,3 +28,7 @@
     </div>
   </nav>
 </div>
+
+<script type="text/javascript">
+
+</script>
