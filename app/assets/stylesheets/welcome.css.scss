@@ -121,3 +121,14 @@ a:hover {
   background: linear-gradient(160deg, rgba(246,143,26,.9), rgba(120,181,202,.9)), url('three-sides.png') repeat;
   opacity: .5;
 }
+
+.white_box {
+  width: 100%;
+  height: 90px;
+  margin: 10px 0;
+  padding: 0 10px;
+  background-color: rgba($crcc-white, .7);
+  text-align: center;
+  font-family: 'Roboto', cursive;
+  box-sizing: border-box;
+}
