@@ -29,6 +29,15 @@ body {
   overflow: scroll;
 }
 
+.footer-container {
+
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+}
+
 a:hover {
   color: $crcc-black !important;
 }

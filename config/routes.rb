@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :welcome do
     collection do
-      get :planting_team
+      get :staff
     end
   end
 
