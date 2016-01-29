@@ -132,6 +132,9 @@ a:hover {
     opacity: .05;
     z-index: 2;
   }
+  a {
+    color: $crcc-black;
+  }
 }
 
 .white_box {
@@ -143,6 +146,7 @@ a:hover {
   background-color: rgba($crcc-white, .7);
   text-align: center;
   box-sizing: border-box;
+  border-radius: 2px;
   z-index: 3;
 
   .content {
