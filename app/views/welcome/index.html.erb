@@ -90,44 +90,44 @@
   <br>
   <div class="container">
     <div class="row">
-      <a href="#modal_faith_scriptures" id="faith_scriptures_button" class="modal-trigger">
+      <a href="#modal_faith_scriptures" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">The Scriptures</div></div></div>
       </a>
-      <a href="#modal_faith_origins" id="faith_origins_button" class="modal-trigger">
+      <a href="#modal_faith_origins" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">Origins</div></div></div>
       </a>
-      <a href="#modal_faith_trinity" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_trinity" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">The Trinity</div></div></div>
       </a>
-      <a href="#modal_faith_god_the_father" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_god_the_father" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">God The Father</div></div></div>
       </a>
     </div>
     <div class="row">
-      <a href="#modal_faith_god_the_son" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_god_the_son" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">God The Son</div></div></div>
       </a>
-      <a href="#modal_faith_god_the_spirit" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_god_the_spirit" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">God The Holy Spirit</div></div></div>
       </a>
-      <a href="#modal_faith_sinful_man" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_sinful_man" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">Sinful Man</div></div></div>
       </a>
-      <a href="#modal_faith_salvation" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_salvation" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">Salvation</div></div></div>
       </a>
     </div>
     <div class="row">
-      <a href="#modal_faith_sanctification" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_sanctification" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">Sanctification</div></div></div>
       </a>
-      <a href="#modal_faith_assurance" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_assurance" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">Assurance</div></div></div>
       </a>
-      <a href="#modal_faith_church" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_church" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">The Church</div></div></div>
       </a>
-      <a href="#modal_faith_marriage" id="faith_trinity_button" class="modal-trigger">
+      <a href="#modal_faith_marriage" class="statement_btn modal-trigger">
         <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content">Sanctity of Marriage</div></div></div>
       </a>
     </div>
@@ -175,5 +175,26 @@
       cssEase: 'linear',
       pauseOnHover: true
     });
+
+
+    $('.statement_btn').on("click", function(){
+      var id = $(this).attr("href").substring(1);
+      var examine_text = ($('#'+id+ " p:first").contents().text());
+
+      $.ajax({
+        method: 'get',
+        url: 'https://api.biblia.com/v1/bible/tag',
+        data: {text: examine_text, key: "<%= j(@biblia_key) %>"},
+        dataType: 'text'
+      })
+      .done(function( msg ) {
+        var response = jQuery.parseJSON(msg);
+        var replacement = response.text;
+        alert( "Response: " + response.text );
+        $('#'+id+ " p:first").html(replacement);
+      });
+    });
+
+
   });
 </script>
