@@ -14,5 +14,6 @@ $(document).ready(function(){
       300,
       "easeOutQuint"
     );
-  })
+  });
+
 });

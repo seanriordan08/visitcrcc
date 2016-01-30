@@ -176,7 +176,6 @@
       pauseOnHover: true
     });
 
-
     $('.statement_btn').on("click", function(){
       var id = $(this).attr("href").substring(1);
       var examine_text = ($('#'+id+ " p:first").contents().text());
@@ -188,13 +187,28 @@
         dataType: 'text'
       })
       .done(function( msg ) {
-        var response = jQuery.parseJSON(msg);
-        var replacement = response.text;
-        alert( "Response: " + response.text );
-        $('#'+id+ " p:first").html(replacement);
+        var response = jQuery.parseJSON(msg).text;
+        $('#'+id+ " p:first").html(response);
+
+        $('#'+id+ " p:first a").each(function(){
+          var link = $(this);
+          const verse = link.text();
+          $.ajax({
+            method: 'get',
+            url: 'https://api.biblia.com/v1/bible/content/LEB.txt',
+            data: {passage: verse, key: "<%= j(@biblia_key) %>"},
+            dataType: 'text'
+          })
+          .done(function( msg ) {
+            link.addClass("tooltipped").attr({
+               "data-position": "bottom",
+               "data-tooltip": "\"" + msg + "\" (LEB)"
+             });
+            $('.tooltipped').tooltip({delay: 50});
+          });
+        });
       });
     });
-
 
   });
 </script>
