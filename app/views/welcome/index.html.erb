@@ -201,7 +201,7 @@
     function get_verse_from_link(id){
       $('#'+id+ " p:first a").each(function(){
         var link = $(this);
-        const verse = link.text();
+        const verse = link.attr("href").match(/[^\/]*$/).toString();
         $.ajax({
           method: 'get',
           url: 'https://api.biblia.com/v1/bible/content/LEB.txt',
