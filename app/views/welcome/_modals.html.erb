@@ -100,17 +100,40 @@
     </ul>
   </div>
 
-  <div id="modal_sign_up" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <p class="navbar-text pull-right">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
+  <div class="modal-footer">
+    <a href="#" class="modal-action modal-close waves-effect btn-flat ">Close</a>
+  </div>
+</div>
+
+<%= render partial: "faith_statement" %>
+
+<div id="modal_sign_up" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -118,5 +141,3 @@
     <a href="#" class="modal-action modal-close waves-effect btn-flat ">Close</a>
   </div>
 </div>
-
-<%= render partial: "faith_statement" %>

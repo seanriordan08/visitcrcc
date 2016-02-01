@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user/index'
+
   devise_for :users
   resources :welcome do
     collection do
