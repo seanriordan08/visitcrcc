@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
 
   before_action :allow_external_url, only: :index
+  skip_before_filter :verify_authenticity_token, :only => [:index]
 
   def index
     if Rails.env.development?
