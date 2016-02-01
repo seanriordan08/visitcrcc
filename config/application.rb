@@ -24,7 +24,7 @@ module Visitcrcc
     config.active_record.raise_in_transactional_callbacks = true
 
     #Required to make Devise play nice with CORS (ie. as required by Biblia)
-    config.middleware.insert_before 0, "Rack::Cors", :debug => true, :logger => (-> { Rails.logger }) do
+    config.middleware.insert_before ActionDispatch::Static, "Rack::Cors", :debug => true, :logger => (-> { Rails.logger }) do
       allow do
         origins '*'
 
