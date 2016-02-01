@@ -23,6 +23,24 @@ module Visitcrcc
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    #Required to make Devise play nice with CORS (ie. as required by Biblia)
+    config.middleware.insert_before 0, "Rack::Cors", :debug => true, :logger => (-> { Rails.logger }) do
+      allow do
+        origins '*'
+
+        resource '/cors',
+         :headers => :any,
+         :methods => [:post],
+         :credentials => true,
+         :max_age => 0
+
+        resource '*',
+         :headers => :any,
+         :methods => [:get, :post, :delete, :put, :patch, :options, :head],
+         :max_age => 0
+      end
+    end
+
     config.action_dispatch.default_headers = {
       'Access-Control-Allow-Origin' => '*',
       'Access-Control-Request-Method' => 'GET, PATCH, PUT, POST, OPTIONS, DELETE',

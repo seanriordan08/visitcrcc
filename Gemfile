@@ -5,6 +5,7 @@ gem 'dotenv-rails', '2.0.2', require: 'dotenv/rails-now'
 gem 'rails', '4.2.4'
 gem 'mysql2', '0.3.20'
 gem 'devise'
+gem 'rack-cors', '~> 0.3.1'
 gem 'sass-rails', '~> 5.0'
 gem 'materialize-sass'
 # Use Uglifier as compressor for JavaScript assets
