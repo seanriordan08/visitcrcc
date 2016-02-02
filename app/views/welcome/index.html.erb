@@ -190,7 +190,7 @@
         method: 'get',
         url: 'https://api.biblia.com/v1/bible/tag',
         data: {text: examine_text, key: "<%= j(@biblia_key) %>"},
-        dataType: 'text'
+        dataType: 'html'
       })
       .done(function( msg ) {
         var response = jQuery.parseJSON(msg).text;
