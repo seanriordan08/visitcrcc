@@ -18,6 +18,17 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+.flip {
+  -moz-transform: scaleX(-1) scaleY(-1);
+  -webkit-transform: scaleX(-1) scaleY(-1);
+  -o-transform: scaleX(-1) scaleY(-1);
+  transform: scaleX(-1) scaleY(-1);
+}
+
+.inline {
+  display: inline;
+}
+
 html {
   width: 100%;
 }
@@ -27,10 +38,6 @@ body {
   height: 100%;
   background: $crcc-white url(concrete_seamless.png) repeat;
   overflow: scroll;
-}
-
-.footer-container {
-
 }
 
 footer {
@@ -121,7 +128,7 @@ a:hover {
 
 .statement_of_faith {
   position: relative;
-  font-family: 'Sansita One', cursive;
+  font-family: 'Sansita One', sans-serif;
   background: linear-gradient(160deg, rgba(246,143,26,.6), rgba(120,181,202,.6));
   z-index: 3;
   &:before {
@@ -137,6 +144,11 @@ a:hover {
   a {
     color: $crcc-black;
   }
+}
+
+.mission_statement {
+  color: $crcc-white;
+  font-family: 'Sansita One', sans-serif;
 }
 
 .white_box {
