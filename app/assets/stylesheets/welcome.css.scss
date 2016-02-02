@@ -43,17 +43,19 @@ a:hover {
 }
 
 .service_time_strip {
-  position: relative;
   display: inline-block;
-  top: -53px;
   width: 100%;
   height: auto;
   text-align: center;
-  color: $crcc-white;
-  background-color: rgba($crcc-brown, .7);
+  color: $crcc-black;
+  background-color: rgba($crcc-brown, .6);
+  .specifics {
+    font-family: 'Kameron', Georgia, serif;
+    color: $crcc-white;
+  }
 }
 
-.box_wrapper {
+.slider_box_wrapper {
   box-sizing: border-box;
   margin: 0 53px;
 }
