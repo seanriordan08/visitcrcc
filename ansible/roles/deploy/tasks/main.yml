@@ -1,13 +1,11 @@
 - name: precompile assets
   local_action: command bundle exec rake assets:precompile chdir=../
 - name: copy files (src is Rails root folder)
-  synchronize: src=../../../../ dest={{ deploy_directory }} delete=yes rsync_opts=--exclude=.git/,--exclude=log/,--exclude=tmp/cache
+  synchronize: src=../../../../ dest={{ deploy_directory }} delete=yes rsync_opts=--exclude=.git/,--exclude=log/,--exclude=tmp/cache,--exclude=.env/
 - name: config database.yml
   template: src=database.yml.j2 dest={{ deploy_directory}}/config/database.yml
 - name: bundle install
   command: bundle install chdir={{ deploy_directory }}
-#- name: ensure ExecJS Runtime is available
-  #command: sudo apt-get install nodejs #per http://stackoverflow.com/questions/6282307/execjs-and-could-not-find-a-javascript-runtime
 - name: migrate database
   command: bundle exec rake db:migrate RAILS_ENV="production" chdir={{ deploy_directory }}
 - name: tmp clear
