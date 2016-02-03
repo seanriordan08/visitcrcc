@@ -2,6 +2,7 @@
   <li><a href="#modal_learn_more" class="modal-trigger" style="color: #353535">Mission</a></li>
   <li class="divider"></li>
   <li><%= link_to "Staff & Personnel", staff_welcome_index_path, style: "color: #353535"%></li>
+  <li class="divider"></li>
   <li><%= link_to "Statement of Faith", statement_of_faith_welcome_index_path, style: "color: #353535"%></li>
 </ul>
 <ul id="nav_dropdown_get_involved" class="dropdown-content">
@@ -39,19 +40,43 @@
         <li>
           <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header" style="color: #353535"><i class="material-icons">filter_drama</i>First</div>
-              <div class="collapsible-body" style="color: #353535"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header" style="color: #353535"><i class="material-icons">place</i>Second</div>
-              <div class="collapsible-body" style="color: #353535"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header" style="color: #353535"><i class="material-icons">whatshot</i>Third</div>
-              <div class="collapsible-body" style="color: #353535"><p>Lorem ipsum dolor sit amet.</p></div>
+              <div class="collapsible-header" style="color: #353535"><i class="material-icons">keyboard_arrow_right</i>About</div>
+              <div class="collapsible-body" style="color: #353535">
+              <ul>
+                <li><a href="#modal_learn_more" class="modal-trigger" style="color: #353535">Mission</a></li>
+                <li class="divider"></li>
+                <li><%= link_to "Staff & Personnel", staff_welcome_index_path, style: "color: #353535"%></li>
+                <li class="divider"></li>
+                <li><%= link_to "Statement of Faith", statement_of_faith_welcome_index_path, style: "color: #353535"%></li>
+              </ul>
+              </div>
             </li>
           </ul>
         </li>
+        <li><a href="#!" style="color: #353535">Sermons</a></li>
+        <li><a href="#!" style="color: #353535">Events</a></li>
+        <li>
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header" style="color: #353535"><i class="material-icons">keyboard_arrow_right</i>Get Involved</div>
+              <div class="collapsible-body" style="color: #353535">
+                <ul>
+                  <li><a href="#" style="color: #353535">Prayer</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#" style="color: #353535">Attend Launch</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#" style="color: #353535">Giving</a></li>
+                  <% if !user_signed_in? %>
+                    <li class="divider"></li>
+                    <li id="sign_up"><a href="#modal_sign_up" class="modal-trigger" style="color: #353535">Sign Up</a></li>
+                  <% end %>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+
       </ul>
 
     </div>
