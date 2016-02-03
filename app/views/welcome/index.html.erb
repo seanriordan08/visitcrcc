@@ -178,7 +178,7 @@
       var id = $(this).attr("href").substring(1);
       var examine_text = ($('#'+id+ " p:first").contents().text());
 
-      $('#'+id+" .modal-content h4").append("<div class='progress'><div class='indeterminate'></div></div>"); //Begin preloader
+      $('#'+id+" .modal-content h4 div.progress").append("<div class='indeterminate' style='color: blue'></div>"); //Begin preloader
 
       get_scripture_links(id, examine_text);
     });
@@ -218,10 +218,10 @@
           });
           $('.tooltipped').tooltip({delay: 50});
 
-          if (link_count < 2){
+          link_count -= 1;
+          if (link_count < 1){
             $("div.progress").empty(); //End preloader
           }
-          link_count -= 1;
         });
       });
     }
