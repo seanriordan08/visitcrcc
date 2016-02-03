@@ -178,6 +178,8 @@
       var id = $(this).attr("href").substring(1);
       var examine_text = ($('#'+id+ " p:first").contents().text());
 
+      $('#'+id+" .modal-content h4").append("<div class='progress'><div class='indeterminate'></div></div>"); //Begin preloader
+
       get_scripture_links(id, examine_text);
     });
 
@@ -197,7 +199,10 @@
     }
 
     function get_verse_from_link(id){
-      $('#'+id+ " p:first a").each(function(){
+      var link_content = $('#'+id+ " p:first a");
+      var link_count = link_content.length;
+
+      link_content.each(function(index){
         var link = $(this);
         const verse = link.attr("href").match(/[^\/]*$/).toString();
         $.ajax({
@@ -212,6 +217,11 @@
             "data-tooltip": "\"" + msg + "\" (LEB)"
           });
           $('.tooltipped').tooltip({delay: 50});
+
+          if (link_count < 2){
+            $("div.progress").empty(); //End preloader
+          }
+          link_count -= 1;
         });
       });
     }
