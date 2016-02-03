@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :welcome do
     collection do
       get :staff
+      get :statement_of_faith
     end
   end
 
