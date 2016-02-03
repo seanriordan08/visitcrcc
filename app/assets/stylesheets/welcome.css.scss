@@ -212,6 +212,11 @@ a:hover {
   }
 }
 
+.white_box.hoverable.more{
+  @media screen and (max-width: 600px){  border-radius: 2px 2px 50px 2px !important; }
+  @media screen and (min-width: 601px){  border-radius: 2px 2px 50px 50px !important; }
+}
+
 .material-tooltip {
   @media screen and (max-width: 300px){  max-width: 200px !important; }
   @media screen and (min-width: 301px){  max-width: 400px !important; }
