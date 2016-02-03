@@ -1,7 +1,8 @@
 $(document).ready(function(){
-  $('.button-collapse').sideNav();
   $('.parallax').parallax();
-  $(".dropdown-button").dropdown({hover: true});
+  //$('.collapsible').collapsible();
+  $('.button-collapse').sideNav();
+  $('.dropdown-button').dropdown({hover: true});
 
   $('.modal-trigger').leanModal({
     opacity: .5
@@ -15,5 +16,6 @@ $(document).ready(function(){
       "easeOutQuint"
     );
   });
+
 
 });
