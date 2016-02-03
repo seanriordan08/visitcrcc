@@ -11,4 +11,7 @@ class WelcomeController < ApplicationController
   def staff
   end
 
+  def statement_of_faith
+  end
+
 end
