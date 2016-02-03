@@ -21,20 +21,13 @@
     <div class="nav-wrapper container">
       <%= link_to "CRCC", root_path, id: "logo-container", class: "brand-logo crcc-black-text", style: "font-family: 'Sansita One', cursive; color: #353535" %>
       <ul class="right hide-on-med-and-down">
-        <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_info">About<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a href="#" style="color: #353535">Sermons</a></li>
-        <li><a href="#" style="color: #353535">Events</a></li>
-        <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_get_involved">Get Involved<i class="material-icons right">arrow_drop_down</i></a></li>
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-          <li><a href="#" style="color: #353535">Log In</a></li>
-        <% end %>
+        <%= render partial: 'shared/nav_bar_links' %>
       </ul>
 
-      <%= render partial: 'shared/nav_bar_mobile' %>
+      <ul id="nav-mobile" class="side-nav">
+        <%= render partial: 'shared/nav_bar_links' %>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 
     </div>
   </nav>
