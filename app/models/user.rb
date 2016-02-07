@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
-
+  ROLES = %w[admin staff member guest suspended banned]
 end
