@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+
+  <body>
+    <p>Dear <%= @user.name %>,</p>
+    <h1>Welcome to Castle Rock Community Church!</h1>
+    <p>
+      You have successfully signed up to visitcrcc.org,
+      your user email is: <%= @user.email %>.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>
+      Blessings,<br>
+      CRCC & Friends
+    </p>
+  </body>
+
+</html>

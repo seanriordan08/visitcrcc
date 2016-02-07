@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 class ConfirmationTest < ActionMailer::TestCase
   # test "the truth" do
