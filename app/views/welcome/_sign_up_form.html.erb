@@ -1,0 +1,53 @@
+
+<div id="modal_sign_up" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <div class="row">
+
+      <%= form_for User.new, url: {controller: "users", action: 'create'}, html: {class: 'col s12'} do |f|%>
+        <div class="row">
+          <div class="input-field col s6">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name %>
+          </div>
+          <div class="input-field col s6">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.label :password %>
+            <%= f.text_field :password %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+            <label for="filled-in-box">Stay in touch with emailed updates</label>
+            <%= f.label(:send_emails, "Stay in touch with emailed updates") %>
+            <%= f.check_box :send_emails %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s4 offset-s4 center-align">
+            <%= content_tag :button, type: :submit, class: "btn waves-effect waves-light" do %>
+              Submit
+              <i class="material-icons right">send</i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <a href="#" class="modal-action modal-close waves-effect btn-flat ">Close</a>
+  </div>
+</div>
