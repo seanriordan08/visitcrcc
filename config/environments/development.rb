@@ -22,11 +22,12 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'visitcrcc.org',
-    user_name:            '<username>',
-    password:             '<password>',
+    domain:               'gmail.com',
+    user_name:            ENV['GMAIL_USERNAME_DEV'],
+    password:             ENV['GMAIL_PASSWORD_DEV'],
     authentication:       'plain',
-    enable_starttls_auto: true  }
+    enable_starttls_auto: true
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
