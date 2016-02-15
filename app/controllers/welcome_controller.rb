@@ -7,8 +7,6 @@ class WelcomeController < ApplicationController
       @biblia_key = Rails.application.secrets.biblia_api_prod_key
     end
 
-    @user = User.new
-
   end
 
   def staff
