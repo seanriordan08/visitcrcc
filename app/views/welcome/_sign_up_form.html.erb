@@ -3,7 +3,9 @@
   <div class="modal-content">
     <div class="row">
 
-      <%= form_for User.new, url: {controller: "users", action: 'create'}, html: {class: 'col s12'} do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'col s12'}) do |f| %>
+        <%= devise_error_messages! %>
+
         <div class="row">
           <div class="input-field col s6">
             <%= f.label :first_name %>
@@ -16,34 +18,41 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <%= f.label :email %>
-            <%= f.text_field :email, class: "validate", required: true %>
+            <%= f.label :email %><br />
+            <%= f.email_field :email, required: true %>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s6">
             <%= f.label :password %>
-            <%= f.text_field :password, class: "validate", required: true %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", required: true %>
+          </div>
+
+          <div class="input-field col s6">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
         </div>
         <div class="row">
-          <div class="col s12">
-            By the way, I'm a<br>
+          <div class="col s6">
             <%= f.radio_button(:gender, "male") %>
-            <%= f.label(:gender_male, "Guy") %>
+            <%= f.label(:gender_male, "I'm a Guy") %>
+            <br>
             <%= f.radio_button(:gender, "female") %>
-            <%= f.label(:gender_female, "Girl") %>
+            <%= f.label(:gender_female, "I'm a Girl") %>
           </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
+
+          <div class="col s6">
             <%= f.check_box(:send_emails, class: "filled-in") %>
-            <%= f.label(:send_emails, "Keep me in the loop with important happenings, notifications and such (you can switch it off later too)") %>
+            <%= f.label(:send_emails, "Inform me on important happenings, notifications and such (you can always opt out).") %>
           </div>
         </div>
         <br>
         <div class="row">
-          <div class="col s4 offset-s4 center-align">
+          <div class="col s4">
             <%= content_tag :button, type: :submit, id: "sign_up_submit", class: "btn waves-effect waves-light" do %>
               Submit
               <i class="material-icons right">send</i>
