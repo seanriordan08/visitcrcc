@@ -18,21 +18,24 @@ class User < ActiveRecord::Base
   private
 
   def update_mailchimp
-    gibbon = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
-    gibbon.timeout = 10
+    begin
+      gibbon = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
+      gibbon.timeout = 10
 
-    gibbon.lists(ENV['MAILCHIMP_LISTID_MASTER']).members.create(
-      body: {
-        email_address: "#{self.email}", status: "subscribed", merge_fields: {
-          EMAIL: "#{self.email}",
-          FNAME: "#{self.first_name}",
-          LNAME: "#{self.last_name}",
-          GENDER: "#{self.gender}"
+      gibbon.lists(ENV['MAILCHIMP_LISTID_MASTER']).members.create(
+        body: {
+          email_address: "#{self.email}", status: "subscribed", merge_fields: {
+            EMAIL: "#{self.email}",
+            FNAME: "#{self.first_name}",
+            LNAME: "#{self.last_name}",
+            GENDER: "#{self.gender}"
+          }
         }
-      }
-    )
-
-    Rails.logger.debug "**** Created MailChimp Contact #{self.email}"
+      )
+      Rails.logger.debug "**** Created MailChimp Contact #{self.email}"
+    rescue
+      Rails.logger.debug "**** MailChimp Contact #{self.email} ALREADY EXISTS!"
+    end
   end
 
 end
