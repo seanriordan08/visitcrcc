@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   after_create :update_mailchimp
 
+  extend MailchimpHelper
+
   ROLES = %w[admin staff member guest suspended banned]
 
   def full_name
