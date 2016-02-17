@@ -26,7 +26,8 @@ class User < ActiveRecord::Base
         email_address: "#{self.email}", status: "subscribed", merge_fields: {
           EMAIL: "#{self.email}",
           FNAME: "#{self.first_name}",
-          LNAME: "#{self.last_name}"
+          LNAME: "#{self.last_name}",
+          GENDER: "#{self.gender}"
         }
       }
     )
