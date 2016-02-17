@@ -31,6 +31,8 @@ class User < ActiveRecord::Base
         }
       }
     )
+
+    Rails.logger.debug "**** Created MailChimp Contact #{self.email}"
   end
 
 end
