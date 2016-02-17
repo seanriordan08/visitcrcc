@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  extend MailchimpHelper
+
   # Include default devise modules. Others available are:
   #:lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,7 +9,6 @@ class User < ActiveRecord::Base
 
   after_create :update_mailchimp
 
-  extend MailchimpHelper
 
   ROLES = %w[admin staff member guest suspended banned]
 
@@ -19,7 +20,18 @@ class User < ActiveRecord::Base
   private
 
   def update_mailchimp
-    MailchimpHelper.register_user(self)
+    gibbon = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
+    gibbon.timeout = 10
+
+    gibbon.lists(ENV['MAILCHIMP_LISTID_MASTER']).members.create(
+      body: {
+        email_address: "#{self.email}", status: "subscribed", merge_fields: {
+          EMAIL: "#{self.email}",
+          FNAME: "#{self.first_name}",
+          LNAME: "#{self.last_name}"
+        }
+      }
+    )
   end
 
 end
