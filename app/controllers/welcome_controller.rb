@@ -15,4 +15,7 @@ class WelcomeController < ApplicationController
   def statement_of_faith
   end
 
+  def sermons
+  end
+
 end

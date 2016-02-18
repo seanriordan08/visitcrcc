@@ -1,3 +1,4 @@
+
 <ul id="nav_dropdown_info" class="dropdown-content">
   <li><a href="#modal_learn_more" class="modal-trigger" style="color: #353535">Mission</a></li>
   <li class="divider"></li>
@@ -5,6 +6,7 @@
   <li class="divider"></li>
   <li><%= link_to "Statement of Faith", statement_of_faith_welcome_index_path, style: "color: #353535"%></li>
 </ul>
+
 <ul id="nav_dropdown_get_involved" class="dropdown-content">
   <li><a href="#" style="color: #353535">Prayer</a></li>
   <li class="divider"></li>
@@ -23,7 +25,7 @@
       <%= link_to "CRCC", root_path, id: "logo-container", class: "brand-logo crcc-black-text", style: "font-family: 'Sansita One', cursive; color: #353535" %>
       <ul class="right hide-on-med-and-down">
         <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_info">About<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a href="#" style="color: #353535">Sermons</a></li>
+        <li><%= link_to "Sermons", sermons_welcome_index_path, style: "color: #353535"%></li>
         <li><a href="#" style="color: #353535">Events</a></li>
         <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_get_involved">Get Involved<i class="material-icons right">arrow_drop_down</i></a></li>
         <% if user_signed_in? %>

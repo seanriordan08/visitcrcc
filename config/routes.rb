@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     collection do
       get :staff
       get :statement_of_faith
+      get :sermons
     end
   end
 
