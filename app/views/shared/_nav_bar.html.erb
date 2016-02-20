@@ -19,6 +19,10 @@
   <% end %>
 </ul>
 
+<ul id="nav_dropdown_logged_in" class="dropdown-content">
+  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></li>
+</ul>
+
 <div class="navbar-fixed">
   <nav class="crcc-white" role="navigation">
     <div class="nav-wrapper container">
@@ -29,9 +33,9 @@
         <li><%= link_to "Events", events_welcome_index_path, style: "color: #353535"%></li>
         <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_get_involved">Get Involved<i class="material-icons right">arrow_drop_down</i></a></li>
         <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.first_name %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_logged_in">
+            Logged in as <strong><%= current_user.first_name %></strong><i class="material-icons right">arrow_drop_down</i></a>
+          </li>
         <% else %>
           <li><a href="#modal_log_in" class="modal-trigger" style="color: #353535">Log In</a></li>
         <% end %>
