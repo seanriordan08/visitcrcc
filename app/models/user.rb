@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
+  has_and_belongs_to_many :events
+
   after_create :update_mailchimp
 
 
