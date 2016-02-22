@@ -40,8 +40,10 @@ body {
   overflow: scroll;
 }
 
-footer {
+footer.page-footer {
   position: relative;
+  margin: 0;
+  height: auto;
   bottom: 0;
 }
 
