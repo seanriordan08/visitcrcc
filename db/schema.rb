@@ -15,11 +15,8 @@ ActiveRecord::Schema.define(version: 20160222040047) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255,   default: "Event Title", null: false
-    t.string   "string",      limit: 255,   default: "Event Title", null: false
     t.text     "description", limit: 65535
-    t.text     "text",        limit: 65535
     t.datetime "start_time"
-    t.datetime "datetime"
     t.datetime "end_time"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
