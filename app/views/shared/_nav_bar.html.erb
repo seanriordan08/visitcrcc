@@ -38,7 +38,7 @@
           <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_logged_in">
             Logged in as <strong><%= current_user.first_name %></strong><i class="material-icons right">arrow_drop_down</i></a>
           </li>
-          <li><%= link_to '<i class="large material-icons">account_circle</i>'.html_safe, sermons_welcome_index_path, style: "color: #353535"%></li>
+          <li><%= link_to '<i class="large material-icons">account_circle</i>'.html_safe, edit_user_path(current_user.id), style: "color: #353535"%></li>
         <% else %>
           <li><a href="#modal_log_in" class="modal-trigger" style="color: #353535">Log In</a></li>
         <% end %>
