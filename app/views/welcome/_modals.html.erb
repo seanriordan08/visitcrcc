@@ -1,6 +1,6 @@
 
 <%= render partial: "statement_modals" %>
 <%= render partial: "mission_modal" %>
-<%= render partial: 'sign_up_form' %>
+<%= render partial: 'sign_up_form' if !signed_in? %>
 <%= render partial: 'log_in_form' %>
-<%= render partial: 'profile_edit_form' %>
+<%= render partial: 'modal_edit_user' if signed_in? %>

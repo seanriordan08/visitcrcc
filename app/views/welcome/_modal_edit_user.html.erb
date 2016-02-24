@@ -1,0 +1,55 @@
+<div id="modal_edit_user" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <div class="row">
+
+      <h2>About Me</h2>
+      <br>
+
+      <%= form_for(current_user, url: "/users/#{current_user.id}", html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :first_name %><br />
+          <%= f.text_field :first_name, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :last_name %><br />
+          <%= f.text_field :last_name, autofocus: true %>
+        </div>
+
+        <div class="row">
+          <div class="col s6">
+            <%= f.radio_button :gender, "male" %>
+            <%= f.label :gender_male, "I'm a Guy" %>
+            <br>
+            <%= f.radio_button :gender, "female" %>
+            <%= f.label :gender_female, "I'm a Girl" %>
+          </div>
+
+          <div class="col s6">
+            <%= f.check_box(:send_emails) %>
+            <%= f.label(:send_emails, "Inform me on important happenings, notifications and such.") %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s4">
+            <%= content_tag :button, type: :submit, id: "update_submit", class: "btn waves-effect waves-light" do %>
+              Submit
+              <i class="material-icons right">send</i>
+            <% end %>
+          </div>
+        </div>
+
+
+      <% end %>
+
+      <!--<p>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>-->
+
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="modal-action modal-close waves-effect btn-flat ">Cancel</a>
+  </div>
+</div>

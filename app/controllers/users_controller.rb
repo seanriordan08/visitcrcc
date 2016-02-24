@@ -30,10 +30,18 @@ class UsersController < ApplicationController
 
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
+    respond_to do |format|
+      format.html { redirect_to root_path }
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :gender, :send_mails)
+    params.require(:user).permit(:first_name, :last_name, :gender, :send_emails)
   end
 
 end
