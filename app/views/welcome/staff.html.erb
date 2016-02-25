@@ -4,18 +4,22 @@
   <div class="section">
     <h3>Staff</h3>
     <ul class="collection">
-      <% @staff.each do |s| %>
-        <li class="collection-item avatar large">
-          <%= image_tag 'avatars-material-man-3.png', class: "circle responsive-img", style: "background-color: #78B5CA" %>
-          <span class="title"><%= s.role_description.titleize %></span>
-          <p>
-            <%= s.first_name %> <%= s.last_name %>
-            <br>
-            <%= s.email %>
-          </p>
-          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-        </li>
-      <% end %>
+      <% if @staff.present? %>
+        <% @staff.each do |s| %>
+          <li class="collection-item avatar large">
+            <%= image_tag 'avatars-material-man-3.png', class: "circle responsive-img", style: "background-color: #78B5CA" %>
+            <span class="title"><%= s.role_description.titleize %></span>
+            <p>
+              <%= s.first_name %> <%= s.last_name %>
+              <br>
+              <%= s.email %>
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+        <% end %>
+        <% else %>
+          Under Construction - Check Back Soon :D
+        <% end %>
     </ul>
 
   </div>
