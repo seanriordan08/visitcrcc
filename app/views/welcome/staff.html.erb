@@ -1,10 +1,10 @@
 <%= render partial: "modals" %>
 
-<div class="container">
+<div class="container staff_page">
   <div class="section">
-    <h3>Staff</h3>
-    <ul class="collection">
-      <% if @staff.present? %>
+    <% if @staff.present? %>
+      <h3>Staff</h3>
+      <ul class="collection">
         <% @staff.each do |s| %>
           <li class="collection-item avatar large">
             <%= image_tag 'avatars-material-man-3.png', class: "circle responsive-img", style: "background-color: #78B5CA" %>
@@ -17,10 +17,11 @@
             <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
           </li>
         <% end %>
-        <% else %>
-          Under Construction - Check Back Soon :D
-        <% end %>
-    </ul>
+      </ul>
+    <% else %>
+      <br>
+      <h4>Under Construction - Check Back Soon :D</h4>
+    <% end %>
 
   </div>
 </div>
