@@ -70,6 +70,32 @@ a:hover {
   @media screen and (min-width: 601px){margin: 0;}
 }
 
+.wrapper {
+  width: 100%;
+  max-height: 400px;
+  height: 10%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.wrapper:after {
+  padding-top: 56.25%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  /* fill parent */
+  background-color: transparent;
+  /* let's see it! */
+  color: white;
+}
+
 .crcc_main_slider {
   display: inline-block;
   vertical-align: top;
@@ -81,7 +107,8 @@ a:hover {
   .slider_content {
     display: inline-block;
     width: inherit;
-    height: 400px;
+    height: 24vw;
+    overflow: auto;
     outline-width: 0;
     cursor: pointer;
   }
