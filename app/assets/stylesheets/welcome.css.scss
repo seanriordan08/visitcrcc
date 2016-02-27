@@ -292,3 +292,28 @@ a:hover {
   min-height: 300px;
   color: $crcc-brown;
 }
+
+.brand-logo {
+  @media screen and (max-width: 600px){
+    margin-top: 3px;
+  }
+  @media screen and (min-width: 601px){
+    margin-top: 5px;
+  }
+  padding: 5px 0;
+}
+#learn_more_button {
+  position: relative;
+  @media screen and (max-width: 600px) { bottom: 0; }
+  @media screen and (min-width: 601px) and (max-width: 800px) { bottom: -50px; }
+  @media screen and (min-width: 801px) { bottom: 50px; }
+}
+
+.hero-buffer {
+  display: inline-block;
+  @media screen and (max-width: 600px) { height: 100px; }
+  @media screen and (min-width: 601px) and (max-width: 999px) { height: 30px; }
+  @media screen and (min-width: 1000px) { height: 0; }
+  vertical-align: middle;
+  content: ''
+}
