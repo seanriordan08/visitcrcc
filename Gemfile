@@ -17,6 +17,7 @@ gem 'execjs'
 gem 'therubyracer' #, platforms: :ruby
 gem 'jquery-rails'
 gem 'gibbon', '~> 2.2', '>= 2.2.1'
+gem 'aws-sdk'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
