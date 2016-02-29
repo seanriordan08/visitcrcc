@@ -36,7 +36,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  background: $crcc-white url(concrete_seamless.png) repeat;
+  background: $crcc-white image-url('concrete_seamless.png') repeat;
   overflow: scroll;
 }
 
@@ -114,19 +114,19 @@ a:hover {
     cursor: pointer;
   }
   .event1 {
-    background: transparent url('may_worship.jpg') no-repeat;
+    background: transparent image-url('may_worship.jpg') no-repeat;
     background-size: 100%;
   }
   .event2 {
-    background: transparent url('may_community_event.jpg') no-repeat;
+    background: transparent image-url('may_community_event.jpg') no-repeat;
     background-size: 100%;
   }
   .event3 {
-    background: transparent url('june_community_event.jpg') no-repeat;
+    background: transparent image-url('june_community_event.jpg') no-repeat;
     background-size: 100%;
   }
   .event4 {
-    background: transparent url('july_community_event.jpg') no-repeat;
+    background: transparent image-url('july_community_event.jpg') no-repeat;
     background-size: 100%;
   }
   .slick-arrow {
@@ -170,11 +170,11 @@ a:hover {
 
 .dark_bg {
   color: $crcc-grey;
-  background: transparent url('dark_geometric.png') repeat;
+  background: transparent image-url('dark_geometric.png') repeat;
 }
 .light_bg {
   color: $crcc-black;
-  background: transparent url('light_paper.png') repeat;
+  background: transparent image-url('light_paper.png') repeat;
 }
 
 .hoverable {
@@ -193,7 +193,7 @@ a:hover {
     bottom: 0;
     width: 100%;
     height: 100%;
-    background: transparent url('three-sides.png') repeat;
+    background: transparent image-url('three-sides.png') repeat;
     opacity: .05;
     z-index: 2;
   }
