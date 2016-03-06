@@ -18,21 +18,6 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-@mixin content($margin, $padding) {
-  .content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 30%;
-    margin: $margin;
-    padding: $padding;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.3em;
-  }
-}
-
 .flip {
   -moz-transform: scaleX(-1) scaleY(-1);
   -webkit-transform: scaleX(-1) scaleY(-1);
@@ -247,27 +232,6 @@ a:hover {
   }
 }
 
-.clear_box {
-  position: relative;
-  width: 100%;
-  @media screen and (max-width: 700px){
-    height: 85vh;
-  }
-  @media screen and (min-width: 701px){
-    height: 45vh;
-  }
-  margin: 10px 0;
-  padding: 0 10px;
-  background-color: rgba($crcc-white, .5);
-  text-align: center;
-  box-sizing: border-box;
-  border-radius: 2px;
-  z-index: 3;
-  transition: .25s;
-
-  @include content(0, 20px);
-}
-
 .white_box {
   position: relative;
   width: 100%;
@@ -286,7 +250,17 @@ a:hover {
     background-color: rgba($crcc-white, .9);
   }
 
-  @include content(auto, 0);
+  .content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+  }
 }
 
 .white_box.hoverable.more{
