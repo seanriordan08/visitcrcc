@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
     @staff = User.where(role: ['admin', 'staff'])
   end
 
-  def statement_of_faith
+  def declaration_of_faith
   end
 
   def sermons

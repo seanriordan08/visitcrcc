@@ -193,7 +193,7 @@ a:hover {
   cursor: pointer;
 }
 
-.statement_of_faith {
+.declaration_of_faith {
   position: relative;
   font-family: 'Sansita One', sans-serif;
   background: linear-gradient(160deg, rgba(246,143,26,.6), rgba(120,181,202,.6));
@@ -250,7 +250,12 @@ a:hover {
 .clear_box {
   position: relative;
   width: 100%;
-  height: 350px;
+  @media screen and (max-width: 700px){
+    height: 85vh;
+  }
+  @media screen and (min-width: 701px){
+    height: 45vh;
+  }
   margin: 10px 0;
   padding: 0 10px;
   background-color: rgba($crcc-white, .5);

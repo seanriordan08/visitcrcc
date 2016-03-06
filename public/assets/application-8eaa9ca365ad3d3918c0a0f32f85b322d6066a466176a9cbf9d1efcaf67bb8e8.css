@@ -13232,14 +13232,14 @@ a:hover {
 }
 
 /* line 122, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
-.statement_of_faith {
+.declaration_of_faith {
   position: relative;
   font-family: 'Sansita One', cursive;
   background: linear-gradient(160deg, rgba(246, 143, 26, 0.6), rgba(120, 181, 202, 0.6));
   z-index: 3;
 }
 /* line 127, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
-.statement_of_faith:before {
+.declaration_of_faith:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -13250,7 +13250,7 @@ a:hover {
   z-index: 2;
 }
 /* line 137, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
-.statement_of_faith a {
+.declaration_of_faith a {
   color: #353535;
 }
 
