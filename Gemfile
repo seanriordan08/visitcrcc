@@ -6,6 +6,7 @@ gem 'rails', '4.2.4'
 gem 'mysql2', '0.3.20'
 gem 'rack-cors'
 gem 'devise'
+gem 'cancancan', '1.13.1'
 gem 'sass-rails', '~> 5.0'
 gem 'materialize-sass'
 # Use Uglifier as compressor for JavaScript assets

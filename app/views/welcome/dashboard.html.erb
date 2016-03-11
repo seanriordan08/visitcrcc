@@ -1,0 +1,55 @@
+<%= render partial: "modals" %>
+
+<div class="container staff_page">
+  <br>
+  <h3>Dashboard</h3>
+  <br>
+  <div class="row">
+    <div class="dashboard_leaderboard">
+      <div class="tab">
+        <div class="title">
+          <i class="x-small material-icons" style="display: inline-block; color: #353535; vertical-align: middle">person</i>
+          <div class="label" style="display: inline-block; vertical-align: middle;">Total Users</div>
+        </div>
+        <div class="figure center"><%= @users.count %></div>
+      </div>
+      <div class="tab">
+        <div class="title">
+          <i class="x-small material-icons" style="display: inline-block; color: #353535; vertical-align: middle">person</i>
+          <div class="label" style="display: inline-block; vertical-align: middle;">Total Men</div>
+        </div>
+        <div class="figure center"><%= @users.where(gender: 'male').count %></div>
+      </div>
+      <div class="tab">
+        <div class="title">
+          <i class="x-small material-icons" style="display: inline-block; color: #353535; vertical-align: middle">person</i>
+          <div class="label" style="display: inline-block; vertical-align: middle;">Total Women</div>
+        </div>
+        <div class="figure center"><%= @users.where(gender: 'female').count %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <% if @users.present? %>
+      <ul class="collection">
+        <% @users.each do |s| %>
+          <li class="collection-item avatar large">
+            <%= image_tag 'avatars-material-man-3.png', class: "circle responsive-img", style: "background-color: #78B5CA" %>
+            <span class="title"><%= s.role_description.titleize %></span>
+            <p>
+              <%= s.first_name %> <%= s.last_name %>
+              <br>
+              <%= s.email %>
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <br>
+      <h4>Currently, there are no users</h4>
+    <% end %>
+
+  </div>
+</div>

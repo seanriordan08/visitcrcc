@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :declaration_of_faith
       get :sermons
       get :events
+      get :dashboard
     end
   end
 
