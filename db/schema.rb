@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223025206) do
+ActiveRecord::Schema.define(version: 20160311025321) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title",       limit: 255,   default: "Event Title", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160223025206) do
     t.string   "first_name",             limit: 255, default: "",      null: false
     t.string   "last_name",              limit: 255, default: "",      null: false
     t.string   "role_description",       limit: 255, default: "guest"
+    t.boolean  "staff",                              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
