@@ -1,4 +1,4 @@
-<%= render partial: "welcome/modals" %>
+<%= render partial: "modals/modals" %>
 
 <div class="container staff_page">
   <br>
@@ -42,12 +42,12 @@
               <br>
               <%= user.email %>
             </p>
-            <a href="#!" class="secondary-content">
+            <div class="secondary-content">
+              <a href="#!"><i class="material-icons settings">settings</i></a>
               <% if user.staff %>
-                <div class="position:relative; display:inline-block;top:0">STAFF</div>
+                <div style="padding-top: 30px">STAFF</div>
               <% end %>
-              <!--<i class="material-icons" style="float:right">grade</i>-->
-            </a>
+            </div>
           </li>
         <% end %>
       </ul>
