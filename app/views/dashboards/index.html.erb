@@ -33,16 +33,21 @@
   <div class="section">
     <% if @users.present? %>
       <ul class="collection">
-        <% @users.each do |s| %>
-          <li class="collection-item avatar large">
+        <% @users.each do |user| %>
+          <li class="collection-item avatar user-collection-item">
             <%= image_tag 'avatars-material-man-3.png', class: "circle responsive-img", style: "background-color: #78B5CA" %>
-            <span class="title"><%= s.role_description.titleize %></span>
+            <span class="title"><%= user.role_description.titleize %></span>
             <p>
-              <%= s.first_name %> <%= s.last_name %>
+              <%= user.first_name %> <%= user.last_name %>
               <br>
-              <%= s.email %>
+              <%= user.email %>
             </p>
-            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            <a href="#!" class="secondary-content">
+              <% if user.staff %>
+                <div class="position:relative; display:inline-block;top:0">STAFF</div>
+              <% end %>
+              <!--<i class="material-icons" style="float:right">grade</i>-->
+            </a>
           </li>
         <% end %>
       </ul>
