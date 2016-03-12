@@ -2,7 +2,11 @@
   <div class="modal-content">
     <div class="row">
 
-      <h2>About Me</h2>
+      <% if flash[:admin] %>
+        <h2>Edit @user.first_name.capitalize</h2>
+      <% else %>
+        <h2>About Me</h2>
+      <% end %>
       <br>
 
       <%= form_for(current_user, url: "/users/#{current_user.id}", html: { method: :put }) do |f| %>

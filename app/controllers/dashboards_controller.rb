@@ -5,4 +5,11 @@ class DashboardsController < ApplicationController
     @users = User.all
   end
 
+  def edit_user
+    binding.pry
+    @user = User.find(params[:id])
+    flash[:admin] = true
+    render nothing: true
+  end
+
 end

@@ -1,4 +1,4 @@
-<%= render partial: "modals/modals" %>
+<%= render partial: "modals/all" %>
 
 <div class="container staff_page">
   <br>
@@ -43,7 +43,9 @@
               <%= user.email %>
             </p>
             <div class="secondary-content">
-              <a href="#!"><i class="material-icons settings">settings</i></a>
+              <a href="#modal_edit_user" class="modal-trigger">
+                <i class="material-icons settings">settings</i>
+              </a>
               <% if user.staff %>
                 <div style="padding-top: 30px">STAFF</div>
               <% end %>
