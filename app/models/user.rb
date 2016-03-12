@@ -7,11 +7,14 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, :gender, presence: true
 
-  has_one :avatar
+  has_one :avatar, dependent: :destroy
   has_and_belongs_to_many :events
 
   after_create :update_mailchimp
+  after_create :create_avatar
   before_save :normalize_names
+
+  accepts_nested_attributes_for :avatar
 
 
   ROLES = %w[admin staff member guest suspended banned]
@@ -53,6 +56,10 @@ class User < ActiveRecord::Base
     rescue
       Rails.logger.debug "**** MailChimp Contact #{self.email} ALREADY EXISTS!"
     end
+  end
+
+  def create_avatar
+    Avatar.create(user_id: self.id, face: 'Face-1', hair: 'hair-black', eyes: 'eyes-blue-green', skin: 'skin-dark')
   end
 
 end
