@@ -5,6 +5,14 @@ class UsersController < ApplicationController
 
   end
 
+  def show
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def new
 
   end
@@ -45,7 +53,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :gender, :send_emails)
+    params.require(:user).permit(:first_name, :last_name, :gender, :send_emails, :role_description, :staff)
   end
 
 end

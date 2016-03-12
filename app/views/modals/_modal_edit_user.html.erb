@@ -2,8 +2,6 @@
   <div class="modal-content">
     <div class="row">
 
-      <%# binding.pry %>
-
       <% if @user && current_user.id != @user.id %>
         <% selected_user = @user %>
         <h2>Edit <%= @user.first_name.capitalize %></h2>
@@ -16,15 +14,37 @@
       <%= form_for(selected_user, url: "/users/#{selected_user.id}", html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="field">
-          <%= f.label :first_name %><br />
-          <%= f.text_field :first_name, autofocus: true %>
+        <div class="row">
+          <div class="col s6">
+            <div class="field">
+              <%= f.label :first_name %><br />
+              <%= f.text_field :first_name, autofocus: true %>
+            </div>
+          </div>
+          <div class="col s6">
+            <div class="field">
+              <%= f.label :last_name %><br />
+              <%= f.text_field :last_name, autofocus: true %>
+            </div>
+          </div>
         </div>
 
-        <div class="field">
-          <%= f.label :last_name %><br />
-          <%= f.text_field :last_name, autofocus: true %>
-        </div>
+        <% if can? :manage, :all %>
+          <div class="row">
+            <div class="valign-wrapper">
+              <div class="col s6">
+                <div class="field">
+                  <%= f.label :role_description %><br />
+                  <%= f.text_field :role_description %>
+                </div>
+              </div>
+              <div class="col s6 valign">
+                <%= f.check_box(:staff) %>
+                <%= f.label(:staff, "Staff") %>
+              </div>
+            </div>
+          </div>
+        <% end %>
 
         <div class="row">
           <div class="col s6">
@@ -43,13 +63,13 @@
 
         <div class="row">
           <div class="col s4">
+            <br>
             <%= content_tag :button, type: :submit, id: "update_submit", class: "btn waves-effect waves-light" do %>
               Submit
               <i class="material-icons right">send</i>
             <% end %>
           </div>
         </div>
-
 
       <% end %>
 
