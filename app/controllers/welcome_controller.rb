@@ -19,8 +19,4 @@ class WelcomeController < ApplicationController
   def sermons
   end
 
-  def dashboard
-    @users = User.all
-  end
-
 end

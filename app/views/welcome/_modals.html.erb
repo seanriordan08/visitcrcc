@@ -1,11 +1,11 @@
 <% if !signed_in? %>
-  <%= render partial: 'sign_up_form' %>
-  <%= render partial: 'log_in_form' %>
+  <%= render partial: 'welcome/sign_up_form' %>
+  <%= render partial: 'welcome/log_in_form' %>
 <% end %>
 
-<%= render partial: "declaration_modals" %>
-<%= render partial: "mission_modal" %>
+<%= render partial: "welcome/declaration_modals" %>
+<%= render partial: "welcome/mission_modal" %>
 
 <% if signed_in? %>
-  <%= render partial: 'modal_edit_user'%>
+  <%= render partial: 'welcome/modal_edit_user'%>
 <% end %>

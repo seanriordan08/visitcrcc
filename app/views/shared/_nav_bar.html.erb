@@ -45,7 +45,7 @@
           </li>
           <% if can? :manage, User %>
             <li>
-              <%= link_to '<i class="large material-icons" style="color: #353535">dashboard</i>'.html_safe, dashboard_welcome_index_path, style: "color: #353535"%>
+              <%= link_to '<i class="large material-icons" style="color: #353535">dashboard</i>'.html_safe, dashboards_path, style: "color: #353535"%>
             </li>
           <% end %>
         <% else %>

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :dashboards
+
   Rails.application.routes.draw do
     match '*path', via: :all, to: 'errors#not_found', constraints: CloudfrontConstraint.new
   end
