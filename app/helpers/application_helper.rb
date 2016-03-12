@@ -16,4 +16,8 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
+  def get_avatar(user)
+    "avatars/material/" + user.gender + "/" + user.avatar.face + "/" + user.avatar.hair + "-" + user.avatar.eyes + "-" + user.avatar.skin + ".png"
+  end
+
 end
