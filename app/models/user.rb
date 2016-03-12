@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
 
+  validates :first_name, :last_name, :gender, presence: true
+
   has_one :avatar
   has_and_belongs_to_many :events
 
