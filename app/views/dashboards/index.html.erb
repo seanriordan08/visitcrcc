@@ -43,9 +43,10 @@
               <%= user.email %>
             </p>
             <div class="secondary-content">
-              <a href="#modal_edit_user" class="modal-trigger">
-                <i class="material-icons settings">settings</i>
-              </a>
+              <%= link_to '<i class="material-icons settings">settings</i>'.html_safe, edit_user_url(user.id), remote: true %>
+              <!--<a href="#modal_edit_user" class="modal-trigger">-->
+              <!--<i class="material-icons settings">settings</i>-->
+              <!--</a>-->
               <% if user.staff %>
                 <div style="padding-top: 30px">STAFF</div>
               <% end %>

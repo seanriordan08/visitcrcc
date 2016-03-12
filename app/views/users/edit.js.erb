@@ -1,0 +1,3 @@
+
+$('.navbar-fixed').after('<%= escape_javascript("#{render :partial => 'modals/modal_edit_user'}".html_safe) %>');
+$('#modal_edit_user').openModal();
