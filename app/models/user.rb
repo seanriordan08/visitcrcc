@@ -9,12 +9,21 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :events
 
   after_create :update_mailchimp
+  before_save :normalize_names
 
 
   ROLES = %w[admin staff member guest suspended banned]
 
   def full_name
     "#{self.first_name} #{self.last_name}"
+  end
+
+  def normalize_names
+    self.tap do |u|
+      u.first_name = u.first_name.strip.downcase.titleize
+      u.last_name = u.last_name.strip.downcase.titleize
+      u.role_description = u.role_description.strip.downcase.titleize
+    end
   end
 
   def admin?
