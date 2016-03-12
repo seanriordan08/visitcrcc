@@ -321,23 +321,3 @@ a:hover {
   vertical-align: middle;
   content: ''
 }
-
-.dashboard_leaderboard {
-  .tab {
-    width: 130px;
-    height: auto;
-    overflow: auto;
-    margin: 5px 10px;
-    color: $crcc-brown;
-    display: inline-block;
-    float: left;
-    padding: 10px;
-    border-right: 1px solid $crcc-black;
-    .title {
-      font-size: 12px;
-    }
-    .figure {
-      font-size: 48px;
-    }
-  }
-}

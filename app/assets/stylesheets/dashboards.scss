@@ -2,6 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.dashboard_leaderboard {
+  .tab {
+    position: relative;
+    width: 130px;
+    height: auto;
+    overflow: auto;
+    margin: 5px 10px;
+    color: $crcc-brown;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+    &:before {
+      position: absolute;
+      bottom: 20%;
+      right: 0;
+      height: 55%;
+      content:"";
+      background: #AAA;
+      width: 2px;
+    }
+
+    .title {
+      font-size: 12px;
+    }
+    .figure {
+      font-size: 48px;
+    }
+  }
+}
+
 .user-collection-item {
   cursor: pointer;
   &:hover {
