@@ -43,9 +43,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    user = User.find(params[:id])
 
-    @user.update_attributes(user_params)
+    user.update_attributes(user_params)
     respond_to do |format|
       format.html { redirect_to root_path }
     end
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :gender, :send_emails, :role_description, :staff, avatar_attributes: [:face, :hair, :eyes, :skin])
+    params.require(:user).permit(:first_name, :last_name, :gender, :send_emails, :role_description, :staff, avatar_attributes: [:id, :skin] )
   end
 
 end

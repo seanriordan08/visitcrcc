@@ -19,8 +19,15 @@
             <%= image_tag get_avatar(selected_user), size: "200x200", class: "circle responsive-img", style: "background-color: #{selected_user.avatar.background_color}" %>
           </div>
           <div class="col s2">
-            stuff<br>
-            stuff
+            <%= f.fields_for :avatar, selected_user.avatar do |n| %>
+              <div class="field">
+                <%= n.radio_button :skin, 'skin-light', id: make_unique %>
+                <%= n.label :skin, "Light", value: 'skin-light'  %>
+                <br>
+                <%= n.radio_button :skin, 'skin-dark', id: make_unique%>
+                <%= n.label :skin, "Dark", value: 'skin-dark'  %>
+              </div>
+            <% end %>
           </div>
           <div class="col s6">
             <div class="field">

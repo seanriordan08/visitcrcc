@@ -20,4 +20,8 @@ module ApplicationHelper
     "avatars/material/" + user.gender + "/" + user.avatar.face + "/" + user.avatar.hair + "-" + user.avatar.eyes + "-" + user.avatar.skin + ".png"
   end
 
+  def make_unique
+    SecureRandom.base64(24)
+  end
+
 end
