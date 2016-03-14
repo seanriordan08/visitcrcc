@@ -39,8 +39,7 @@
             Logged in as <strong><%= current_user.first_name %></strong><i class="material-icons right">arrow_drop_down</i></a>
           </li>
           <li>
-
-          <%= link_to '<i class="material-icons large">account_circle</i>'.html_safe, user_path(current_user.id), style: "color: #353535", remote: true %>
+            <%= link_to '<i class="material-icons large">account_circle</i>'.html_safe, edit_user_path(current_user.id), style: "color: #353535", remote: true %>
           </li>
           <% if can? :manage, User %>
             <li>

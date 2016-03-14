@@ -56,10 +56,10 @@
 
         <div class="row">
           <div class="col s6">
-            <%= f.radio_button :gender, "male" %>
+            <%= f.radio_button :gender, "male", disabled: "disabled" %>
             <%= f.label :gender_male, "I'm a Guy" %>
             <br>
-            <%= f.radio_button :gender, "female" %>
+            <%= f.radio_button :gender, "female", disabled: "disabled" %>
             <%= f.label :gender_female, "I'm a Girl" %>
           </div>
 
