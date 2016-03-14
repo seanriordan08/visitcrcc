@@ -20,11 +20,17 @@
           </div>
           <div class="col s3">
             <%= f.fields_for :avatar do |n| %>
+              <%= n.label :face %>
+              <%= n.select :face, [['Square','Face-1'],['Patch','Face-2'],['Round','Face-3'],['Shaggy','Face-4'],['McFly','Face-5'],['GlassBeard','Face-6']], {}, { class: "avatar_options" } %>
+              <br>
+              <%= n.label :hair %>
+              <%= n.select :hair, [['Light','hair-blonde'],['Medium','hair-brown'], ['Dark','hair-black']], {}, { class: "avatar_options" } %>
+              <br>
               <%= n.label :eyes %>
               <%= n.select :eyes, [['Light','eyes-blue-green'],['Medium','eyes-brown'], ['Dark','eyes-dark']], {}, { class: "avatar_options" } %>
               <br>
               <%= n.label :skin %>
-              <%= n.select :skin, [['Light','skin-light'],['Dark','skin-dark']], {}, { class: "avatar_options" } %>
+              <%= n.select :skin, [['Light','skin-light'],['Tan','skin-tanned'],['Dark','skin-dark']], {}, { class: "avatar_options" } %>
             <% end %>
           </div>
           <div class="col s5">
@@ -95,6 +101,8 @@
 
 <script type="text/javascript">
   $('.avatar_options').on("change", function(){
+    var face = $('.avatar_options#user_avatar_attributes_face option:selected').attr("value");
+    var hair = $('.avatar_options#user_avatar_attributes_hair option:selected').attr("value");
     var eyes = $('.avatar_options#user_avatar_attributes_eyes option:selected').attr("value");
     var skin = $('.avatar_options#user_avatar_attributes_skin option:selected').attr("value");
 
@@ -108,7 +116,7 @@
     $.ajax({
       url: "<%= j(update_avatar_user_path(selected_user.id, format: "js")) %>",
       type: "put",
-      data: { eyes: eyes, skin : skin },
+      data: { face: face, hair: hair, eyes: eyes, skin : skin },
       dataType: 'script',
       complete: function(){
 //        alert("DONE");
