@@ -1,6 +1,5 @@
 $(document).ready(function(){
   $('.parallax').parallax();
-  //$('.collapsible').collapsible();
   $('.button-collapse').sideNav();
   $('.dropdown-button').dropdown({hover: true});
 
@@ -17,16 +16,11 @@ $(document).ready(function(){
     );
   });
 
-
-  //jQuery.validator.setDefaults({
-  //  debug: true,
-  //  success: "valid"
-  //});
-
   jQuery.validator.addClassRules("user_first_name", {
     required: true,
     minlength: 2
   });
+
   $("#new_user").validate({
     onkeyup: false,    //this setting is what you need
     rules: {

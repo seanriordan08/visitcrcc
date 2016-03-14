@@ -43,10 +43,10 @@ class UsersController < ApplicationController
   end
 
   def update
-
     user = User.find(params[:id])
 
     user.update_attributes(user_params)
+
     respond_to do |format|
       format.js
     end
@@ -56,8 +56,10 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     avatar = user.avatar
     avatar.update(skin: params[:skin])
-
-    render locals: { selected_user: user, thing: "some_text" }
+# binding.pry
+    respond_to do |format|
+      format.js { render layout: false, content_type: 'text/javascript', locals: { selected_user: user, thing: "some_text" } }
+    end
   end
 
   private

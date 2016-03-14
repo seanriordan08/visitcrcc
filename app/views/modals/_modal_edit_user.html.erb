@@ -94,13 +94,20 @@
   $('.avatar_options').on("change", function(){
     var skin = $('.avatar_options option:selected').attr("value");
 
+//    $('#avatar_img').animate({
+//      opacity:.5
+//    }, 500, "linear");
+
+//    $('#avatar_img').attr('src', 'hair-black' + '-' + 'eyes-blue-green' + '-' + skin + '.png');
+//    $('#avatar_img').attr('src', "assets/images/avatars/material/" + "male" + "/" + "Face-1" + "/" + "hair-black" + "-" + "eyes-blue-green" + "-" + skin + ".png");
+
     $.ajax({
       url: "<%= j(update_avatar_user_path(selected_user.id, format: "js")) %>",
-      method: "PUT",
+      type: "put",
       data: { skin : skin },
-      dataType: "script",
-      complete: function(data){
-//        alert("DONE");
+      dataType: 'script',
+      complete: function(){
+        alert("DONE");
       }
     });
   })

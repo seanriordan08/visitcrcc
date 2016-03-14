@@ -13081,7 +13081,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     margin-bottom: 5em;
   }
 }
-/* line 2, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 2, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -13101,7 +13101,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 21, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 21, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .flip {
   -moz-transform: scaleX(-1) scaleY(-1);
   -webkit-transform: scaleX(-1) scaleY(-1);
@@ -13109,17 +13109,17 @@ time, mark, audio, video {
   transform: scaleX(-1) scaleY(-1);
 }
 
-/* line 28, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 28, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .inline {
   display: inline;
 }
 
-/* line 32, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 32, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 html {
   width: 100%;
 }
 
-/* line 36, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 36, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 body {
   width: 100%;
   height: 100%;
@@ -13127,18 +13127,18 @@ body {
   overflow: scroll;
 }
 
-/* line 43, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 43, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 footer {
   position: relative;
   bottom: 0;
 }
 
-/* line 48, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 48, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 a:hover {
   color: #353535 !important;
 }
 
-/* line 52, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 52, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .service_time_strip {
   display: inline-block;
   width: 100%;
@@ -13147,30 +13147,30 @@ a:hover {
   color: #353535;
   background-color: rgba(107, 96, 84, 0.6);
 }
-/* line 59, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 59, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .service_time_strip .specifics {
   font-family: 'Kameron', Georgia, serif;
   color: #F5F5F5;
 }
 
-/* line 65, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 65, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .slider_box_wrapper {
   box-sizing: border-box;
 }
 @media screen and (max-width: 600px) {
-  /* line 65, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 65, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .slider_box_wrapper {
     margin: -5px;
   }
 }
 @media screen and (min-width: 601px) {
-  /* line 65, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 65, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .slider_box_wrapper {
     margin: 0 53px;
   }
 }
 
-/* line 71, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 71, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .crcc_main_slider {
   display: inline-block;
   vertical-align: top;
@@ -13180,7 +13180,7 @@ a:hover {
   font-family: 'Cabin Sketch', cursive;
   font-size: 7vw;
 }
-/* line 79, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 79, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .crcc_main_slider .slider_content {
   display: inline-block;
   width: inherit;
@@ -13188,81 +13188,81 @@ a:hover {
   outline-width: 0;
   cursor: pointer;
 }
-/* line 86, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 86, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .crcc_main_slider .slick-arrow {
   text-shadow: 0 0 2px #000;
 }
-/* line 89, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 89, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .crcc_main_slider .slick-prev {
   left: 10px;
   z-index: 3;
 }
-/* line 93, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 93, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .crcc_main_slider .slick-next {
   right: 10px;
   z-index: 3;
 }
-/* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .crcc_main_slider .slick-dots {
   height: 100px;
 }
 @media screen and (max-width: 500px) {
-  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .crcc_main_slider .slick-dots {
     bottom: -110px;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 900px) {
-  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .crcc_main_slider .slick-dots {
     bottom: -90px;
   }
 }
 @media screen and (min-width: 901px) and (max-width: 1200px) {
-  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .crcc_main_slider .slick-dots {
     bottom: -65px;
   }
 }
 @media screen and (min-width: 1201px) and (max-width: 1850px) {
-  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .crcc_main_slider .slick-dots {
     bottom: -25px;
   }
 }
 @media screen and (min-width: 1851px) {
-  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 97, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .crcc_main_slider .slick-dots {
     bottom: 0;
   }
 }
 
-/* line 116, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 116, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .dark_bg {
   color: #9ba7b1;
   background: transparent url("dark_geometric.png") repeat;
 }
 
-/* line 120, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 120, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .light_bg {
   color: #353535;
   background: transparent url("light_paper.png") repeat;
 }
 
-/* line 125, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 125, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .hoverable {
   padding: 10px;
   cursor: pointer;
 }
 
-/* line 130, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 130, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .declaration_of_faith {
   position: relative;
   font-family: 'Sansita One', sans-serif;
   background: linear-gradient(160deg, rgba(246, 143, 26, 0.6), rgba(120, 181, 202, 0.6));
   z-index: 3;
 }
-/* line 135, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 135, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .declaration_of_faith:before {
   content: '';
   position: absolute;
@@ -13273,29 +13273,29 @@ a:hover {
   opacity: .05;
   z-index: 2;
 }
-/* line 145, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 145, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .declaration_of_faith a {
   color: #353535;
 }
 
-/* line 151, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 151, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .mission_statement .title {
   color: #F5F5F5;
   font-family: 'Sansita One', sans-serif;
 }
 @media screen and (max-width: 600px) {
-  /* line 155, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 155, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .mission_statement h3 {
     text-align: center;
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 155, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 155, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .mission_statement h3 {
     text-align: left;
   }
 }
-/* line 159, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 159, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .mission_statement .social, .mission_statement .social_square, .mission_statement .social_circle {
   position: relative;
   bottom: 25%;
@@ -13306,22 +13306,22 @@ a:hover {
   cursor: pointer;
   transition: .2s;
 }
-/* line 168, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 168, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .mission_statement .social:hover, .mission_statement .social_square:hover, .mission_statement .social_circle:hover {
   background-color: rgba(0, 0, 0, 0.5);
   transform: translate(0, -4px);
   transition: .3s;
 }
-/* line 174, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 174, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .mission_statement .social_square {
   border-radius: 2px;
 }
-/* line 178, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 178, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .mission_statement .social_circle {
   border-radius: 25px;
 }
 
-/* line 184, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 184, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .white_box {
   position: relative;
   width: 100%;
@@ -13335,12 +13335,12 @@ a:hover {
   z-index: 3;
   transition: .25s;
 }
-/* line 197, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 197, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .white_box:hover {
   transition: .25s;
   background-color: rgba(245, 245, 245, 0.9);
 }
-/* line 202, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+/* line 202, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
 .white_box .content {
   position: absolute;
   top: 0;
@@ -13354,13 +13354,13 @@ a:hover {
 }
 
 @media screen and (max-width: 300px) {
-  /* line 215, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 215, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .material-tooltip {
     max-width: 200px !important;
   }
 }
 @media screen and (min-width: 301px) {
-  /* line 215, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.css.scss */
+  /* line 215, /Users/seanriordan08/Desktop/visitcrcc/app/assets/stylesheets/welcome.scss */
   .material-tooltip {
     max-width: 400px !important;
   }
