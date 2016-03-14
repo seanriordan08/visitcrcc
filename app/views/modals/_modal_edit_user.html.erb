@@ -20,7 +20,7 @@
           </div>
           <div class="col s3">
             <%= f.fields_for :avatar do |n| %>
-              <%= n.label :face %>
+              <%= n.label :style %>
               <%= n.select :face, [['Square','Face-1'],['Patch','Face-2'],['Round','Face-3'],['Shaggy','Face-4'],['McFly','Face-5'],['GlassBeard','Face-6']], {}, { class: "avatar_options" } %>
               <br>
               <%= n.label :hair %>
