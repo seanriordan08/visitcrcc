@@ -43,12 +43,21 @@ class UsersController < ApplicationController
   end
 
   def update
+
     user = User.find(params[:id])
 
     user.update_attributes(user_params)
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.js
     end
+  end
+
+  def update_avatar
+    user = User.find(params[:id])
+    avatar = user.avatar
+    avatar.update(skin: params[:skin])
+
+    render locals: { selected_user: user, thing: "some_text" }
   end
 
   private

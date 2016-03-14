@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
 
-  resources :users
+  resources :users do
+    member do
+      put :update_avatar
+    end
+  end
 
   resources :welcome do
     collection do
