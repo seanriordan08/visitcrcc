@@ -55,8 +55,8 @@ class UsersController < ApplicationController
   def update_avatar
     user = User.find(params[:id])
     avatar = user.avatar
-    avatar.update(skin: params[:skin])
-# binding.pry
+    avatar.update(eyes: params[:eyes], skin: params[:skin])
+
     respond_to do |format|
       format.js { render layout: false, content_type: 'text/javascript', locals: { selected_user: user, thing: "some_text" } }
     end

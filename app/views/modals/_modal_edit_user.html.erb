@@ -20,6 +20,9 @@
           </div>
           <div class="col s3">
             <%= f.fields_for :avatar do |n| %>
+              <%= n.label :eyes %>
+              <%= n.select :eyes, [['Light','eyes-blue-green'],['Medium','eyes-brown'], ['Dark','eyes-dark']], {}, { class: "avatar_options" } %>
+              <br>
               <%= n.label :skin %>
               <%= n.select :skin, [['Light','skin-light'],['Dark','skin-dark']], {}, { class: "avatar_options" } %>
             <% end %>
@@ -92,7 +95,8 @@
 
 <script type="text/javascript">
   $('.avatar_options').on("change", function(){
-    var skin = $('.avatar_options option:selected').attr("value");
+    var eyes = $('.avatar_options#user_avatar_attributes_eyes option:selected').attr("value");
+    var skin = $('.avatar_options#user_avatar_attributes_skin option:selected').attr("value");
 
 //    $('#avatar_img').animate({
 //      opacity:.5
@@ -104,7 +108,7 @@
     $.ajax({
       url: "<%= j(update_avatar_user_path(selected_user.id, format: "js")) %>",
       type: "put",
-      data: { skin : skin },
+      data: { eyes: eyes, skin : skin },
       dataType: 'script',
       complete: function(){
 //        alert("DONE");

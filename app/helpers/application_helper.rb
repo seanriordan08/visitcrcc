@@ -20,11 +20,6 @@ module ApplicationHelper
     "avatars/material/" + user.gender + "/" + user.avatar.face + "/" + user.avatar.hair + "-" + user.avatar.eyes + "-" + user.avatar.skin + ".png"
   end
 
-  def get_image_path
-    path = "Face-1/" + "hair-black-eyes-blue-green-skin-dark.png"
-    image_path(path)
-  end
-
   def make_unique
     SecureRandom.base64(24)
   end
