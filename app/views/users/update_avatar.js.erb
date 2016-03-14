@@ -1,7 +1,3 @@
-alert(thing);
-$('.row h2').text('BLAMO');
-<%j binding.pry%>
-<% j(src = get_avatar(selected_user.reload)) %>
 
-$("#avatar_img").fadeOut();
-$("#avatar_img").html("<%= escape_javascript(render partial: "modals/avatar_img", locals: { src: get_avatar(selected_user), avatar_background: selected_user.avatar.background_color })%>");
+
+$('#avatar_preview #avatar_img').replaceWith("<%= escape_javascript(render partial: "modals/avatar_img", locals: { src: get_avatar(selected_user), avatar_background: selected_user.avatar.background_color })%>");
