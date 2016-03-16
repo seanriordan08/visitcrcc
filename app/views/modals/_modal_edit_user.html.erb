@@ -16,7 +16,7 @@
 
         <div id="avatar_preview" class="row">
           <div class="col s4">
-            <%= render partial: "modals/avatar_img", locals: { src: get_avatar(selected_user), avatar_background: selected_user.avatar.background_color }%>
+            <%= render partial: "modals/avatar_img", locals: { src: get_avatar(selected_user), size: '200', avatar_background: selected_user.avatar.background_color } %>
           </div>
           <div class="col s3">
             <%= f.fields_for :avatar do |n| %>

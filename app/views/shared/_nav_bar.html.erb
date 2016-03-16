@@ -39,7 +39,7 @@
             Logged in as <strong><%= current_user.first_name %></strong><i class="material-icons right">arrow_drop_down</i></a>
           </li>
           <li>
-            <%= link_to '<i class="material-icons large">account_circle</i>'.html_safe, edit_user_path(current_user.id), style: "color: #353535", remote: true %>
+            <%= link_to "#{render partial: "modals/avatar_img", locals: { src: get_avatar(current_user), size: '40', avatar_background: current_user.avatar.background_color}}".html_safe, edit_user_path(current_user.id), style:"height: 64px;color: #353535", remote: true %>
           </li>
           <% if can? :manage, User %>
             <li>
