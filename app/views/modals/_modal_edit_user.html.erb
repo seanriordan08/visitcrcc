@@ -20,12 +20,12 @@
             <div class="background_swatches">
               <%= label_tag :background %>
               <br>
-              <div id="swatch-default" class="swatch" data-color="#78B5CA"></div>
-              <div id="swatch-orange" class="swatch" data-color="#FF5D00"></div>
-              <div id="swatch-brown" class="swatch" data-color="#6B6054"></div>
-              <div id="swatch-blue" class="swatch" data-color="#8AB0AB"></div>
-              <div id="swatch-navy" class="swatch" data-color="#3E505B"></div>
-              <div id="swatch-black" class="swatch" data-color="#353535"></div>
+              <div id="swatch-default" class="swatch" data-selected="false" data-color="#78B5CA"></div>
+              <div id="swatch-orange" class="swatch" data-selected="false" data-color="#FF5D00"></div>
+              <div id="swatch-brown" class="swatch" data-selected="false" data-color="#6B6054"></div>
+              <div id="swatch-blue" class="swatch" data-selected="false" data-color="#8AB0AB"></div>
+              <div id="swatch-navy" class="swatch" data-selected="false" data-color="#3E505B"></div>
+              <div id="swatch-black" class="swatch" data-selected="false" data-color="#353535"></div>
             </div>
             <br>
           </div>
@@ -109,34 +109,36 @@
 
 <script type="text/javascript">
   $('.swatch').click(function(){
-    const background_color = $(this).data("color");
-    update_avatar(undefined, undefined, undefined, undefined, background_color)
+    $(this).attr("data-selected", "true");
+    $(this).siblings().each(function() {
+      $(this).attr("data-selected", "");
+    });
+    gather_selections();
   });
 
   $('.avatar_options').on("change", function(){
+    gather_selections();
+  });
+
+  function gather_selections(){
+    const current_bg = $(".swatch[data-selected='true']");
+
     var face = $('.avatar_options#user_avatar_attributes_face option:selected').attr("value");
     var hair = $('.avatar_options#user_avatar_attributes_hair option:selected').attr("value");
     var eyes = $('.avatar_options#user_avatar_attributes_eyes option:selected').attr("value");
     var skin = $('.avatar_options#user_avatar_attributes_skin option:selected').attr("value");
+    var background_color = current_bg.attr("data-color");
 
-    update_avatar(face, hair, eyes, skin, undefined)
-  });
+    update_avatar(face, hair, eyes, skin, background_color)
+  }
 
   function update_avatar(face, hair, eyes, skin, bg){
-    face = face || "<%=j(selected_user.avatar.face)%>";
-    hair = hair || "<%=j(selected_user.avatar.hair)%>";
-    eyes = eyes || "<%=j(selected_user.avatar.eyes)%>";
-    skin = skin || "<%=j(selected_user.avatar.skin)%>";
-    bg = bg || "<%=j(selected_user.avatar.background_color)%>";
-
     $.ajax({
       url: "<%= j(update_avatar_user_path(selected_user.id, format: "js")) %>",
       type: "put",
       data: { face: face, hair: hair, eyes: eyes, skin : skin, bg : bg },
       dataType: 'script',
-      complete: function(){
-//        alert("DONE");
-      }
+      complete: function(){}
     });
   }
 </script>
