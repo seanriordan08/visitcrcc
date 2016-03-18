@@ -1,3 +1,50 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$crcc-white: #F5F5F5;
+$crcc-orange: #FF5D00;
+$crcc-brown: #6B6054;
+$crcc-grey: #8AB0AB;
+$crcc-ltblue: #3E505B;
+$crcc-black: #353535;
+
+@mixin swatch {
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  border: 1px solid #DDDDDD;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.background_swatches {
+  margin-top: 20px;
+  height: 20px;
+
+  div#swatch-default {
+    @include swatch;
+    background-color: #78B5CA;
+  }
+  div#swatch-orange {
+    @include swatch;
+    background-color: $crcc-orange;
+  }
+  div#swatch-brown {
+    @include swatch;
+    background-color: $crcc-brown;
+  }
+  div#swatch-blue {
+    @include swatch;
+    background-color: $crcc-grey;
+  }
+  div#swatch-navy {
+    @include swatch;
+    background-color: $crcc-ltblue;
+  }
+  div#swatch-black {
+    @include swatch;
+    background-color: $crcc-black;
+  }
+
+}

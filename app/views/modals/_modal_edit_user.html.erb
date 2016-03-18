@@ -17,18 +17,26 @@
         <div id="avatar_preview" class="row">
           <div class="col s4">
             <%= render partial: "modals/avatar_img", locals: { src: get_avatar(selected_user), size: '200', avatar_background: selected_user.avatar.background_color } %>
+            <div class="background_swatches">
+              <%= label_tag :background %>
+              <br>
+              <div id="swatch-default" class="swatch" data-color="#78B5CA"></div>
+              <div id="swatch-orange" class="swatch" data-color="#FF5D00"></div>
+              <div id="swatch-brown" class="swatch" data-color="#6B6054"></div>
+              <div id="swatch-blue" class="swatch" data-color="#8AB0AB"></div>
+              <div id="swatch-navy" class="swatch" data-color="#3E505B"></div>
+              <div id="swatch-black" class="swatch" data-color="#353535"></div>
+            </div>
+            <br>
           </div>
           <div class="col s3">
             <%= f.fields_for :avatar do |n| %>
               <%= n.label :style %>
               <%= n.select :face, all_avatar_faces, {}, { class: "avatar_options" } %>
-              <br>
               <%= n.label :hair %>
               <%= n.select :hair, [['Light','hair-blonde'],['Medium','hair-brown'], ['Dark','hair-black']], {}, { class: "avatar_options" } %>
-              <br>
               <%= n.label :eyes %>
               <%= n.select :eyes, [['Light','eyes-blue-green'],['Medium','eyes-brown'], ['Dark','eyes-dark']], {}, { class: "avatar_options" } %>
-              <br>
               <%= n.label :skin %>
               <%= n.select :skin, [['Light','skin-light'],['Tan','skin-tanned'],['Dark','skin-dark']], {}, { class: "avatar_options" } %>
             <% end %>
@@ -100,27 +108,35 @@
 </div>
 
 <script type="text/javascript">
+  $('.swatch').click(function(){
+    const background_color = $(this).data("color");
+    update_avatar(undefined, undefined, undefined, undefined, background_color)
+  });
+
   $('.avatar_options').on("change", function(){
     var face = $('.avatar_options#user_avatar_attributes_face option:selected').attr("value");
     var hair = $('.avatar_options#user_avatar_attributes_hair option:selected').attr("value");
     var eyes = $('.avatar_options#user_avatar_attributes_eyes option:selected').attr("value");
     var skin = $('.avatar_options#user_avatar_attributes_skin option:selected').attr("value");
 
-//    $('#avatar_img').animate({
-//      opacity:.5
-//    }, 500, "linear");
+    update_avatar(face, hair, eyes, skin, undefined)
+  });
 
-//    $('#avatar_img').attr('src', 'hair-black' + '-' + 'eyes-blue-green' + '-' + skin + '.png');
-//    $('#avatar_img').attr('src', "assets/images/avatars/material/" + "male" + "/" + "Face-1" + "/" + "hair-black" + "-" + "eyes-blue-green" + "-" + skin + ".png");
+  function update_avatar(face, hair, eyes, skin, bg){
+    face = face || "<%=j(selected_user.avatar.face)%>";
+    hair = hair || "<%=j(selected_user.avatar.hair)%>";
+    eyes = eyes || "<%=j(selected_user.avatar.eyes)%>";
+    skin = skin || "<%=j(selected_user.avatar.skin)%>";
+    bg = bg || "<%=j(selected_user.avatar.background_color)%>";
 
     $.ajax({
       url: "<%= j(update_avatar_user_path(selected_user.id, format: "js")) %>",
       type: "put",
-      data: { face: face, hair: hair, eyes: eyes, skin : skin },
+      data: { face: face, hair: hair, eyes: eyes, skin : skin, bg : bg },
       dataType: 'script',
       complete: function(){
 //        alert("DONE");
       }
     });
-  })
+  }
 </script>

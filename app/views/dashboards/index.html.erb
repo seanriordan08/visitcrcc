@@ -35,7 +35,7 @@
       <ul class="collection">
         <% @users.each do |user| %>
           <li class="collection-item avatar user-collection-item">
-            <%= image_tag get_avatar(user), class: "circle responsive-img", style: "background-color: #78B5CA" %>
+            <%= image_tag get_avatar(user), class: "circle responsive-img", style: "background-color: #{user.avatar.background_color}" %>
             <span class="title"><%= user.role_description.titleize %></span>
             <p>
               <%= user.first_name %> <%= user.last_name %>
