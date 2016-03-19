@@ -43,12 +43,11 @@
           </div>
           <div class="col s5">
             <div class="field">
-              <%= f.label :first_name %><br />
+              <%= f.label :first_name %>
               <%= f.text_field :first_name, autofocus: true %>
             </div>
-            <br>
             <div class="field">
-              <%= f.label :last_name %><br />
+              <%= f.label :last_name %>
               <%= f.text_field :last_name, autofocus: true %>
             </div>
           </div>
@@ -72,7 +71,7 @@
         <% end %>
 
         <div class="row">
-          <div class="col s6">
+          <div class="col s4">
             <%= f.radio_button :gender, "male", disabled: "disabled" %>
             <%= f.label :gender_male, "I'm a Guy" %>
             <br>
@@ -80,7 +79,7 @@
             <%= f.label :gender_female, "I'm a Girl" %>
           </div>
 
-          <div class="col s6">
+          <div class="col s8">
             <%= f.check_box(:send_emails) %>
             <%= f.label(:send_emails, "Inform me on important happenings, notifications and such.") %>
           </div>
@@ -88,7 +87,6 @@
 
         <div class="row">
           <div class="col s4">
-            <br>
             <%= content_tag :button, type: :submit, id: "update_submit", class: "btn waves-effect waves-light" do %>
               Submit
               <i class="material-icons right">send</i>
