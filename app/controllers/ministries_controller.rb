@@ -2,9 +2,11 @@ class MinistriesController < ApplicationController
 
 
   def life_groups
+    @lead_pastor = User.where(role_description: "Lead Pastor").first
   end
 
   def mens
+    @lead_pastor = User.where(role_description: "Lead Pastor").first
   end
 
   def womens

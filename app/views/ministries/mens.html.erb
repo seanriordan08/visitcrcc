@@ -20,8 +20,8 @@
       <b>When We Meet:</b>
       <br>
       Join us weekly on Saturday mornings from 7:30am – 8:30am at Lost Coffee on
-      Perry Street in Castle Rock. Contact Pastor Josh here (insert link to
-      josh.epstein@visitcrcc.org) for more information.
+      Perry Street in Castle Rock. Contact <%= mail_to @lead_pastor.email, @lead_pastor.full_name, subject: "Men's Ministry" %>
+      for more information.
     </p>
     <br>
 
