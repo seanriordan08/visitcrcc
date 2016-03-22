@@ -14,15 +14,15 @@ class MinistriesController < ApplicationController
   end
 
   def youth
-    @youth_pastor = User.where(role_description: "Youth Pastor").first
+    @lead_pastor = User.where(role_description: "Lead Pastor").first
   end
 
   def childrens
-    # @youth_pastor = User.where(role_description: "Youth Pastor").first
+    @childrens_pastor = User.where(role_description: "Children's Ministry Pastor").first
   end
 
   def worship_arts
-    # @youth_pastor = User.where(role_description: "Youth Pastor").first
+    @worship_pastor = User.where(role_description: "Worship Pastor").first
   end
 
   def missions
