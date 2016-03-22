@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     collection do
       get :life_groups
       get :mens
+      get :womens
     end
   end
 
