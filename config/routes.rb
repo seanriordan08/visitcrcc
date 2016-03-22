@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       get :youth
       get :childrens
       get :worship_arts
+      get :missions
     end
   end
 

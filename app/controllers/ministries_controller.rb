@@ -23,4 +23,8 @@ class MinistriesController < ApplicationController
     # @youth_pastor = User.where(role_description: "Youth Pastor").first
   end
 
+  def missions
+    # @youth_pastor = User.where(role_description: "Youth Pastor").first
+  end
+
 end
