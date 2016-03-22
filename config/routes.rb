@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       get :womens
       get :youth
       get :childrens
+      get :worship_arts
     end
   end
 
