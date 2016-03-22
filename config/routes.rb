@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :ministries do
     collection do
       get :life_groups
+      get :mens
     end
   end
 
