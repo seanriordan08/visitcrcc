@@ -20,6 +20,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :ministries do
+    collection do
+      get :life_groups
+    end
+  end
+
   resources :dashboards
 
   Rails.application.routes.draw do
