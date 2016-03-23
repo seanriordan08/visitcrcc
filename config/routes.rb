@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get :sermons
       get :events
       get :dashboard
+      get :serve
     end
   end
 

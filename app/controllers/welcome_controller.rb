@@ -19,4 +19,7 @@ class WelcomeController < ApplicationController
   def sermons
   end
 
+  def serve
+  end
+
 end
