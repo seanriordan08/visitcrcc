@@ -295,6 +295,23 @@ a:hover {
   @media screen and (min-width: 601px){  border-radius: 2px 2px 50px 50px !important; }
 }
 
+.white_box.hoverable.more{
+  @media screen and (max-width: 600px){  border-radius: 2px 2px 50px 2px !important; }
+  @media screen and (min-width: 601px){  border-radius: 2px 2px 50px 50px !important; }
+}
+
+.ministry-grid {
+  width: 200px;
+  height: auto;
+}
+
+.grid_space {
+  height: 150px;
+  padding: 10px;
+  //background-color: rgba(220,220,220,.6);
+  border: 1px solid rgba(200,200,200,.8);
+}
+
 .material-tooltip {
   @media screen and (max-width: 300px){  max-width: 200px !important; }
   @media screen and (min-width: 301px){  max-width: 400px !important; }
@@ -336,10 +353,7 @@ a:hover {
     height: 260px;
   }
 }
-.ministry-grid {
-  width: 200px;
-  height: 130px;
-}
+
 #learn_more_button {
   position: relative;
   @media screen and (max-width: 600px) { bottom: 0; }

@@ -1,29 +1,33 @@
 <%= render partial: "modals/all" %>
 
 <div class="container">
-    <h3>Serve</h3>
-    <br>
+  <br>
+  <h3 class="center-align">Serve At Castle Rock Community Church</h3>
+  <br>
 
+  <div class="row">
+    <div class="col s12 m6 l4">
+      <%= link_to('', life_groups_ministries_path) do %>
+        <div class="white_box hoverable grid_space"><img src="ministry_logos/life_group_ministry_logo.png" class="ministry-grid"></div></div>
+      <% end %>
+    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/mens_ministry_logo.png", class: "ministry-grid") %></div></div>
+    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/womens_ministry_logo.png", class: "ministry-grid") %></div></div>
+  </div>
+  <div class="row">
+    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/youth_ministry_logo.png", class: "ministry-grid") %></div></div>
+    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/childrens_ministry_logo.png", class: "ministry-grid") %></div></div>
+    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/worship_arts_ministry_logo.png", class: "ministry-grid") %></div></div>
+  </div>
+  <div class="row">
+    <div class="col s12 m6 l4 offset-l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/missions_ministry_logo.png", class: "ministry-grid") %></div></div>
+  </div>
 
-    <div class="row">
-      <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content"><%= image_tag("ministry_logos/life_group_ministry_logo.png", class: "ministry-grid") %></div></div></div>
-      <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content"><%= image_tag("ministry_logos/mens_ministry_logo.png", class: "ministry-grid") %></div></div></div>
-      <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content"><%= image_tag("ministry_logos/womens_ministry_logo.png", class: "ministry-grid") %></div></div></div>
-      <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content"><%= image_tag("ministry_logos/youth_ministry_logo.png", class: "ministry-grid") %></div></div></div>
-    </div>
-    <div class="row">
-      <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content"><%= image_tag("ministry_logos/childrens_ministry_logo.png", class: "ministry-grid") %></div></div></div>
-      <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content"><%= image_tag("ministry_logos/worship_arts_ministry_logo.png", class: "ministry-grid") %></div></div></div>
-      <div class="col s6 m6 l3"><div class="white_box hoverable"><div class="content"><%= image_tag("ministry_logos/missions_ministry_logo.png", class: "ministry-grid") %></div></div></div>
-    </div>
-
-    <div class="row">
-      Serve At Castle Rock Community Church (please center align all of this 	text)
+  <div class="row">
+    <p style="text-align: center; font-size: 20px">
       Opportunities to demonstrate the heart of Christ are ever growing in our church community.
       We encourage you to explore where your gifts and talents can be uniquely used in one of
       our ministries to bring honor to Jesus Christ. Click on a ministry below to learn more
       about current service opportunities.
-      text
-    </div>
-
+    </p>
+  </div>
 </div>
