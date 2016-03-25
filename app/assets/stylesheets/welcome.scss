@@ -372,7 +372,7 @@ a:hover {
 
 .arrow_down {
   transition: .2s;
-  transform: rotate(90deg);
+  transform: rotate(90deg) translate(1px,1px);
 }
 
 .material-icons {
