@@ -369,3 +369,12 @@ a:hover {
   vertical-align: middle;
   content: ''
 }
+
+.arrow_down {
+  transition: .2s;
+  transform: rotate(90deg);
+}
+
+.material-icons {
+  transition: .2s;
+}

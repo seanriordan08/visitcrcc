@@ -63,7 +63,7 @@
 
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="side-nav">
-        <li>
+        <li class="swivel_down smooth">
           <ul class="collapsible" data-collapsible="accordion">
             <li>
               <div class="collapsible-header" style="color: #353535"><i class="material-icons">keyboard_arrow_right</i>About</div>
@@ -82,7 +82,7 @@
         <li class="divider"></li>
         <li><%= link_to "Events", events_welcome_index_path, style: "color: #353535"%></li>
         <li class="divider"></li>
-        <li>
+        <li class="swivel_down">
           <ul class="collapsible" data-collapsible="accordion">
             <li>
               <div class="collapsible-header" style="color: #353535"><i class="material-icons">keyboard_arrow_right</i>Ministries</div>
@@ -107,7 +107,7 @@
           </ul>
         </li>
         <li class="divider"></li>
-        <li>
+        <li class="swivel_down">
           <ul class="collapsible" data-collapsible="accordion">
             <li>
               <div class="collapsible-header" style="color: #353535"><i class="material-icons">keyboard_arrow_right</i>Give</div>
@@ -130,3 +130,15 @@
     </div>
   </nav>
 </div>
+
+<script type="text/javascript">
+  $(".swivel_down").on("click", function(){
+    var icon = $(this).find(".material-icons").toggleClass("arrow_down");
+  })
+</script>
+
+
+
+
+
+
