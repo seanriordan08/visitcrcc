@@ -2,25 +2,8 @@
 
 <div class="container">
   <br>
-  <h3 class="center-align">Serve At Castle Rock Community Church</h3>
+  <h3 class="center-align">Serve</h3>
   <br>
-
-  <div class="row">
-    <div class="col s12 m6 l4">
-      <%= link_to('', life_groups_ministries_path) do %>
-        <div class="white_box hoverable grid_space"><img src="ministry_logos/life_group_ministry_logo.png" class="ministry-grid"></div></div>
-      <% end %>
-    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/mens_ministry_logo.png", class: "ministry-grid") %></div></div>
-    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/womens_ministry_logo.png", class: "ministry-grid") %></div></div>
-  </div>
-  <div class="row">
-    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/youth_ministry_logo.png", class: "ministry-grid") %></div></div>
-    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/childrens_ministry_logo.png", class: "ministry-grid") %></div></div>
-    <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/worship_arts_ministry_logo.png", class: "ministry-grid") %></div></div>
-  </div>
-  <div class="row">
-    <div class="col s12 m6 l4 offset-l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/missions_ministry_logo.png", class: "ministry-grid") %></div></div>
-  </div>
 
   <div class="row">
     <p style="text-align: center; font-size: 20px">
@@ -30,4 +13,33 @@
       about current service opportunities.
     </p>
   </div>
+
+  <div class="row">
+    <a href="/ministries/life_groups">
+      <div class="col s12 m6 l4 offset-l2"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/life_group_ministry_logo.png", class: "ministry-grid") %></div></div>
+    </a>
+    <a href="/ministries/mens">
+      <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/mens_ministry_logo.png", class: "ministry-grid") %></div></div>
+    </a>
+  </div>
+  <div class="row">
+    <a href="/ministries/womens">
+      <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/womens_ministry_logo.png", class: "ministry-grid") %></div></div>
+    </a>
+    <a href="/ministries/youth">
+      <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/youth_ministry_logo.png", class: "ministry-grid") %></div></div>
+    </a>
+    <a href="/ministries/childrens">
+      <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/childrens_ministry_logo.png", class: "ministry-grid") %></div></div>
+    </a>
+  </div>
+  <div class="row">
+    <a href="/ministries/worship_arts">
+      <div class="col s12 m6 l4 offset-l2"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/worship_arts_ministry_logo.png", class: "ministry-grid") %></div></div>
+    </a>
+    <a href="/ministries/missions">
+      <div class="col s12 m6 l4"><div class="white_box hoverable grid_space"><%= image_tag("ministry_logos/missions_ministry_logo.png", class: "ministry-grid") %></div></div>
+    </a>
+  </div>
+
 </div>
