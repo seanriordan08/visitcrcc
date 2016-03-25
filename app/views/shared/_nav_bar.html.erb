@@ -79,6 +79,9 @@
             </li>
           </ul>
         </li>
+        <li class="divider"></li>
+        <li><%= link_to "Events", events_welcome_index_path, style: "color: #353535"%></li>
+        <li class="divider"></li>
         <li>
           <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -103,20 +106,22 @@
             </li>
           </ul>
         </li>
+        <li class="divider"></li>
         <li>
           <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header" style="color: #353535"><i class="material-icons">keyboard_arrow_right</i>Support</div>
+              <div class="collapsible-header" style="color: #353535"><i class="material-icons">keyboard_arrow_right</i>Give</div>
               <div class="collapsible-body" style="color: #353535">
                 <ul>
                   <li><%= link_to "Events", events_welcome_index_path, style: "color: #353535"%></li>
                   <li class="divider"></li>
-                  <li><a href="https://castlerockcommunitychurch.givingfuel.com/crcc-giving" style="color: #353535">Giving</a></li>
+                  <li><a href="https://castlerockcommunitychurch.givingfuel.com/crcc-giving" style="color: #353535">Give</a></li>
                 </ul>
               </div>
             </li>
           </ul>
         </li>
+        <li class="divider"></li>
         <% if !user_signed_in? %>
           <li id="sign_up"><a href="#modal_sign_up" class="modal-trigger" style="color: #353535">Sign Up</a></li>
         <% end %>
