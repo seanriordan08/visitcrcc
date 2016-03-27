@@ -2,37 +2,58 @@
 <div id="modal_log_in" class="modal modal-fixed-footer">
   <div class="modal-content">
     <div class="row">
-      <h2>Log in</h2>
+      <div class="col s12">
+        <h2>Log in</h2>
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-
-        <% if devise_mapping.rememberable? -%>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true %>
           </div>
-        <% end -%>
 
-        <div class="actions">
-          <%= f.submit "Log in" %>
-        </div>
-      <% end %>
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
 
-      <%= render "devise/shared/links" %>
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+          <br>
 
-      <div class="modal-footer">
-        <a href="#" class="modal-action modal-close waves-effect btn-flat ">Cancel</a>
+          <div class="actions" id="login_submit">
+            <%= link_to '<i class="material-icons right">send</i>log in'.html_safe, '', id: "login_input_submit", class: "btn-large waves-effect waves-light", style: "background-color: #aaaaaa"%>
+          </div>
+
+        <% end %>
       </div>
+    </div>
 
+  </div>
+
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col s6">
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+        <% end -%>
+        <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+          <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+        <% end -%>
+      </div>
+      <div class="col s6">
+        <a href="#" class="modal-action modal-close waves-effect btn-flat">Cancel</a>
+      </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $("#login_submit").on("click",function(e) {
+    e.preventDefault();
+    $("#new_user").submit();
+  });
+</script>

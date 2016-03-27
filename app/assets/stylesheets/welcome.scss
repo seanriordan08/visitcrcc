@@ -33,6 +33,14 @@ time, mark, audio, video {
   text-align: center;
 }
 
+.lefted {
+  float: left;
+}
+
+.righted {
+  float: left;
+}
+
 html {
   width: 100%;
 }
@@ -376,5 +384,15 @@ a:hover {
 }
 
 .material-icons {
-  transition: .2s;kkkk
+  transition: .2s;
+}
+
+.false_footer {
+  position: relative;
+
+  .ff_content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
