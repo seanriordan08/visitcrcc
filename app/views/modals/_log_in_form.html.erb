@@ -25,11 +25,12 @@
           <br>
 
           <div class="actions">
-            <span id="login_submit">
-              <%= link_to '<i class="material-icons right">send</i>log in'.html_safe, '', id: "login_input_submit", class: "btn-large waves-effect waves-light", style: "background-color: #aaaaaa"%>
-            </span>
+            <%= content_tag :button, type: :submit, id: "login_submit", class: "btn waves-effect waves-light" do %>
+              Submit
+              <i class="material-icons right">send</i>
+            <% end %>
             <span>
-              &nbsp;or&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;
               <%= link_to "Sign Up", '', id: 'sign_up_form_link' %><br />
             </span>
           </div>
@@ -65,7 +66,8 @@
 
   $('#sign_up_form_link').on("click", function(e) {
     e.preventDefault();
-    alert("yep");
+    $('#modal_log_in').closeModal();
+    $('#modal_sign_up').openModal();
   })
 
 </script>
