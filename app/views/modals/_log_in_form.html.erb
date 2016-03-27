@@ -24,8 +24,14 @@
           <% end -%>
           <br>
 
-          <div class="actions" id="login_submit">
-            <%= link_to '<i class="material-icons right">send</i>log in'.html_safe, '', id: "login_input_submit", class: "btn-large waves-effect waves-light", style: "background-color: #aaaaaa"%>
+          <div class="actions">
+            <span id="login_submit">
+              <%= link_to '<i class="material-icons right">send</i>log in'.html_safe, '', id: "login_input_submit", class: "btn-large waves-effect waves-light", style: "background-color: #aaaaaa"%>
+            </span>
+            <span>
+              &nbsp;or&nbsp;
+              <%= link_to "Sign Up", '', id: 'sign_up_form_link' %><br />
+            </span>
           </div>
 
         <% end %>
@@ -56,4 +62,10 @@
     e.preventDefault();
     $("#login_form").submit();
   });
+
+  $('#sign_up_form_link').on("click", function(e) {
+    e.preventDefault();
+    alert("yep");
+  })
+
 </script>
