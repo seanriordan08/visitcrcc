@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get :events
       get :dashboard
       get :serve
+      get :new_here
     end
   end
 

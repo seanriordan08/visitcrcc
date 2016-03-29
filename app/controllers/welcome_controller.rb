@@ -22,4 +22,7 @@ class WelcomeController < ApplicationController
   def serve
   end
 
+  def new_here
+  end
+
 end
