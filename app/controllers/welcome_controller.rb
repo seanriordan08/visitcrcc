@@ -25,4 +25,7 @@ class WelcomeController < ApplicationController
   def new_here
   end
 
+  def get_involved
+  end
+
 end

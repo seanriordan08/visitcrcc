@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get :dashboard
       get :serve
       get :new_here
+      get :get_involved
     end
   end
 
