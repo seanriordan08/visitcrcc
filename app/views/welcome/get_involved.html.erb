@@ -4,19 +4,12 @@
   <div class="section">
 
     <!-- toolbar with suitable buttons and dialogues -->
-    <div id="toolbar">
-      <a data-wysihtml5-command="bold">bold</a>
-      <a data-wysihtml5-command="italic">italic</a>
-      <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">H1</a>
-      <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
-    </div>
+    <%= render partial: "shared/wysihtml_toolbar" %>
 
     <!-- element to edit -->
-    <div id="editor" data-placeholder="Go on, start editing..." style="width: 600px; height: 200px">
+    <div id="textarea" class="wysihtml5-sandbox wysihtml5-editor demo-editor" contenteditable="true" data-placeholder="Go on, start editing..." style="width: 600px; height: 200px"></div>
 
-    </div>
-
-    <h5>Welcome to Castle Rock Community Church!</h5>
+    <h5>Welcome to  Castle Rock Community Church!</h5>
     <br>
 
     <p>
@@ -56,10 +49,9 @@
 </div>
 
 <script>
-  var editor = new wysihtml5.Editor("editor", { // id of textarea element
+  var editor = new wysihtml5.Editor("textarea", { // id of textarea element
     toolbar:      "toolbar", // id of toolbar element
     stylesheets:  "<%= stylesheet_path('wysihtml.scss') %>", // optional, css to style the editor's content
-    parserRules:  wysihtml5ParserRules, // defined in parser rules set
-    showToolbarAfterInit: false
+    parserRules:  wysihtml5ParserRules // defined in parser rules set
   });
 </script>
