@@ -2,6 +2,20 @@
 
 <div class="container">
   <div class="section">
+
+    <!-- toolbar with suitable buttons and dialogues -->
+    <div id="toolbar">
+      <a data-wysihtml5-command="bold">bold</a>
+      <a data-wysihtml5-command="italic">italic</a>
+      <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">H1</a>
+      <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">P</a>
+    </div>
+
+    <!-- element to edit -->
+    <div id="editor" data-placeholder="Go on, start editing..." style="width: 600px; height: 200px">
+
+    </div>
+
     <h5>Welcome to Castle Rock Community Church!</h5>
     <br>
 
@@ -40,3 +54,12 @@
 
   </div>
 </div>
+
+<script>
+  var editor = new wysihtml5.Editor("editor", { // id of textarea element
+    toolbar:      "toolbar", // id of toolbar element
+    stylesheets:  "<%= stylesheet_path('wysihtml.scss') %>", // optional, css to style the editor's content
+    parserRules:  wysihtml5ParserRules, // defined in parser rules set
+    showToolbarAfterInit: false
+  });
+</script>
