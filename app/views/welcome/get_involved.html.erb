@@ -3,11 +3,10 @@
 <div class="container">
   <div class="section">
 
-    <!-- toolbar with suitable buttons and dialogues -->
-    <%= render partial: "shared/wysihtml_toolbar" %>
-
-    <!-- element to edit -->
-    <div id="textarea" class="wysihtml5-sandbox wysihtml5-editor demo-editor" contenteditable="true" data-placeholder="Go on, start editing..." style="width: 600px; height: 200px"></div>
+    <div id="editor" style="display: block">
+      <%= render partial: "shared/wysihtml_toolbar" %>
+      <div id="textarea" class="wysihtml5-sandbox wysihtml5-editor demo-editor" contenteditable="true"></div>
+    </div>
 
     <h5>Welcome to  Castle Rock Community Church!</h5>
     <br>

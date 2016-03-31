@@ -15,6 +15,6 @@
 //= require jquery_ujs
 //= require materialize-sprockets
 //= require turbolinks
-//= require wysihtml
-//= require parser_rules/advanced
+//= require wysihtml-toolbar
+//= require parser_rules/advanced_unwrap
 //= require_tree .
