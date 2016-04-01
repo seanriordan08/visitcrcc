@@ -1,0 +1,52 @@
+<%= render partial: "modals/all" %>
+
+<div class="container life_groups_page">
+  <div class="section">
+    <div class="center-align"><%= image_tag("ministry_logos/mens_ministry_logo.png", class: "ministry-logo") %></div>
+
+    <p>
+      “Then, after doing all those things, I will pour out my Spirit upon all people.
+      Your sons and daughters will prophesy. Your old men will dream dreams, and
+      your young men will see visions.” – Joel 2:28 NLT
+    </p>
+    <br>
+
+    <p>
+      We value the life and growth that happens when men commit to investing in
+      honest friendship with other men. In an effort to become men who live and love
+      like Jesus, we are looking for other like-minded men to join our Men’s Ministry
+      Team to reach our brothers in the name of Christ. Current areas that are open
+      for others to serve in this ministry include teachers, mentors, and deacons.
+      Men who serve in a teaching role are called upon to help lead instructional time
+      at men’s ministry specific events. They additionally may be called upon to help
+      facilitate in other teaching settings for various ministries of CRCC.
+    </p>
+    <br>
+
+    <p>
+      Men who serve in a mentor role are called upon to invest in the life of another
+      man in the ministry who is younger in the faith (though not always younger in
+      age). These mentors are called upon to help teach and model for other men
+      what it means to be a follower of Jesus.
+    </p>
+    <br>
+
+    <p>
+      Men who serve in the role of a Deacon are called upon to facilitate the work of
+      the church. Duties can consist of the following: set-up/tear-down for events and
+      Sunday Services; connecting with new members and families who attend CRCC;
+      supporting the work of the other ministries of the church such as Children’s and
+      Youth activities; learning the roles and responsibilities of being an elder at
+      CRCC.
+    </p>
+    <br>
+
+    <p>
+      If you are interested in learning more about our Men’s Ministry and serving on
+      our Men’s Ministry Team, contact Pastor Josh here
+      <%= mail_to @lead_pastor.email, @lead_pastor.full_name, subject: "Serving in Men's Ministry" %>
+    </p>
+    <br>
+
+  </div>
+</div>
