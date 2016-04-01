@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       get :worship_arts
       get :worship_arts_serve
       get :missions
+      get :missions_serve
     end
   end
 
