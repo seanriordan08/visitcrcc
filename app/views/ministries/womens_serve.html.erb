@@ -1,0 +1,51 @@
+<%= render partial: "modals/all" %>
+
+<div class="container life_groups_page">
+  <div class="section">
+    <div class="center-align"><%= image_tag("ministry_logos/womens_ministry_logo.png", class: "ministry-logo") %></div>
+
+    <p>
+      “She is energetic and strong, a hard worker. She makes sure her dealings are
+      profitable; her lamp burns late into the night. Her hands are busy spinning
+      thread, her fingers twisting fiber.  She extends a helping hand to the poor and
+      opens her arms to the needy.” – Proverbs 31:17-20 NLT
+    </p><br>
+
+    <p>
+      We value true friendship among the women of CRCC and encourage women to
+      be genuine and vulnerable as they participate in our women’s ministry. In an
+      effort to become women who live and love like Jesus, we are looking for other
+      like-minded women to join our Women’s Ministry Team to reach our sisters in
+      the name of Christ. Current areas that are open for others to serve in this
+      ministry include the Women’s Leadership Team, teachers and mentors.
+    </p>
+    <br>
+
+    <p>
+      Women who serve on the Women’s Leadership Team are committed to the
+      overall vision of CRCC, as well as the specific vision of our women’s ministry. As
+      a part of the Women’s Leadership Team, these women commit to regularly
+      scheduled meetings in order to plan, coordinate and serve at all women’s
+      ministry events and bible studies.
+    </p>
+    <br>
+
+    <p>
+      Women who serve in a teaching role are called upon to help lead instructional
+      time at women’s ministry specific events.
+      Women who serve in a mentor role are called upon to invest in the life of
+      another woman in the ministry who is younger in the faith (though not always
+      younger in age). These mentors are called upon to help teach and model for
+      other women what it means to be a follower of Jesus.
+    </p>
+    <br>
+
+    <p>
+      If you are interested in learning more about our Women’s Ministry and serving
+      on our Women’s Ministry Team, contact Autumn Epstein here
+      <%= mail_to @womens_director.email, @womens_director.full_name, subject: "Serving in Women's Ministry" %>
+    </p>
+    <br>
+
+  </div>
+</div>
