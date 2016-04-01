@@ -30,7 +30,7 @@ class MinistriesController < ApplicationController
   end
 
   def worship_arts_serve
-    @worship_pastor = User.where(role_description: "Worship Pastor").first
+    @lead_pastor = User.where(role_description: "Lead Pastor").first
   end
 
   def missions

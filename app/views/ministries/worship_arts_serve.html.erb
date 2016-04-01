@@ -10,9 +10,8 @@
     <p>
       We have a variety of teams that make up our Worship Arts Ministry. Take a
       look at a few of the opportunities to serve in the areas listed below, and contact
-      us here (will eventually insert link for our worship pastor – Joe – but for now
-      you can put my name again josh.epstein@visitcrcc.org) for more information
-      about getting involved.
+      us here <%= mail_to @lead_pastor.email, @lead_pastor.full_name, subject: "Serving in Worship Ministry" %>
+      for more information about getting involved.
     </p>
     <br>
 
