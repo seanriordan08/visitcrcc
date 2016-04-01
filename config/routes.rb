@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       get :womens
       get :youth
       get :childrens
+      get :childrens_serve
       get :worship_arts
       get :missions
     end
