@@ -7,6 +7,7 @@ class MinistriesController < ApplicationController
 
   def mens
     @lead_pastor = User.where(role_description: "Lead Pastor").first
+    @html_content = WelcomeContent.where(page_name: 'mens').first.html_content
   end
 
   def mens_serve

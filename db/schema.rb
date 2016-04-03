@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327032436) do
+ActiveRecord::Schema.define(version: 20160403024344) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -69,5 +69,10 @@ ActiveRecord::Schema.define(version: 20160327032436) do
 
   add_index "users_events", ["event_id"], name: "index_users_events_on_event_id", using: :btree
   add_index "users_events", ["user_id"], name: "index_users_events_on_user_id", using: :btree
+
+  create_table "welcome_contents", force: :cascade do |t|
+    t.string "page_name",    limit: 255
+    t.text   "html_content", limit: 65535
+  end
 
 end
