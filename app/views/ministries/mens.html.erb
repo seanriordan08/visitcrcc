@@ -8,14 +8,14 @@
       <div id="wysihtml-toolbar" style="display: none;">
         <%= render partial: "shared/wysihtml_toolbar" %>
       </div>
+      <br>
     <% end %>
 
-    <!--insert ajax form here-->
-    <!--<textarea id="wysihtml-textarea" placeholder="Enter your text ..." autofocus></textarea>-->
     <div id="wysihtml-textarea" data-placeholder="Enter your text ..." style="outline:none">
       <%= raw(@html_content) %>
     </div>
 
+    <div style="width: 100px; height: 36px"><a class="waves-effect waves-light btn lefted">Save</a></div>
   </div>
 </div>
 
