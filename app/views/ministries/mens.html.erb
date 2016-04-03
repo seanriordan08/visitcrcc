@@ -4,25 +4,7 @@
   <div class="section">
     <div class="center-align"><%= image_tag("ministry_logos/mens_ministry_logo.png", class: "ministry-logo") %></div>
 
-    <% if current_user && current_user.admin? %>
-      <div id="wysihtml-toolbar" style="display: none;">
-        <%= render partial: "shared/wysihtml_toolbar" %>
-      </div>
-      <br>
-    <% end %>
+    <%= render partial: "shared/html_content" %>
 
-    <div id="wysihtml-textarea" data-placeholder="Enter your text ..." style="outline:none">
-      <%= raw(@html_content) %>
-    </div>
-
-    <div style="width: 100px; height: 36px"><a class="waves-effect waves-light btn lefted">Save</a></div>
   </div>
 </div>
-
-<script type="text/javascript">
-  var editor = new wysihtml5.Editor("wysihtml-textarea", { // id of textarea element
-    toolbar:      "wysihtml-toolbar", // id of toolbar element
-    parserRules:  wysihtml5ParserRules, // defined in parser rules set
-    stylesheets: ["<%= j( asset_path("application.css") ) %>"]
-  });
-</script>

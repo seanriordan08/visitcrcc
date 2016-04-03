@@ -54,4 +54,14 @@ class MinistriesController < ApplicationController
     # @youth_pastor = User.where(role_description: "Youth Pastor").first
   end
 
+  def save_html_content
+    welcome_content = WelcomeContent.where(page_name: 'mens').first
+    welcome_content.update(html_content: params[:html_content])
+
+    respond_to do |format|
+      # flash[:error] = "Unable to save changes :(" unless welcome_content
+      format.js { render "ministry_page" }
+    end
+  end
+
 end

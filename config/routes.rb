@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       get :worship_arts_serve
       get :missions
       get :missions_serve
+      put :save_html_content
     end
   end
 

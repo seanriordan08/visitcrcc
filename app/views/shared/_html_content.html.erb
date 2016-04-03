@@ -1,0 +1,41 @@
+<% if current_user && current_user.admin? %>
+  <div id="wysihtml-toolbar" style="display: none;">
+    <%= render partial: "shared/wysihtml_toolbar" %>
+  </div>
+  <br>
+<% end %>
+
+<div id="wysihtml-textarea" data-placeholder="Enter your text ..." style="outline:none">
+  <br>
+  <%= raw(@html_content) %>
+</div>
+
+<% if current_user && current_user.admin? %>
+  <div id="html_content_save" style="width: 100px; height: 36px"><a class="waves-effect waves-light btn lefted">Save</a></div>
+<% end %>
+
+<script type="text/javascript">
+  var editor = new wysihtml5.Editor("wysihtml-textarea", { // id of textarea element
+    toolbar:      "wysihtml-toolbar", // id of toolbar element
+    parserRules:  wysihtml5ParserRules, // defined in parser rules set
+    stylesheets: ["<%= j( asset_path("application.css") ) %>"]
+  });
+
+  $('#html_content_save').on('click', function(){
+    var html_content = $('#wysihtml-textarea').html();
+
+    $.ajax({
+      url: "<%= j(save_html_content_ministries_path) %>",
+      method: 'PUT',
+      data: {html_content: html_content},
+      dataType: 'script',
+      success: function(){
+        Materialize.toast('Saved!', 2000);
+      },
+      error: function(){
+        Materialize.toast('Unable to Save :(', 4000);
+      }
+    })
+  })
+
+</script>
