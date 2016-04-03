@@ -9,9 +9,11 @@
       <%= render partial: "shared/wysihtml_toolbar" %>
     </div>
 
-    <form>
-      <textarea id="wysihtml-textarea" placeholder="Enter your text ..." autofocus></textarea>
-    </form>
+    <!--insert ajax form here-->
+    <!--<textarea id="wysihtml-textarea" placeholder="Enter your text ..." autofocus></textarea>-->
+    <div id="wysihtml-textarea" data-placeholder="Enter your text ..." style="outline:none">
+      <%= @page_content %>
+    </div>
 
 
     <p>
@@ -23,7 +25,7 @@
       Proverbs 24:5-6 (NLT) – “The wise are mightier than the strong, and those
       with knowledge grow stronger and stronger. So don’t go to war without wise
       guidance; victory depends on having many advisers.”
-    </p><br>fdsa
+    </p><br>
 
     <p>
       <b>When We Meet:</b>

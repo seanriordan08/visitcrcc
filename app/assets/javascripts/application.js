@@ -15,6 +15,6 @@
 //= require jquery_ujs
 //= require materialize-sprockets
 //= require turbolinks
-//= require wysihtml/lib/wysihtml-toolbar.min.js
+//= require wysihtml/lib/wysihtml-toolbar.js
 //= require wysihtml/parser_rules/advanced_and_extended.js
 //= require_tree .
