@@ -30,11 +30,12 @@
 
   $('#html_content_save').on('click', function(){
     var html_content = $('#wysihtml-textarea').html();
+    var page_name = "<%= j(action_name) %>";
 
     $.ajax({
       url: "<%= j(save_html_content_ministries_path) %>",
       method: 'PUT',
-      data: {html_content: html_content},
+      data: { page_name: page_name, html_content: html_content },
       dataType: 'script',
       success: function(){
         Materialize.toast('Saved!', 2000);

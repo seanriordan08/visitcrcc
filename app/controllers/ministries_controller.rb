@@ -13,7 +13,7 @@ class MinistriesController < ApplicationController
 
   def mens_serve
     @lead_pastor = User.where(role_description: "Lead Pastor").first
-    @html_content = WelcomeContent.where(page_name: 'life_groups').first.html_content
+    @html_content = WelcomeContent.where(page_name: 'mens_serve').first.html_content
   end
 
   def womens
@@ -67,7 +67,7 @@ class MinistriesController < ApplicationController
   end
 
   def save_html_content
-    welcome_content = WelcomeContent.where(page_name: 'mens').first
+    welcome_content = WelcomeContent.where(page_name: params[:page_name]).first
     welcome_content.update(html_content: params[:html_content])
 
     respond_to do |format|
