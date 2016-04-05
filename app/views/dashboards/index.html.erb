@@ -43,7 +43,9 @@
               <%= user.email %>
             </p>
             <div class="secondary-content">
-              <%= link_to '<i class="material-icons settings">settings</i>'.html_safe, edit_user_url(user.id), remote: true %>
+              <% if can? :manage, :all %>
+                <%= link_to '<i class="material-icons settings">settings</i>'.html_safe, edit_user_url(user.id), remote: true %>
+              <% end %>
               <% if user.staff %>
                 <div style="padding-top: 30px">STAFF</div>
               <% end %>

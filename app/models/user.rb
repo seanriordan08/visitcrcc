@@ -31,8 +31,10 @@ class User < ActiveRecord::Base
     end
   end
 
-  def admin?
-    self.role == 'admin'
+  def role?(role)
+    raise 'Arguement must be a symbol!' unless role.is_a? Symbol
+
+    self.role.to_sym == role.to_sym
   end
 
   private

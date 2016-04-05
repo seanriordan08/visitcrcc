@@ -1,24 +1,21 @@
-<% if current_user && current_user.admin? %>
+<% if can? :save_html_content, WelcomeContent %>
   <div id="wysihtml-toolbar" style="display: none;">
     <%= render partial: "shared/wysihtml_toolbar" %>
   </div>
   <br>
-<% end %>
 
-<% if current_user && current_user.admin? %>
   <div id="wysihtml-textarea" data-placeholder="Enter your text ..." style="outline:none">
     <br>
     <%= raw(@html_content) %>
   </div>
+
+  <div id="html_content_save" style="width: 100px; height: 36px"><a class="waves-effect waves-light btn lefted">Save</a></div>
+
 <% else %>
   <div style="outline:none">
     <br>
     <%= raw(@html_content) %>
   </div>
-<% end %>
-
-<% if current_user && current_user.admin? %>
-  <div id="html_content_save" style="width: 100px; height: 36px"><a class="waves-effect waves-light btn lefted">Save</a></div>
 <% end %>
 
 <script type="text/javascript">
