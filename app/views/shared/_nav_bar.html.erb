@@ -49,7 +49,7 @@
           <li>
             <%= link_to "#{render partial: "modals/avatar_img", locals: { src: get_avatar(current_user), size: '40', avatar_background: current_user.avatar.background_color}}".html_safe, edit_user_path(current_user.id), style:"height: 64px;color: #353535", remote: true %>
           </li>
-          <% if current_user && (current_user.role?(:staff) || current_user.role?(:admin))%>
+          <% if current_user && (current_user.staff || current_user.role?(:admin))%>
             <li>
               <%= link_to '<i class="large material-icons" style="color: #353535">dashboard</i>'.html_safe, dashboards_path, style: "color: #353535"%>
             </li>
