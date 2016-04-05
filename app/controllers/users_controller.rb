@@ -47,6 +47,8 @@ class UsersController < ApplicationController
 
     user.update_attributes(user_params)
 
+    sync_staff_role(user)
+
     respond_to do |format|
       format.js
     end
@@ -65,7 +67,16 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :gender, :send_emails, :role_description, :staff, avatar_attributes: [:id, :hair, :eyes, :skin] )
+    params.require(:user).permit(:first_name, :last_name, :gender, :send_emails, :role_description, :staff, avatar_attributes: [:id, :face, :hair, :eyes, :skin] )
+  end
+
+  def sync_staff_role(user)
+    return if ( user.role?(:admin) || user.role?(:staff) )
+
+    puts "STAFF!!!!!!!!!!!"
+    if params[:user][:staff] == "1"
+      user.update(role: "staff")
+    end
   end
 
 end
