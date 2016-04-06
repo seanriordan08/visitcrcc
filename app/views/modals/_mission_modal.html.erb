@@ -103,3 +103,10 @@
     <a href="#" class="modal-action modal-close waves-effect btn-flat ">Close</a>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(".collapsible-header").click(function(){
+    alert(this.attr("class"));
+    $(this).animate({scrollTop: $(this).prop("scrollHeight")}, 1000);
+  });
+</script>

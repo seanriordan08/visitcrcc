@@ -68,7 +68,7 @@ class MinistriesController < ApplicationController
 
   def save_html_content
     welcome_content = WelcomeContent.where(page_name: params[:page_name]).first
-    welcome_content.save_html_content(params[:html_content])
+    welcome_content.save_html_content(current_user, params[:html_content])
 
     respond_to do |format|
       format.js { render "ministry_page" }
