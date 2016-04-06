@@ -1614,6 +1614,16 @@
   margin-top: 1px;
 }
 
+#header_5 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 92px;
+  top: 14px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .edy-itempicker .edy-itempicker-item .edy-itempicker-right-btn:before {
   color: #fff;
   content: attr(title);
@@ -1761,7 +1771,6 @@
 }
 
 #editor,#source {
-  max-width: 640px;
   margin: 50px auto 0;
 }
 

@@ -73,7 +73,6 @@ class UsersController < ApplicationController
   def sync_staff_role(user)
     return if ( user.role?(:admin) || user.role?(:staff) )
 
-    puts "STAFF!!!!!!!!!!!"
     if params[:user][:staff] == "1"
       user.update(role: "staff")
     end
