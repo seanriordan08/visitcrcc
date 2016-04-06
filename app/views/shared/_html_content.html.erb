@@ -4,12 +4,16 @@
     <%= render partial: "shared/wysihtml_toolbar" %>
   </div>
   <div id="wysihtml-textarea" style="outline:none">
-    <%= raw(@html_content) %>
+    <%= raw(@content.html_content) %>
   </div>
-  <div id="html_content_save" style="width: 100px; height: 36px"><a class="waves-effect waves-light btn lefted">Save</a></div>
+  <div id="html_content_save" style="display: inline-block; width: 100px; height: 36px;"><a class="waves-effect waves-light btn lefted">Save</a></div>
+  <div style="position: relative; display: inline-block; top: -5px; left: 20px">
+    <div class="whisper">Last Modified:</div>
+    <div class="whisper" style="clear: both" ><%= @content.last_modified_by %> | <%= Time.zone.parse("#{@content.last_modified_date}").strftime("%b %e, %Y %l:%M:%S %p") %></div>
+  </div>
 <% else %>
   <div style="outline:none">
-    <%= raw(@html_content) %>
+    <%= raw(@content.html_content) %>
   </div>
 <% end %>
 
