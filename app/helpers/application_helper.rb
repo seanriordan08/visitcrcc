@@ -33,4 +33,16 @@ module ApplicationHelper
       ]
   end
 
+  def content_modified_stamp(content)
+    return "Nobody" if content.last_modified_by.blank?
+
+    content.last_modified_by
+  end
+
+  def content_time_stamp(content)
+    return "Ever" if content.last_modified_date.blank?
+
+    Time.zone.parse("#{content.last_modified_date}").strftime("%b %e, %Y %l:%M:%S %p")
+  end
+
 end
