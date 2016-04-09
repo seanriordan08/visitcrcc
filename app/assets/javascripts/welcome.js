@@ -9,7 +9,7 @@ $(document).ready(function(){
   });
 
   $('.collapsible-header').on("click", function(){
-    position = $(this).delay(1000).position();
+    position = $(this).position();
     $('.modal-content').animate({
         scrollTop: position.top
       },
