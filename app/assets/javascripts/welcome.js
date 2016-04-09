@@ -7,9 +7,10 @@ $(document).ready(function(){
     opacity: .5
   });
 
-  $('.collapsible-header').one("click", function(){
+  $('.collapsible-header').on("click", function(){
+    position = $(this).delay(1000).position();
     $('.modal-content').animate({
-        scrollTop: $('.modal-content').height()
+        scrollTop: position.top
       },
       300,
       "easeOutQuint"

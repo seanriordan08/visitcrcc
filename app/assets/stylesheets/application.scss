@@ -11,13 +11,13 @@
  * file per style scope.
  */
 @import "custom_colors";
+@import "global";
 @import "materialize";
 @import "welcome";
 @import "ministries";
 @import "dashboards";
 @import "user";
 @import "wysihtml_toolbar";
-@import "global";
 
 .indent {
   padding-left: 20px;
