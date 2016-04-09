@@ -15,13 +15,14 @@ Rails.application.routes.draw do
       get :staff
       get :declaration_of_faith
       get :sermons
-      get :events
       get :dashboard
       get :serve
       get :new_here
       get :get_involved
     end
   end
+
+  resources :events
 
   resources :ministries do
     collection do

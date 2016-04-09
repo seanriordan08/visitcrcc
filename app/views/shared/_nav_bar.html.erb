@@ -39,7 +39,7 @@
       <%= link_to image_tag("CRCC_Orange_Pinstripe.svg", size: "200x55", class: "brand-logo"), root_path, id: "logo-container" %>
       <ul class="right hide-on-med-and-down">
         <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_info">About<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><%= link_to "Events", events_welcome_index_path, style: "color: #353535"%></li>
+        <li><%= link_to "Events", events_path, style: "color: #353535"%></li>
         <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_ministries">Ministries<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a class="dropdown-button" href="#" style="color: #353535" data-activates="nav_dropdown_give">Give<i class="material-icons right">arrow_drop_down</i></a></li>
         <% if user_signed_in? %>
@@ -80,7 +80,7 @@
           </ul>
         </li>
         <li class="divider"></li>
-        <li><%= link_to "Events", events_welcome_index_path, style: "color: #353535"%></li>
+        <li><%= link_to "Events", events_path, style: "color: #353535"%></li>
         <li class="divider"></li>
         <li class="swivel_down">
           <ul class="collapsible" data-collapsible="accordion">
