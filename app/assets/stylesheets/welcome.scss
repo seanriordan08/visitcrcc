@@ -159,30 +159,30 @@
     @media screen and (max-width: 600px){text-align: center;}
     @media screen and (min-width: 600px){text-align: left;}
   }
-  .social {
-    position: relative;
-    display: inline-block;
-    bottom: 25%;
-    width: 50px;
-    height: 50px;
-    padding: 0 10px;
-    opacity: .7;
-    cursor: pointer;
-    transition: .2s;
-    &:hover {
-      background-color: rgba(0,0,0,.5);
-      transform: translate(0,-4px);
-      transition: .3s;
-    }
+}
+.social {
+  position: relative;
+  display: inline-block;
+  bottom: 25%;
+  width: 50px;
+  height: 50px;
+  padding: 0 10px;
+  opacity: .7;
+  cursor: pointer;
+  transition: .2s;
+  &:hover {
+    background-color: rgba(0,0,0,.5);
+    transform: translate(0,-4px);
+    transition: .3s;
   }
-  .social_square{
-    @extend .social;
-    border-radius: 2px;
-  }
-  .social_circle{
-    @extend .social;
-    border-radius: 25px;
-  }
+}
+.social_square{
+  @extend .social;
+  border-radius: 2px;
+}
+.social_circle{
+  @extend .social;
+  border-radius: 25px;
 }
 
 .clearbox {
