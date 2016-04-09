@@ -4,18 +4,18 @@
     <%= render partial: "shared/wysihtml_toolbar" %>
   </div>
   <div id="wysihtml-textarea" style="outline:none">
-    <%= raw(@content.html_content) %>
+    <%= raw(content.html_content) %>
   </div>
   <div id="html_content_save" style="display: inline-block; width: 100px; height: 36px;"><a class="waves-effect waves-light btn lefted">Save</a></div>
   <div style="position: relative; display: inline-block; top: -5px; left: 20px">
     <div class="whisper">Last Modified:</div>
     <div class="whisper" style="clear: both" >
-      <%= content_modified_stamp(@content) %> | <%= content_time_stamp(@content) %>
+      <%= content_modified_stamp(content) %> | <%= content_time_stamp(content) %>
     </div>
   </div>
 <% else %>
   <div style="outline:none">
-    <%= raw(@content.html_content) %>
+    <%= raw(content.html_content) %>
   </div>
 <% end %>
 

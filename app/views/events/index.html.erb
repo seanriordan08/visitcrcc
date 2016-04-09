@@ -1,0 +1,20 @@
+<%= render partial: "modals/all" %>
+
+<div class="container">
+  <div class="section">
+    <h3>Events</h3>
+    <br>
+
+    <% @contents.each do |content| %>
+      <div class="row">
+        <div class="col s12">
+          <%= image_tag content.image, class: "static_event" %>
+          <div class="static_event_description">
+            <%= content.description %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

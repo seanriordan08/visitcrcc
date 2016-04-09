@@ -16,6 +16,14 @@ class WelcomeController < ApplicationController
   def declaration_of_faith
   end
 
+  def events
+    @contents = Event.all
+
+    respond_to do |format|
+      format.html { render "events/index" }
+    end
+  end
+
   def sermons
   end
 

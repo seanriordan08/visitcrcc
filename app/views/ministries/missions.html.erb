@@ -4,7 +4,7 @@
   <div class="section">
     <div class="center-align"><%= image_tag("ministry_logos/missions_ministry_logo.png", class: "ministry-logo") %></div>
 
-    <%= render partial: "shared/html_content" %>
+    <%= render partial: "shared/html_content", locals: { content: @contents } %>
 
   </div>
 </div>
