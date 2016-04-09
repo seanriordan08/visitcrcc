@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $('.parallax').parallax();
   $('.button-collapse').sideNav();
   $('.dropdown-button').dropdown({hover: true});
@@ -50,6 +51,10 @@ $(document).ready(function(){
           error.insertAfter(element);
         }
       }
-    });
+  });
+
+  $(".swivel_down").on("click", function(){
+    $(this).find(".material-icons").toggleClass("arrow_down");
+  })
 
 });
