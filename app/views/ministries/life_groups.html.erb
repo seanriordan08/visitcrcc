@@ -3,6 +3,7 @@
 <div class="container life_groups_page">
   <div class="section">
     <div class="center-align"><%= image_tag("ministry_logos/life_group_ministry_logo.png", class: "ministry-logo") %></div>
+    <%= render partial: "shared/people_finder" %>
 
     <%= render partial: "shared/html_content", locals: { content: @contents } %>
 
