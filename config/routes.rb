@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :life_groups
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
 
   resources :users do
