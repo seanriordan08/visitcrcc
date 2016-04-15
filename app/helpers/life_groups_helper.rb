@@ -1,0 +1,2 @@
+module LifeGroupsHelper
+end

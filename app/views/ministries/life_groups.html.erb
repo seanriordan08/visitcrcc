@@ -28,16 +28,25 @@
 
 <script type="text/javascript">
 
-  $('#life_group_groups').on('click', function(e){
-    e.preventDefault();
-    $('#life_group_about_wrapper').fadeOut(100, "linear");
-    $('#life_group_groups_wrapper').fadeIn(200, "linear");
-  });
-
   $('#life_group_about').on('click', function(e){
     e.preventDefault();
     $('#life_group_about_wrapper').fadeIn(200, "linear");
     $('#life_group_groups_wrapper').fadeOut(100, "linear");
   });
+
+  $('#life_group_groups').on('click', function(e){
+    e.preventDefault();
+    $('#life_group_about_wrapper').fadeOut(100, "linear");
+    $.ajax({
+      method: 'GET',
+      url: "<%= j(life_groups_path) %>",
+      data: {},
+      dataType: "script",
+      complete: function(){
+        $('#life_group_groups_wrapper').fadeIn(200, "linear");
+      }
+    });
+  });
+
 
 </script>
