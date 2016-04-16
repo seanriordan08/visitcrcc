@@ -1,1 +1,17 @@
-$('#life_group_groups_wrapper').html("<div>This was passed from js!</div>");
+$('#life_group_groups_wrapper').prepend("\
+  <% if life_groups.present? %>\
+    <ul class='collection'>\
+      <% life_groups.each do |l| %>\
+        <li class='collection-item avatar'>\
+        <span class='title'>Title</span>\
+          <p>First Line <br>\
+          Second Line\
+          </p>\
+          <a href='#!' class='secondary-content'><i class='material-icons'>grade</i></a>\
+        </li>\
+      <% end %>\
+    </ul>\
+  <% end %>\
+");
+
+$('#add_life_group_fab').css({visibility: "visible"});

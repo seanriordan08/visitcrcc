@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415051037) do
+ActiveRecord::Schema.define(version: 20160416195155) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -37,16 +37,14 @@ ActiveRecord::Schema.define(version: 20160415051037) do
   end
 
   create_table "life_groups", force: :cascade do |t|
-    t.string   "name",                   limit: 255
-    t.boolean  "for_singles"
-    t.boolean  "for_singles_with_kids"
-    t.boolean  "for_marrieds"
-    t.boolean  "for_marrieds_with_kids"
+    t.string   "name",        limit: 255
     t.date     "date"
     t.time     "start_time"
     t.time     "end_time"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "demographic", limit: 255
+    t.string   "location",    limit: 255
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160415051037) do
     t.string   "last_name",              limit: 255, default: "",      null: false
     t.string   "role_description",       limit: 255, default: "guest"
     t.boolean  "staff",                              default: false
+    t.integer  "life_group_id",          limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,6 +1,5 @@
 <%= render partial: "modals/all" %>
 
-
 <div class="container life_groups_page">
   <div class="section">
     <div class="center-align"><%= image_tag("ministry_logos/life_group_ministry_logo.png", class: "ministry-logo") %></div>
@@ -8,7 +7,7 @@
 
     <div class="row">
       <div class="col s12">
-        <ul class="tabs" style="margin-top: 10px; background-color: rgba(250,250,250,.5)">
+        <ul class="tabs" style="margin-top: 10px; background-color: rgba(250,250,250,.5); overflow: hidden">
           <li class="tab col s3" id="life_group_about"><a class="active" href="#">About</a></li>
           <li class="tab col s3" id="life_group_groups"><a href="#">Groups</a></li>
         </ul>
@@ -20,7 +19,13 @@
     </div>
 
     <div id="life_group_groups_wrapper">
-      Groups!
+      <div class='row'>
+        <% if current_user && current_user.life_group.nil? %>
+          <a href='#new_life_group' id='add_life_group_fab' class='modal-trigger secondary-content btn-floating btn-large waves-effect waves-light red' style="visibility: hidden">
+            <i class='material-icons'>add</i>
+          </a>
+        <% end %>
+      </div>
     </div>
 
   </div>
