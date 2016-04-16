@@ -1,9 +1,72 @@
 <div id="new_life_group" class="modal modal-fixed-footer">
   <div class="modal-content">
     <div class="row">
-
-      New Life Group
+      <h3>New Life Group</h3>
       <br>
+
+      <%= form_for(LifeGroup.new, url: "/life_groups", html: { method: :post }, remote: true) do |f| %>
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="input-field col s6">
+              <%= f.text_field :name, placeholder: "#{current_user.last_name} Life Group" %>
+              <%= f.label :name %>
+            </div>
+            <div class="input-field col s6 valign">
+              <%= f.text_field :demographic, placeholder: "Singles, Marrieds, Marrieds w/ Kids, etc..." %>
+              <%= f.label :demographic %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="input-field col s6 valign">
+              <%= f.text_field :date, placeholder: "Tuesdays" %>
+              <%= f.label :date %>
+            </div>
+            <div class="input-field col s6 ">
+              <%= f.text_field :location, placeholder: "1234 Nearby Ave. Castle Rock, CO 80104" %>
+              <%= f.label :location %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="input-field col s6">
+              <%= f.text_field :start_time, placeholder: "6:30pm" %>
+              <%= f.label :start_time %>
+            </div>
+            <div class="input-field col s6 valign">
+              <%= f.text_field :end_time, placeholder: "8:30pm" %>
+              <%= f.label :end_time %>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          Preview
+          <br>
+          <div id="life_group_preview">
+            <div class="name"></div>
+            <div class="demographic"></div>
+            <div class="date"></div>
+            <div class="location"></div>
+            <div class="start_time"></div>
+            <div class="end_time"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s4">
+            <%= content_tag :button, type: :submit, id: "update_submit", class: "btn waves-effect waves-light" do %>
+              Submit
+              <i class="material-icons right">send</i>
+            <% end %>
+          </div>
+        </div>
+
+      <% end %>
 
     </div>
   </div>
@@ -12,3 +75,12 @@
     <a href="#" class="modal-action modal-close waves-effect btn-flat ">Cancel</a>
   </div>
 </div>
+
+<script>
+  $('.input-field').on('change', function(){
+    var changed_element = $(this).children(":first");
+    var identifier = changed_element.attr('name').replace("life_group[", "").slice(0,-1);
+    var new_text = changed_element.val();
+
+  })
+</script>
