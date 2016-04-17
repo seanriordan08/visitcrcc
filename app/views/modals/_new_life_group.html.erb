@@ -1,8 +1,7 @@
 <div id="new_life_group" class="modal modal-fixed-footer">
   <div class="modal-content">
     <div class="row">
-      <h3>New Life Group</h3>
-      <br>
+      <h4>New Life Group</h4>
 
       <%= form_for(LifeGroup.new, url: "/life_groups", html: { method: :post }, remote: true) do |f| %>
         <div class="row">
@@ -12,8 +11,8 @@
               <%= f.label :name %>
             </div>
             <div class="input-field col s6 valign">
-              <%= f.text_field :demographic, placeholder: "Singles, Marrieds, Marrieds w/ Kids, etc..." %>
-              <%= f.label :demographic %>
+              <%= f.select(:demographic, ['Light','Medium','Dark'], {}, {style: "display: block", prompt: "Demo"}) %>
+              <%#= f.label :demographic %>
             </div>
           </div>
         </div>
@@ -22,7 +21,7 @@
           <div class="valign-wrapper">
             <div class="input-field col s6 valign">
               <%= f.text_field :date, placeholder: "Tuesdays" %>
-              <%= f.label :date %>
+              <%= f.label :day %>
             </div>
             <div class="input-field col s6 ">
               <%= f.text_field :location, placeholder: "1234 Nearby Ave. Castle Rock, CO 80104" %>
@@ -44,16 +43,17 @@
           </div>
         </div>
 
-        <div>
-          Preview
-          <br>
-          <div id="life_group_preview">
-            <div class="name"></div>
-            <div class="demographic"></div>
-            <div class="date"></div>
-            <div class="location"></div>
-            <div class="start_time"></div>
-            <div class="end_time"></div>
+        <div class="row">
+          <div class="col s12">
+            Preview:
+            <p>
+              <div id="life_group_preview">
+                <div class="name" style="font-weight: bold"></div>
+                <span class="demographic"></span> <span class="date"></span>
+                <div class="location"></div>
+                <span class="start_time"></span> <span id="life_group_hyphen" style="visibility: hidden">-</span> <span class="end_time"></span>
+              </div>
+            </p>
           </div>
         </div>
 
@@ -77,10 +77,17 @@
 </div>
 
 <script>
-  $('.input-field').on('change', function(){
+  $('.input-field').on('keyup', function(){
     var changed_element = $(this).children(":first");
     var identifier = changed_element.attr('name').replace("life_group[", "").slice(0,-1);
     var new_text = changed_element.val();
 
+    $('#life_group_preview' + ' .' + identifier).text(new_text);
+
+    if (identifier == 'start_time' && new_text != ''){
+      $('#life_group_hyphen').css("visibility", "visible")
+    } else if (identifier == 'start_time' && new_text == ''){
+      $('#life_group_hyphen').css("visibility", "hidden")
+    }
   })
 </script>
