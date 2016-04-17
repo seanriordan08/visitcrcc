@@ -11,8 +11,9 @@
               <%= f.label :name %>
             </div>
             <div class="input-field col s6 valign">
-              <%= f.select(:demographic, ['Light','Medium','Dark'], {}, {style: "display: block", prompt: "Demo"}) %>
-              <%#= f.label :demographic %>
+              <% options = [['Choose your demographic'],['Singles',true],['Couples (Not Married)',true],['Marrieds',true],['with Kids',true]] %>
+              <%= f.select(:demographic, options, {disabled: ['Choose your demographic'], selected: ['Choose your demographic']}, {multiple: true}) %>
+              <%= f.label :demographic, 'Demographic' %>
             </div>
           </div>
         </div>
@@ -77,17 +78,36 @@
 </div>
 
 <script>
-  $('.input-field').on('keyup', function(){
-    var changed_element = $(this).children(":first");
-    var identifier = changed_element.attr('name').replace("life_group[", "").slice(0,-1);
-    var new_text = changed_element.val();
+  $('select').material_select();
 
-    $('#life_group_preview' + ' .' + identifier).text(new_text);
+  // Update preview on keypress
+  $('.input-field').on('keyup change', function(){
+    const changed_element = $(this).children(":first");
+    const identifier = changed_element.attr('name').replace("life_group[", "").slice(0,-1);
+    const new_text = changed_element.val();
 
+    updatePreview(identifier, new_text);
+    toggleTimeHyphen(new_text);
+  });
+
+  // Update preview on checkbox select
+  $('.select-wrapper label').on('click', function(){
+    const identifier = 'demographic';
+    const new_text = $(this).closest('span').text();
+    updatePreview(identifier, new_text);
+  });
+
+
+  function updatePreview(identifier, new_text){
+    $('#life_group_preview' + ' .' + identifier).text(new_text); //Update preview
+  }
+
+  function toggleTimeHyphen(new_text){
     if (identifier == 'start_time' && new_text != ''){
       $('#life_group_hyphen').css("visibility", "visible")
     } else if (identifier == 'start_time' && new_text == ''){
       $('#life_group_hyphen').css("visibility", "hidden")
     }
-  })
+  }
+
 </script>
