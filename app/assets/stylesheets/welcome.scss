@@ -1,4 +1,9 @@
 
+@mixin main_slider($image) {
+  background: transparent image-url($image) no-repeat;
+  background-size: 100%;
+}
+
 .service_time_strip {
   display: inline-block;
   width: 100%;
@@ -186,16 +191,25 @@
 }
 
 .event1 {
-  background: transparent image-url('summer_worship.jpg') no-repeat;
-  background-size: 100%;
+  @include main_slider('summer_worship.jpg');
   }
 .event2 {
-  background: transparent image-url('june_community_event.jpg') no-repeat;
-  background-size: 100%;
+  @include main_slider('june_community_event.jpg');
 }
 .event3 {
-  background: transparent image-url('july_community_event.jpg') no-repeat;
-  background-size: 100%;
+  @include main_slider('july_community_event.jpg');
+}
+.event4 {
+  @include main_slider('womens_ministry.jpg');
+}
+.event5 {
+  @include main_slider('sep_11_launch_sunday.jpg');
+}
+.event6 {
+  @include main_slider('mens_ministry.jpg');
+}
+.event7 {
+  @include main_slider('life_groups.jpg');
 }
 
 .clearbox {

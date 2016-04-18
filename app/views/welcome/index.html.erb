@@ -41,6 +41,10 @@
               <div class="slider_content event1"></div>
               <div class="slider_content event2"></div>
               <div class="slider_content event3"></div>
+              <div class="slider_content event4"></div>
+              <div class="slider_content event5"></div>
+              <div class="slider_content event6"></div>
+              <div class="slider_content event7"></div>
             </div>
           </div>
         </div>
@@ -200,9 +204,7 @@
     $('.statement_btn').on("click", function(){
       var id = $(this).attr("href").substring(1);
       var examine_text = ($('#'+id+ " p:first").contents().text());
-
 //      $('#'+id+" .modal-content h4 div.progress").append("<div class='indeterminate' style='color: blue'></div>"); //Begin preloader
-
 //      get_scripture_links(id, examine_text);
     });
 
