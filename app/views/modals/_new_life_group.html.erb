@@ -82,19 +82,32 @@
 
   // Update preview on keypress
   $('.input-field').on('keyup change', function(){
-    const changed_element = $(this).children(":first");
-    const identifier = changed_element.attr('name').replace("life_group[", "").slice(0,-1);
-    const new_text = changed_element.val();
+    var changed_element = $(this).children(":first");
+    if (changed_element.attr('name').indexOf("demographic") >= 0) {
+      // Ignore demographic dropdown
+    } else {
+      var identifier = changed_element.attr('name').replace("life_group[", "").slice(0,-1);
+    }
+    var new_text = changed_element.val();
 
     updatePreview(identifier, new_text);
-    toggleTimeHyphen(new_text);
+    toggleTimeHyphen(identifier, new_text);
   });
 
   // Update preview on checkbox select
-  $('.select-wrapper label').on('click', function(){
-    const identifier = 'demographic';
-    const new_text = $(this).closest('span').text();
-    updatePreview(identifier, new_text);
+  $('.select-wrapper label').on('click change', function(){
+    var identifier = 'demographic';
+    var children = $(this).closest('ul').find('li.active span');
+    var new_text = '';
+    children.each(function(){
+      if ($(this).closest('li').attr("class") != 'disabled') {
+        new_text += $(this).text();
+        updatePreview(identifier, new_text);
+      } else if ($(this).closest('li').attr("class") != 'active'){
+        new_text -= $(this).text();
+      }
+      updatePreview(identifier, new_text)
+    });
   });
 
 
@@ -102,7 +115,7 @@
     $('#life_group_preview' + ' .' + identifier).text(new_text); //Update preview
   }
 
-  function toggleTimeHyphen(new_text){
+  function toggleTimeHyphen(identifier, new_text){
     if (identifier == 'start_time' && new_text != ''){
       $('#life_group_hyphen').css("visibility", "visible")
     } else if (identifier == 'start_time' && new_text == ''){
