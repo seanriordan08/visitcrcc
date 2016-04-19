@@ -54,7 +54,7 @@ $(document).ready(function(){
   });
 
   $(".swivel_down").on("click", function(){
-    $(this).find(".material-icons").toggleClass("arrow_down");
+    $(this).find(".flip-able").toggleClass("arrow_down");
   })
 
 });
