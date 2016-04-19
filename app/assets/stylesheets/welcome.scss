@@ -190,25 +190,25 @@
   border-radius: 25px;
 }
 
-.event1 {
+.event5 {
   @include main_slider('summer_worship.jpg');
   }
-.event2 {
+.event6 {
   @include main_slider('june_community_event.jpg');
 }
-.event3 {
+.event7 {
   @include main_slider('july_community_event.jpg');
 }
 .event4 {
   @include main_slider('womens_ministry.jpg');
 }
-.event5 {
+.event1 {
   @include main_slider('sep_11_launch_sunday.jpg');
 }
-.event6 {
+.event3 {
   @include main_slider('mens_ministry.jpg');
 }
-.event7 {
+.event2 {
   @include main_slider('life_groups.jpg');
 }
 
