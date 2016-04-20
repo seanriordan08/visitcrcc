@@ -97,17 +97,13 @@
   // Update preview on checkbox select
   $('.select-wrapper label').on('click change', function(){
     var identifier = 'demographic';
-    var children = $(this).closest('ul').find('li.active span');
-    var new_text = '';
-    children.each(function(){
-      if ($(this).closest('li').attr("class") != 'disabled') {
-        new_text += $(this).text();
-        updatePreview(identifier, new_text);
-      } else if ($(this).closest('li').attr("class") != 'active'){
-        new_text -= $(this).text();
-      }
-      updatePreview(identifier, new_text)
-    });
+    var child = $(this).closest('span');
+    var new_text = (new_text === undefined) ? '' : new_text;
+    if (child.text() != ''){
+      new_text += child.text();
+    }
+
+    updatePreview(identifier, new_text)
   });
 
 
