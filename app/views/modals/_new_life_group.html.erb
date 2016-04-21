@@ -79,7 +79,7 @@
 
 <script>
   var new_text;
-  var new_html;
+  var new_html = [];
 
   $('select').material_select();
 
@@ -99,10 +99,9 @@
 
   // Update preview on checkbox select
   $('.select-wrapper label').on('click change', function(){
-    var identifier = 'demographic';
     var child = $(this).closest('span');
     var child_text = child.text();
-    new_html = (new_html === undefined) ? '' : new_html;
+//    new_html = (new_html === undefined) ? '' : new_html;
 
     if (child_text == ''){ return; }
 
@@ -111,21 +110,20 @@
     child_text_id = child_text_id.replace('(', '');
     child_text_id = child_text_id.replace(')', '');
 
-    if (child.find('#'+ child_text_id)){ // Delete
-
+    if ($('span.demographic').find('#'+ child_text_id).length == 1){ // Delete
+      $('#'+ child_text_id).remove();
+      return;
     }
-    new_html = "<span id="+ child_text_id +">"+ child_text +"</span>";
+    new_html.push("<span id="+ child_text_id +">"+ child_text +"</span>");
 
-    updateDemographicPreview(identifier, new_html)
+    new_html.each();
+
+    $('span.demographic').append(new_html);
   });
 
 
   function updatePreview(identifier, new_text){
     $('#life_group_preview' + ' .' + identifier).text(new_text); //Update preview
-  }
-
-  function updateDemographicPreview(identifier, new_html){
-    $('#life_group_preview' + ' .' + identifier).before(new_html); //Update preview
   }
 
   function toggleTimeHyphen(identifier, new_text){
