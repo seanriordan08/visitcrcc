@@ -11,7 +11,7 @@
               <%= f.label :name %>
             </div>
             <div class="input-field col s6 valign">
-              <% options = [['Choose your demographic'],['Singles',true],['Couples (Not Married)',true],['Marrieds',true],['with Kids',true]] %>
+              <% options = [['Choose your demographic'],['Singles',true],['Couples (Unmarried)',true], ['Marrieds',true],['with Kids',true]] %>
               <%= f.select(:demographic, options, {disabled: ['Choose your demographic'], selected: ['Choose your demographic']}, {multiple: true}) %>
               <%= f.label :demographic, 'Demographic' %>
             </div>
@@ -78,6 +78,9 @@
 </div>
 
 <script>
+  var new_text;
+  var new_html;
+
   $('select').material_select();
 
   // Update preview on keypress
@@ -98,17 +101,31 @@
   $('.select-wrapper label').on('click change', function(){
     var identifier = 'demographic';
     var child = $(this).closest('span');
-    var new_text = (new_text === undefined) ? '' : new_text;
-    if (child.text() != ''){
-      new_text += child.text();
-    }
+    var child_text = child.text();
+    new_html = (new_html === undefined) ? '' : new_html;
 
-    updatePreview(identifier, new_text)
+    if (child_text == ''){ return; }
+
+    child_text_id = child_text;
+    child_text_id = child_text_id.replace(' ', '_');
+    child_text_id = child_text_id.replace('(', '');
+    child_text_id = child_text_id.replace(')', '');
+
+    if (child.find('#'+ child_text_id)){ // Delete
+
+    }
+    new_html = "<span id="+ child_text_id +">"+ child_text +"</span>";
+
+    updateDemographicPreview(identifier, new_html)
   });
 
 
   function updatePreview(identifier, new_text){
     $('#life_group_preview' + ' .' + identifier).text(new_text); //Update preview
+  }
+
+  function updateDemographicPreview(identifier, new_html){
+    $('#life_group_preview' + ' .' + identifier).before(new_html); //Update preview
   }
 
   function toggleTimeHyphen(identifier, new_text){
