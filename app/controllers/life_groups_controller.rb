@@ -12,7 +12,6 @@ class LifeGroupsController < ApplicationController
   end
 
   def create
-    binding.pry
     @life_group = LifeGroup.create(life_group_params)
 
     if @life_group.save
