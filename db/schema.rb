@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416195155) do
+ActiveRecord::Schema.define(version: 20160422030504) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -36,9 +36,20 @@ ActiveRecord::Schema.define(version: 20160416195155) do
     t.datetime "last_modified_date"
   end
 
+  create_table "life_group_demographics", force: :cascade do |t|
+    t.boolean  "all_welcome"
+    t.boolean  "singles"
+    t.boolean  "unmarried_couples"
+    t.boolean  "married_couples"
+    t.boolean  "with_kids"
+    t.integer  "life_group_id",     limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
   create_table "life_groups", force: :cascade do |t|
     t.string   "name",        limit: 255
-    t.date     "date"
+    t.string   "day",         limit: 255
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at",              null: false

@@ -12,12 +12,22 @@ class LifeGroupsController < ApplicationController
   end
 
   def create
+    binding.pry
+    @life_group = LifeGroup.create(life_group_params)
+
+    if @life_group.save
+      flash[:notice] = "Saved!"
+      redirect_to { life_groups_path }
+    else
+      flash[:notice] = "Failed!"
+      redirect_to { life_groups_path }
+    end
   end
 
   private
 
   def life_group_params
-    params.require(:life_group).permit(:name, :date, :start_time, :end_time, :demographic, :location)
+    params.require(:life_group).permit(:name, :day, :start_time, :end_time, :location, demographic: ['', 'all_welcome'])
   end
 
 end

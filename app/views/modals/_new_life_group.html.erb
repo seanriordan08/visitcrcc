@@ -11,7 +11,7 @@
               <%= f.label :name %>
             </div>
             <div class="input-field col s6 valign">
-              <% options = [['Choose demographic'],['All Welcome'],['Singles',true],['Couples (Unmarried)',true], ['Married Couples',true],['with Kids',true]] %>
+              <% options = [['Choose demographic'],['All Welcome','all_welcome'],['Singles','singles'],['Couples (Unmarried)','unmarried_couples'], ['Married Couples','married_couples'],['with Kids','with_kids']] %>
               <%= f.select(:demographic, options, {disabled: ['Choose demographic'], selected: ['Choose demographic']}, {multiple: true}) %>
               <%= f.label :demographic, 'Demographic' %>
             </div>
@@ -21,7 +21,7 @@
         <div class="row">
           <div class="valign-wrapper">
             <div class="input-field col s6 valign">
-              <%= f.text_field :date, placeholder: "Tuesdays" %>
+              <%= f.text_field :day, placeholder: "Tuesdays" %>
               <%= f.label :day %>
             </div>
             <div class="input-field col s6 ">
@@ -51,7 +51,7 @@
               <div id="life_group_preview">
                 <div class="name" style="font-weight: bold"></div>
                 <span class="demographic"></span>
-                <div class="date"></div>
+                <div class="day"></div>
                 <div class="location"></div>
                 <span class="start_time"></span> <span id="life_group_hyphen" style="visibility: hidden">-</span> <span class="end_time"></span>
               </div>
@@ -61,7 +61,7 @@
 
         <div class="row">
           <div class="col s4">
-            <%= content_tag :button, type: :submit, id: "update_submit", class: "btn waves-effect waves-light" do %>
+            <%= content_tag :button, type: :submit, id: "upday_submit", class: "btn waves-effect waves-light" do %>
               Submit
               <i class="material-icons right">send</i>
             <% end %>
@@ -84,7 +84,7 @@
 
   $('select').material_select();
 
-  // Update preview on keypress
+  // Upday preview on keypress
   $('.input-field').on('keyup change', function(){
     var changed_element = $(this).children(":first");
     if (changed_element.attr('name').indexOf("demographic") < 0) {
@@ -92,11 +92,11 @@
     }
     var new_text = changed_element.val();
 
-    updatePreview(identifier, new_text);
+    updayPreview(identifier, new_text);
     toggleTimeHyphen(identifier, new_text);
   });
 
-  // Update preview on checkbox select
+  // Upday preview on checkbox select
   $('.select-wrapper label').on('click change', function(){
     var child = $(this).closest('span');
     var child_text = child.text();
@@ -115,8 +115,8 @@
   });
 
 
-  function updatePreview(identifier, new_text){
-    $('#life_group_preview' + ' .' + identifier).text(new_text); //Update preview
+  function updayPreview(identifier, new_text){
+    $('#life_group_preview' + ' .' + identifier).text(new_text); //Upday preview
   }
 
   function toggleTimeHyphen(identifier, new_text){
