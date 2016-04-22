@@ -11,7 +11,7 @@
               <%= f.label :name %>
             </div>
             <div class="input-field col s6 valign">
-              <% options = [['Choose demographic'],['Singles',true],['Couples (Unmarried)',true], ['Marrieds',true],['with Kids',true]] %>
+              <% options = [['Choose demographic'],['All Welcome'],['Singles',true],['Couples (Unmarried)',true], ['Married Couples',true],['with Kids',true]] %>
               <%= f.select(:demographic, options, {disabled: ['Choose demographic'], selected: ['Choose demographic']}, {multiple: true}) %>
               <%= f.label :demographic, 'Demographic' %>
             </div>
@@ -50,7 +50,8 @@
             <p>
               <div id="life_group_preview">
                 <div class="name" style="font-weight: bold"></div>
-                <span class="demographic"></span> <span class="date"></span>
+                <span class="demographic"></span>
+                <div class="date"></div>
                 <div class="location"></div>
                 <span class="start_time"></span> <span id="life_group_hyphen" style="visibility: hidden">-</span> <span class="end_time"></span>
               </div>
