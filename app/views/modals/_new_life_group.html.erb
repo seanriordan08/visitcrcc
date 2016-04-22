@@ -86,9 +86,7 @@
   // Update preview on keypress
   $('.input-field').on('keyup change', function(){
     var changed_element = $(this).children(":first");
-    if (changed_element.attr('name').indexOf("demographic") >= 0) {
-      // Ignore demographic dropdown
-    } else {
+    if (changed_element.attr('name').indexOf("demographic") < 0) {
       var identifier = changed_element.attr('name').replace("life_group[", "").slice(0,-1);
     }
     var new_text = changed_element.val();
@@ -104,21 +102,14 @@
 
     if (child_text == ''){ return; }
 
-//    if (text_array.indexOf(child_text) > -1){
-//      // Remove from array
-//    } else {
-      text_array.push(child_text + ", "); // Add to array
-//    }
-
-    // Add smart commas
-    var length = text_array.length;
-    for (var i = 0; i < length; i++) {
-      if (i == (length - 1)){
-        text_array[i] = text_array[i].slice(0,-2);
-      }
+    if (text_array.indexOf(child_text) > -1){
+      const index = text_array.indexOf(child_text);
+      text_array.splice(index, 1); // Remove from array
+    } else {
+      text_array.push(child_text); // Add to array
     }
-    text_string = text_array.join();
 
+    text_string = text_array.join(', ');
     $('span.demographic').text(text_string);
   });
 
