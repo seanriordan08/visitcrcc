@@ -12,8 +12,10 @@
             </div>
             <div class="input-field col s6 valign">
               <% options = [['Choose demographic'],['All Welcome','all_welcome'],['Singles','singles'],['Couples (Unmarried)','unmarried_couples'], ['Married Couples','married_couples'],['with Kids','with_kids']] %>
-              <%= f.select(:demographic, options, {disabled: ['Choose demographic'], selected: ['Choose demographic']}, {multiple: true}) %>
-              <%= f.label :demographic, 'Demographic' %>
+              <%= f.fields_for :life_group_demographics do |n| %>
+                <%= n.select(:life_group_demographic, options, {disabled: ['Choose demographic'], selected: ['Choose demographic']}, {multiple: true}) %>
+                <%= n.label :life_group_demographic, 'Demographic' %>
+              <% end %>
             </div>
           </div>
         </div>

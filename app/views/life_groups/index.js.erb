@@ -3,9 +3,9 @@ $('#life_group_groups_wrapper .group_list').html("\
     <ul class='collection'>\
       <% life_groups.each do |l| %>\
         <li class='collection-item avatar'>\
-          <%= l.name %>\
+          <b><%= l.name %></b>\
           <p>\
-          <%= l.life_group_demographics %> <br>\
+          <%= l.life_group_demographic.attributes.reject{|k,v| v != true}.keys.map{|k| k.capitalize}.each{|k| k.gsub!(/_/, ' ') if k.include?('_')}.join(', ') %> <br>\
           <%= l.day %> <br>\
           <%= l.location %> <br>\
           <%= l.start_time %> - <%= l.end_time %>\

@@ -12,7 +12,11 @@ class LifeGroupsController < ApplicationController
   end
 
   def create
-    @life_group = LifeGroup.create(life_group_params)
+    demographic_hash = Hash[params["life_group"]["life_group_demographics"]["life_group_demographic"].collect {|d| [d, true] unless d == ''}]
+    params["life_group"]["life_group_demographics"] = demographic_hash
+
+    @life_group = LifeGroup.new(life_group_params)
+    @life_group_demographic = @life_group.build_life_group_demographic(demographic_hash)
 
     if @life_group.save
       flash[:notice] = "Saved!"
@@ -26,7 +30,7 @@ class LifeGroupsController < ApplicationController
   private
 
   def life_group_params
-    params.require(:life_group).permit(:name, :day, :start_time, :end_time, :location, demographic: ['', 'all_welcome'])
+    params.require(:life_group).permit(:name, :day, :start_time, :end_time, :location, life_group_demographic_attributes: ['all_welcome','singles','unmarried_couples','married_couples','with_kids'])
   end
 
 end
