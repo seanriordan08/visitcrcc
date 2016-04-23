@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409125120) do
+ActiveRecord::Schema.define(version: 20160423053626) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -34,6 +34,29 @@ ActiveRecord::Schema.define(version: 20160409125120) do
     t.string   "image",              limit: 255
     t.string   "last_modified_by",   limit: 255
     t.datetime "last_modified_date"
+  end
+
+  create_table "life_group_demographics", force: :cascade do |t|
+    t.boolean  "all_welcome"
+    t.boolean  "singles"
+    t.boolean  "unmarried_couples"
+    t.boolean  "married_couples"
+    t.boolean  "with_kids"
+    t.integer  "life_group_id",     limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "life_groups", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.string   "day",           limit: 255
+    t.string   "start_time",    limit: 255
+    t.string   "end_time",      limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "location",      limit: 255
+    t.integer  "group_lead_id", limit: 4
+    t.string   "notes",         limit: 255
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160409125120) do
     t.string   "last_name",              limit: 255, default: "",      null: false
     t.string   "role_description",       limit: 255, default: "guest"
     t.boolean  "staff",                              default: false
+    t.integer  "life_group_id",          limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

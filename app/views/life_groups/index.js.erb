@@ -1,0 +1,34 @@
+$('#life_group_groups_wrapper .group_list').html("\
+  <% if life_groups.present? %>\
+    <ul class='collection'>\
+      <% life_groups.each do |l| %>\
+        <li class='collection-item avatar'>\
+          <div class='row'>\
+            <div class='col s6'>\
+              <b><%= l.name %></b>\
+              <p>\
+              <%= l.life_group_demographic.attributes.reject{|k,v| v != true}.keys.map{|k| k.capitalize}.each{|k| k.gsub!(/_/, ' ') if k.include?('_')}.join(', ') %> <br>\
+              <%= l.day %> <br>\
+              <%= l.location %> <br>\
+              <%= l.start_time %> - <%= l.end_time %>\
+              </p>\
+              <a href='#!' class='secondary-content'><i class='material-icons'>grade</i></a>\
+            </div>\
+            <div class='col s6'>\
+              Contact: <br>\
+              <div class='valign-wrapper' style='position:relative; top:-10px'>\
+                <i class='small material-icons whisper valign'>email</i><span class='valign' style='margin-left:5px'><%= l.group_lead.email %></span><br><br>\
+              </div>\
+              <% if l.notes.present? %>\
+                <u>Additional Notes</u> <br>\
+                <%= l.notes %>\
+              <% end %>\
+            </div>\
+          </div>\
+        </li>\
+      <% end %>\
+    </ul>\
+  <% end %>\
+");
+
+$('#add_life_group_fab').css({visibility: "visible"});

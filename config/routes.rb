@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'user/index'
-
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
 
   resources :users do
@@ -42,6 +40,8 @@ Rails.application.routes.draw do
       put :save_html_content
     end
   end
+
+  resources :life_groups
 
   resources :dashboards
 
