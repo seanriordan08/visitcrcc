@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     self.role.to_sym == role.to_sym
   end
 
+  def role_at_least?(role)
+    ROLES.index(self.role) <= ROLES.index(role)
+  end
+
   private
 
   def update_mailchimp
