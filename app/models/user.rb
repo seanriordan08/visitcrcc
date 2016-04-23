@@ -7,16 +7,17 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, :gender, presence: true
 
-  belongs_to :life_group, class_name: "User", foreign_key: :life_group_id
   has_one :avatar, dependent: :destroy
+  has_one :life_group
   has_and_belongs_to_many :events
+
+  belongs_to :life_group, class_name: "User", foreign_key: :life_group_id
 
   after_create :update_mailchimp
   after_create :create_avatar
   before_save :normalize_names
 
   accepts_nested_attributes_for :avatar
-
 
   ROLES = %w[admin staff member guest suspended banned]
 

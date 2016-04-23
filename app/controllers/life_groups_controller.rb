@@ -12,10 +12,12 @@ class LifeGroupsController < ApplicationController
   end
 
   def create
+    binding.pry
     demographic_hash = Hash[params["life_group"]["life_group_demographics"]["life_group_demographic"].collect {|d| [d, true] unless d == ''}]
     params["life_group"]["life_group_demographics"] = demographic_hash
 
     @life_group = LifeGroup.new(life_group_params)
+    @life_group.group_lead_id = current_user.id
     @life_group_demographic = @life_group.build_life_group_demographic(demographic_hash)
 
     if @life_group.save
@@ -30,7 +32,7 @@ class LifeGroupsController < ApplicationController
   private
 
   def life_group_params
-    params.require(:life_group).permit(:name, :day, :start_time, :end_time, :location, life_group_demographic_attributes: ['all_welcome','singles','unmarried_couples','married_couples','with_kids'])
+    params.require(:life_group).permit(:name, :day, :start_time, :end_time, :location, :notes, life_group_demographic_attributes: ['all_welcome','singles','unmarried_couples','married_couples','with_kids'])
   end
 
 end

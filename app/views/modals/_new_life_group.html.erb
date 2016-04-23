@@ -35,13 +35,17 @@
 
         <div class="row">
           <div class="valign-wrapper">
-            <div class="input-field col s6">
+            <div class="input-field col s3">
               <%= f.text_field :start_time, placeholder: "6:30pm" %>
               <%= f.label :start_time %>
             </div>
-            <div class="input-field col s6 valign">
+            <div class="input-field col s3">
               <%= f.text_field :end_time, placeholder: "8:30pm" %>
               <%= f.label :end_time %>
+            </div>
+            <div class="input-field col s6 valign">
+              <%= f.text_field :notes, placeholder: "Childcare not provided. Dessert provided!" %>
+              <%= f.label :notes %>
             </div>
           </div>
         </div>
