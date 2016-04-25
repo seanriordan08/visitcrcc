@@ -12,7 +12,6 @@ class LifeGroupsController < ApplicationController
   end
 
   def create
-    binding.pry
     demographic_hash = Hash[params["life_group"]["life_group_demographics"]["life_group_demographic"].collect {|d| [d, true] unless d == ''}]
     params["life_group"]["life_group_demographics"] = demographic_hash
 
