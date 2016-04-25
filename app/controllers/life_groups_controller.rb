@@ -31,7 +31,7 @@ class LifeGroupsController < ApplicationController
   private
 
   def life_group_params
-    params.require(:life_group).permit(:name, :day, :start_time, :end_time, :location, :notes, life_group_demographic_attributes: ['all_welcome','singles','unmarried_couples','married_couples','with_kids'])
+    params.require(:life_group).permit(:name, :day, :start_time, :end_time, :location, :notes, life_group_demographic_attributes: ['all_welcome','singles','unmarried_couples','married_couples','with_kids','without_kids'])
   end
 
 end

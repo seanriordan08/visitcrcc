@@ -7,4 +7,14 @@ class LifeGroup < ActiveRecord::Base
 
   accepts_nested_attributes_for :life_group_demographic
 
+  DEMOGRAPHIC_OPTIONS = [
+    ['Choose demographic'],
+    ['All Welcome','all_welcome'],
+    ['Singles','singles'],
+    ['Couples (Unmarried)','unmarried_couples'],
+    ['Married Couples','married_couples'],
+    ['with Kids','with_kids'],
+    ['without Kids','without_kids']
+  ]
+
 end

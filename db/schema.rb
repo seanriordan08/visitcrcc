@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423053626) do
+ActiveRecord::Schema.define(version: 20160425030137) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160423053626) do
     t.integer  "life_group_id",     limit: 4
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.boolean  "without_kids"
   end
 
   create_table "life_groups", force: :cascade do |t|
