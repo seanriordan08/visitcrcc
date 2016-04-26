@@ -1,27 +1,31 @@
 $('#life_group_groups_wrapper .group_list').html("\
   <% if life_groups.present? %>\
     <ul class='collection'>\
-      <% life_groups.each do |l| %>\
+      <% life_groups.each do |g| %>\
         <li class='collection-item avatar'>\
           <div class='row' style='margin-bottom:0'>\
             <div class='col s6'>\
-              <b><%= l.name %></b>\
+              <b><%= g.name %></b>\
               <p>\
-              <%= l.life_group_demographic.attributes.reject{|k,v| v != true}.keys.map{|k| k.capitalize}.each{|k| k.gsub!(/_/, ' ') if k.include?('_')}.join(', ') %> <br>\
-              <%= l.day %> <br>\
-              <%= l.location %> <br>\
-              <%= l.start_time %> - <%= l.end_time %>\
+                <%= g.life_group_demographic.attributes.reject{|k,v| v != true}.keys.map{|k| k.capitalize}.each{|k| k.gsub!(/_/, ' ') if k.include?('_')}.join(', ') %> <br>\
+                <%= g.day %> <br>\
+                <%= g.location %> <br>\
+                <%= g.start_time %> - <%= g.end_time %>\
               </p>\
-              <a href='#!' class='secondary-content'><i class='material-icons'>grade</i></a>\
+              <div class='secondary-content' style='display:block; clear:both'>\
+              <% if current_user && current_user.group_lead?(g) %>\
+                <a href='#!'><i class='material-icons'>mode_edit</i></a>\
+              <% end %>\
+              </div>\
             </div>\
-            <div class='col s6'>\
+            <div class='col s5'>\
               Contact: <br>\
               <div class='valign-wrapper' style='position:relative; top:-10px'>\
-                <i class='small material-icons whisper valign'>email</i><span class='valign' style='margin-left:5px'><%= l.group_lead.email %></span><br><br>\
+                <i class='small material-icons whisper valign'>email</i><span class='valign' style='margin-left:5px'><%= g.group_lead.email %></span><br><br>\
               </div>\
-              <% if l.notes.present? %>\
+              <% if g.notes.present? %>\
                 <u>Additional Notes</u> <br>\
-                <%= l.notes %>\
+                <%= g.notes %>\
               <% end %>\
             </div>\
           </div>\

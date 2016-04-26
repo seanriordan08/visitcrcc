@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
     ROLES.index(self.role) <= ROLES.index(role)
   end
 
+  def group_lead?(group)
+    self.id == group.group_lead.id
+  end
+
   private
 
   def update_mailchimp
