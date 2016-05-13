@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @contents = Event.all
+    @contents = Event.all_active
   end
 
 end
