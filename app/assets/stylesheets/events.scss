@@ -1,3 +1,22 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event5 {
+  @include main_slider('june_community_event.jpg');
+}
+.event6 {
+  @include main_slider('july_community_event.jpg');
+}
+.event4 {
+  @include main_slider('womens_ministry.jpg');
+}
+.event1 {
+  @include main_slider('sep_11_launch_sunday.jpg');
+}
+.event3 {
+  @include main_slider('mens_ministry.jpg');
+}
+.event2 {
+  @include main_slider('life_groups.jpg');
+}

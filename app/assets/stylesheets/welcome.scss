@@ -190,28 +190,6 @@
   border-radius: 25px;
 }
 
-.event5 {
-  @include main_slider('summer_worship.jpg');
-  }
-.event6 {
-  @include main_slider('june_community_event.jpg');
-}
-.event7 {
-  @include main_slider('july_community_event.jpg');
-}
-.event4 {
-  @include main_slider('womens_ministry.jpg');
-}
-.event1 {
-  @include main_slider('sep_11_launch_sunday.jpg');
-}
-.event3 {
-  @include main_slider('mens_ministry.jpg');
-}
-.event2 {
-  @include main_slider('life_groups.jpg');
-}
-
 .clearbox {
   background-color: rgba(255,255,255,.5);
   padding: 20px;
