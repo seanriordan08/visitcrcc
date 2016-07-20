@@ -103,24 +103,6 @@
   }
 }
 
-.static_event {
-  display: inline-block;
-  float: left;
-  width: 30%;
-  height: auto;
-  background-size: 100%;
-  margin-bottom: 20px;
-  border: 4px solid #FEFEFE
-}
-
-.static_event_description {
-  display: inline-block;
-  float: left;
-  width: 30%;
-  height: auto;
-  margin-left: 40px;
-}
-
 .dark_bg {
   color: $crcc-grey;
   background: transparent image-url('dark_geometric.png') repeat;

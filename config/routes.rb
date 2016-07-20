@@ -20,7 +20,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :events
+  resources :events do
+    member do
+      put :deactivate_event
+    end
+  end
 
   resources :ministries do
     collection do

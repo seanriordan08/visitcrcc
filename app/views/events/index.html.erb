@@ -7,7 +7,10 @@
 
     <% @contents.each do |content| %>
       <div class="row">
-        <div class="col s12">
+        <div class="col s12" data-event-id=<%= "#{content.id}" %> >
+          <% if current_user && (current_user.staff || current_user.role?(:admin))%>
+            <div class="event_controls"><i class="material-icons close">close</i></div>
+          <% end %>
           <%= image_tag content.image, class: "static_event", alt: content.title %>
           <div class="static_event_description">
             <%= content.description %>
@@ -18,3 +21,14 @@
 
   </div>
 </div>
+
+<script>
+  $('.event_controls').on('click', function(){
+    event_id = $(this).closest('.col.s12').data('event-id');
+
+    $.ajax({
+      type: 'PUT',
+      url: '/events/' + event_id + '/deactivate_event'
+    })
+  })
+</script>

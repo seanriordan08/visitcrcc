@@ -2,6 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.event_controls {
+  display: inline-block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  padding: 2px 0 0 2px;
+  background-size: 100%;
+  background-color: #ccc;
+  border: 1px solid #FEFEFE;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.static_event {
+  display: inline-block;
+  float: left;
+  width: 30%;
+  height: auto;
+  background-size: 100%;
+  margin-bottom: 20px;
+  border: 4px solid #FEFEFE;
+}
+
+.static_event_description {
+  display: inline-block;
+  float: left;
+  width: 30%;
+  height: auto;
+  margin-left: 40px;
+}
+
 .event5 {
   @include main_slider('june_community_event.jpg');
 }
