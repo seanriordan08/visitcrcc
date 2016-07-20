@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513183641) do
+ActiveRecord::Schema.define(version: 20160605235920) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20160513183641) do
     t.datetime "updated_at",                  null: false
     t.boolean  "without_kids"
   end
+
+  add_index "life_group_demographics", ["life_group_id"], name: "fk_rails_a03e6a4869", using: :btree
 
   create_table "life_groups", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -106,4 +108,5 @@ ActiveRecord::Schema.define(version: 20160513183641) do
     t.datetime "last_modified_date"
   end
 
+  add_foreign_key "life_group_demographics", "life_groups"
 end
