@@ -13,6 +13,9 @@
   border: 1px solid #FEFEFE;
   border-radius: 15px;
   cursor: pointer;
+  &:hover {
+    background-color: #aaa;
+  }
 }
 
 .static_event {
