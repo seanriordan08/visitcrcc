@@ -36,21 +36,18 @@
   margin-left: 40px;
 }
 
-.event5 {
-  @include main_slider('june_community_event.jpg');
-}
-.event6 {
-  @include main_slider('july_community_event.jpg');
-}
-.event4 {
-  @include main_slider('womens_ministry.jpg');
-}
 .event1 {
   @include main_slider('sep_11_launch_sunday.jpg');
+}
+.event2 {
+  @include main_slider('life_groups_mon_tues.png');
 }
 .event3 {
   @include main_slider('mens_ministry.jpg');
 }
-.event2 {
-  @include main_slider('life_groups_mon_tues.png');
+.event4 {
+  @include main_slider('womens_ministry.jpg');
+}
+.event5 {
+  @include main_slider('august_community_event.png');
 }
