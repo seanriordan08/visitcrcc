@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605235920) do
+ActiveRecord::Schema.define(version: 20160817022456) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20160605235920) do
     t.datetime "created_at",                                       null: false
     t.datetime "updated_at",                                       null: false
     t.string   "background_color", limit: 255, default: "#78B5CA"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name",            limit: 255
+    t.string "primary_phone",   limit: 255
+    t.string "secondary_phone", limit: 255
+    t.string "primary_email",   limit: 255
+    t.string "secondary_email", limit: 255
   end
 
   create_table "events", force: :cascade do |t|
