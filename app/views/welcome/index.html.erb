@@ -120,11 +120,15 @@
 
 <div class="container">
   <div class="section">
-    <div class="row" id="contact_us" style="margin: 0">
-      <div class="col s7 m4">
-        <i class="large material-icons brown-text" style="display: block; text-align: center">chat</i>
-        <h2 style="text-align: center">Contact Us</h2>
-      </div>
+    <div class="row" id="contact_us" style="margin: 0;">
+      <a href="<%= new_here_welcome_index_path %>" class="modal-trigger" style="color: #353535">
+        <div class="col s7 m4">
+          <div class="icon-block hoverable">
+            <i class="large material-icons brown-text" style="display: block; text-align: center">chat</i>
+            <h2 style="text-align: center">Contact Us</h2>
+          </div>
+        </div>
+      </a>
       <div class="col s5 m7 offset-m1">
         <h5 style="padding-top: 30px; color: #353535">We'd love to hear from you! Let us know your thoughts as we gear up for launch this Summer!</h5>
       </div>
@@ -155,36 +159,6 @@
     </div>
   </div>
 </div>
-
-<!--
-<div class="parallax-container mission_statement" style="position: relative; height: auto">
-  <div class="section">
-    <div class="row">
-      <div class="container">
-        <div class="row">
-          <div class="col hide-on-small-only m2 l2">
-            <i class="material-icons crcc-black-text flip" style="font-size: 9em">format_quote</i>
-          </div>
-          <div class="col s12 m10 l10">
-            <div class="crcc-black-text text-lighten-4">
-              <h3 style="position: relative; top: 35px; text-shadow: 0 0 10px #aaa, 0 0 1px #fff">
-                Making Much Of Jesus - The clear objective to fight for our community in the name of Jesus Christ.
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="row center">
-      <div class="col s12">
-        <%#= render :partial => 'social_links' %>
-      </div>
-    </div>
-  </div>
-  <div class="parallax"><%#= image_tag("mountain_geometric.jpg", alt: "Mountain") %></div>
-</div>
--->
 
 <script type="text/javascript">
   $(document).ready(function(){
