@@ -4,6 +4,13 @@
     <div class="row">
       <div class="col s12">
         <h2>Contact Us</h2>
+
+        <%= form_for(:inquiry, as: resource_name, url: '/users/sign_in', html: { id: 'login_form' }) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+
       </div>
     </div>
   </div>
