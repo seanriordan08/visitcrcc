@@ -1,8 +1,12 @@
+<%= render partial: "modals/declaration_modals" %>
+<%= render partial: "modals/mission_modal" %>
+<%= render partial: "modals/contact_us_form" %>
+
 <% if !signed_in? %>
   <%= render partial: 'modals/sign_up_form' %>
   <%= render partial: 'modals/log_in_form' %>
 <% end %>
 
-<%= render partial: "modals/declaration_modals" %>
-<%= render partial: "modals/mission_modal" %>
-<%= render partial: "modals/new_life_group" if current_user %>
+<% if signed_in? %>
+  <%= render partial: "modals/new_life_group" if current_user %>
+<% end %>

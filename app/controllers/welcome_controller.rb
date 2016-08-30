@@ -28,4 +28,7 @@ class WelcomeController < ApplicationController
   def get_involved
   end
 
+  def contact_us
+  end
+
 end

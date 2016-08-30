@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get :serve
       get :new_here
       get :get_involved
+      get :contact_us
     end
   end
 
