@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :inquiries
+
   resources :events do
     member do
       put :deactivate_event

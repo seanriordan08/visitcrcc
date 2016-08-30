@@ -5,11 +5,12 @@
       <div class="col s12">
         <h2>Contact Us</h2>
 
-        <%= form_for(:inquiry, as: resource_name, url: '/users/sign_in', html: { id: 'login_form' }) do |f| %>
+        <%= form_for @inquiry = Inquiry.new, url: {action: "create"}, html: {class: ""} do |f| %>
           <div class="field">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true %>
           </div>
+        <% end %>
 
       </div>
     </div>
@@ -23,17 +24,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-//  $("#login_submit").on("click",function(e) {
-//    e.preventDefault();
-//    $("#login_form").submit();
-//  });
-
-  $('.modal-close').on("click", function(e) {
-    e.preventDefault();
-    $('#modal_log_in').closeModal();
-//    $('#modal_sign_up').openModal();
-  })
-
-</script>
