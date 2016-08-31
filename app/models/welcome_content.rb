@@ -5,3 +5,14 @@ class WelcomeContent < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+#
+# Table name: welcome_contents
+#
+#  id                 :integer          not null, primary key
+#  page_name          :string(255)
+#  html_content       :text(65535)
+#  last_modified_by   :string(255)
+#  last_modified_date :datetime
+#

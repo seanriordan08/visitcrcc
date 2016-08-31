@@ -18,3 +18,19 @@ class LifeGroup < ActiveRecord::Base
   ]
 
 end
+
+# == Schema Information
+#
+# Table name: life_groups
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  day           :string(255)
+#  start_time    :string(255)
+#  end_time      :string(255)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  location      :string(255)
+#  group_lead_id :integer
+#  notes         :string(255)
+#

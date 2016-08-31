@@ -1,14 +1,19 @@
 
 <div id="modal_contact_us" class="modal modal-fixed-footer">
   <div class="modal-content">
-    <div class="row">
+    <div class="row" style="margin:0">
       <div class="col s12">
         <h2>Contact Us</h2>
 
         <%= form_for @inquiry = Inquiry.new, url: {action: "create"}, html: {class: ""} do |f| %>
+          <div id="web_inquiry_body" class="field">
+            <%= f.label :body, 'What\'s your question?' %><br />
+            <%= f.text_area :body %>
+          </div>
+
           <div class="field">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true %>
+            <%= f.label :email, 'Whats your email?' %><br />
+            <%= f.email_field :email, autofocus: true, placeholder: 'john.smith@example.com' %>
           </div>
         <% end %>
 
@@ -17,9 +22,13 @@
   </div>
 
   <div class="modal-footer">
-    <div class="row">
+    <div class="row" style="margin:0">
       <div class="col s12">
-        <a href="#" class="modal-action modal-close waves-effect btn-flat">Cancel</a>
+        <%= content_tag :button, type: :submit, id: "sign_up_submit", class: "btn waves-effect waves-light" do %>
+          Send
+          <i class="material-icons right">send</i>
+        <% end %>
+        <a href="#!" class="modal-action modal-close waves-effect btn-flat">Cancel</a>
       </div>
     </div>
   </div>

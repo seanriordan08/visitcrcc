@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830220049) do
+ActiveRecord::Schema.define(version: 20160831141533) do
 
   create_table "avatars", force: :cascade do |t|
     t.integer  "user_id",          limit: 4
@@ -48,13 +48,14 @@ ActiveRecord::Schema.define(version: 20160830220049) do
   create_table "inquiries", force: :cascade do |t|
     t.string   "email",          limit: 255
     t.boolean  "registered"
-    t.string   "media_origin",   limit: 255, default: "web_form"
+    t.string   "media_origin",   limit: 255,   default: "web_form"
     t.string   "tags",           limit: 255
-    t.integer  "priority",       limit: 4,   default: 0
-    t.boolean  "responded",                  default: false
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.integer  "priority",       limit: 4,     default: 0
+    t.boolean  "responded",                    default: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.integer  "helpful_rating", limit: 4
+    t.text     "body",           limit: 65535
   end
 
   create_table "life_group_demographics", force: :cascade do |t|
