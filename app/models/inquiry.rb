@@ -1,4 +1,8 @@
 class Inquiry < ActiveRecord::Base
+
+  validates :body, presence: true
+  validates :email, presence: true
+
 end
 
 # == Schema Information

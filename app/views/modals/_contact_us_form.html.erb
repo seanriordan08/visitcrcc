@@ -24,12 +24,23 @@
   <div class="modal-footer">
     <div class="row" style="margin:0">
       <div class="col s12">
-        <%= content_tag :button, type: :submit, id: "sign_up_submit", class: "btn waves-effect waves-light" do %>
+        <%= content_tag :button, type: :submit, id: "inquiry_send", class: "btn waves-effect waves-light" do %>
           Send
           <i class="material-icons right">send</i>
         <% end %>
-        <a href="#!" class="modal-action modal-close waves-effect btn-flat">Cancel</a>
+        <a id="inquiry_cancel" href="#!" class="modal-action modal-close waves-effect btn-flat">Cancel</a>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  $('#inquiry_cancel').on('click', function() {
+    $('textarea#inquiry_body').val('');
+    $('input#inquiry_email').val('');
+  });
+
+  $('#inquiry_send').on('click', function() {
+
+  })
+</script>
