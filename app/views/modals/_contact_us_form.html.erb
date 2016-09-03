@@ -5,7 +5,7 @@
       <div class="col s12">
         <h2>Contact Us</h2>
 
-        <%= form_for @inquiry = Inquiry.new, url: {action: "create"}, html: {class: ""} do |f| %>
+        <%= form_for @inquiry = Inquiry.new, url: {action: 'create'}, method: 'post', html: {id: "inquiry_form", class: ""} do |f| %>
           <div id="web_inquiry_body" class="field">
             <%= f.label :body, 'What\'s your question?' %><br />
             <%= f.text_area :body %>
@@ -40,7 +40,33 @@
     $('input#inquiry_email').val('');
   });
 
-  $('#inquiry_send').on('click', function() {
+  $('#inquiry_send').on('click', function(e) {
+    e.preventDefault();
 
+    var form_data = $('#inquiry_form').serializeArray();
+    console.log(form_data);
+
+    var data = {};
+    $(form_data).each(function(index, obj){
+      data[obj.name] = obj.value;
+    });
+
+    console.log(form_data);
+
+    $.ajax({
+      method: 'post',
+      url: '/inquiries',
+      dataType: 'script',
+      data: {form_data: data},
+      beforeSend: function() {
+
+      },
+      success: function() {
+        $('#modal_contact_us').closeModal();
+      },
+      error: function() {
+        $('#modal_contact_us').closeModal();
+      }
+    });
   })
 </script>
