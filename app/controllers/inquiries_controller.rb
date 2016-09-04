@@ -16,6 +16,8 @@ class InquiriesController < ApplicationController
 
     if @inquiry.save
       flash.now[:success] = RESPONSE_MESSAGE_SUCCESS
+
+      InquiriesMailer.inquiry_email(email_address, email_body).deliver_now
       head :ok, content_type: "text/html"
     else
       flash.now[:error] = RESPONSE_MESSAGE_ERROR
