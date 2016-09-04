@@ -44,14 +44,11 @@
     e.preventDefault();
 
     var form_data = $('#inquiry_form').serializeArray();
-    console.log(form_data);
 
     var data = {};
     $(form_data).each(function(index, obj){
       data[obj.name] = obj.value;
     });
-
-    console.log(form_data);
 
     $.ajax({
       method: 'post',
