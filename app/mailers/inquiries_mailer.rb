@@ -4,7 +4,8 @@ class InquiriesMailer < ApplicationMailer
   def inquiry_email(user_email, email_body)
     @email = user_email
     @body = email_body
-    mail(to: 'info@visitcrcc.org', from: @email, subject: 'Question/Comment', reply_to: @email)
+    recipient = Rails.env == 'development' ? 'sean.riordan08@gmail.com' : 'info@visitcrcc.org'
+    mail(to: recipient, from: @email, subject: 'Question/Comment', reply_to: @email)
   end
 
 end
