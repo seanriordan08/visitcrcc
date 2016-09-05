@@ -19,7 +19,7 @@ Rails.application.configure do
 
   # SendGrid configs
   ActionMailer::Base.smtp_settings = {
-    :user_name => 'visitcrcc.dev@gmail.com',
+    :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD_DEV'],
     :domain => 'visitcrcc.org',
     :address => 'smtp.sendgrid.net',
