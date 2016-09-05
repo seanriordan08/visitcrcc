@@ -35,7 +35,11 @@ body {
 }
 
 .toast_container_success {
-  background-color: green;
+  background-color: $success-color !important;
+}
+
+.toast_container_error {
+  background-color: $error-color !important;
 }
 
 .flip {

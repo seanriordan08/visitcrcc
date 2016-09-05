@@ -36,8 +36,7 @@
 
 <script>
   $('#inquiry_cancel').on('click', function() {
-    $('textarea#inquiry_body').val('');
-    $('input#inquiry_email').val('');
+    clearContactForm();
   });
 
   $('#inquiry_send').on('click', function(e) {
@@ -59,12 +58,20 @@
 
       },
       success: function() {
+        clearContactForm();
         $('#modal_contact_us').closeModal();
-        Materialize.toast('I am a toast!', 4000)
+        Materialize.toast('Message Sent!', 3000, 'toast_container_success')
       },
       error: function() {
         $('#modal_contact_us').closeModal();
+        Materialize.toast('Eww, problems! Refresh and try again?', 3000, 'toast_container_error')
       }
     });
-  })
+  });
+
+  function clearContactForm(){
+    $('textarea#inquiry_body').val('');
+    $('input#inquiry_email').val('');
+  }
+
 </script>
