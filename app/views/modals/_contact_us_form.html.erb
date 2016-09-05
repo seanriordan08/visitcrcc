@@ -7,7 +7,7 @@
 
         <%= form_for @inquiry = Inquiry.new, url: {action: 'create'}, method: 'post', html: {id: "inquiry_form", class: ""} do |f| %>
           <div id="web_inquiry_body" class="field">
-            <%= f.label :body, 'What\'s your question?' %><br />
+            <%= f.label :body, 'Question/Comment' %><br />
             <%= f.text_area :body %>
           </div>
 
