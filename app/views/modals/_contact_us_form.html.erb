@@ -63,6 +63,7 @@
         Materialize.toast('Message Sent!', 3000, 'toast_container_success')
       },
       error: function() {
+        clearContactForm();
         $('#modal_contact_us').closeModal();
         Materialize.toast('Eww, problems! Refresh and try again?', 3000, 'toast_container_error')
       }
