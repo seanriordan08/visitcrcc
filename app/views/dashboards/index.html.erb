@@ -3,7 +3,19 @@
 <div class="container staff_page">
   <br>
   <h3>Dashboard</h3>
-  <br>
+
+  <% if can? :manage, :all %>
+    <div class="collection">
+      <div class="collection-item" style="padding: 0">
+        <a href="https://analytics.google.com/analytics/web/?authuser=0#home/a83973509w125120448p129458661/" class="collection-item" style="padding: 20px 15px">Visit Google Analytics
+          <div class="secondary-content">
+            <i class="material-icons">insert_chart</i>
+          </div>
+        </a>
+      </div>
+    </div>
+  <% end %>
+
   <div class="row">
     <div class="dashboard_leaderboard">
       <div class="tab">
