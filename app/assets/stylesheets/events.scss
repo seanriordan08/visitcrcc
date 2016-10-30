@@ -37,17 +37,12 @@
 }
 
 .event1 {
-  @include main_slider('sep_11_launch_sunday.jpg');
-}
-.event2 {
   @include main_slider('life_groups_mon_tues.png');
 }
-.event3 {
+.event2 {
   @include main_slider('mens_ministry.jpg');
 }
-.event4 {
+.event3 {
   @include main_slider('womens_ministry.jpg');
 }
-//.event5 {
-//  @include main_slider('august_community_event.png');
-//}
+
