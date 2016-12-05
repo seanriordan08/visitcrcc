@@ -36,6 +36,7 @@ class WelcomeController < ApplicationController
 
   def allow_iframe
     response.headers.except! 'X-Frame-Options'
+    response.headers['Access-Control-Allow-Origin'] = '*'
   end
 
 end
