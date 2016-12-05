@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  after_action :allow_iframe, only: :index
 
   def index
     if Rails.env.development?
@@ -29,6 +30,12 @@ class WelcomeController < ApplicationController
   end
 
   def contact_us
+  end
+
+  private
+
+  def allow_iframe
+    response.headers.except! 'X-Frame-Options'
   end
 
 end
